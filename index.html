@@ -3,6 +3,7 @@
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded artoolkit='sourceType: webcam;'>
 		<a-sphere src="DASH.png" position='0 0.5 0' material='opacity: 0.9;'</a-sphere>
+<a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
 		<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>
 </body>
