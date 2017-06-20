@@ -41,7 +41,7 @@ background-color: #FFFFFF !important;
 z-index:2;
 }
 
-.ascene {
+.box {
 
 height: 500px;
 width: 500px;
@@ -57,7 +57,8 @@ width: 500px;
     </div>
 </nav>
 
-<a-scene class="ascene" embedded artoolkit='sourceType: webcam;'>
+<div class="container-fluid">
+<a-scene class="box" embedded artoolkit='sourceType: webcam;'>
 <a-assets>
 <img id="nukes" src="nukes.gif">
 </a-assets>
@@ -66,7 +67,7 @@ width: 500px;
 </a-entity>
 <a-marker-camera preset='hiro'></a-marker-camera>
 </a-scene>
-
+</div>
 
 </body>
 
