@@ -39,11 +39,22 @@ font-family:Arial;
 font-weight:bold;
 }
 
+.button {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.button:hover {
+    background-color: #555555;
+    color: white;
+}
+
 </style>
 
 
 <body>
-<div id = "bar">&nbsp;&nbsp;&nbsp;<button type ="submit" onclick="window.open('Hiro.png')"><span class="glyphicon glyphicon-th-print"></span>Download Marker to your device</button></div>
+<div id = "bar">&nbsp;&nbsp;&nbsp;<button class="button" type ="submit" onclick="window.open('Hiro.png')"><span class="glyphicon glyphicon-th-print"></span>Get the HIRO Marker</button></div>
 <a-scene embedded artoolkit='sourceType: webcam;'>
 <a-assets>
 <img id="nukes" src="nukes.gif">
