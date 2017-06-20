@@ -36,12 +36,15 @@ font-family:Arial;
 font-weight:bold;
 }
 
-#nav {
-background-color: #FFFFFF !important;
+#bar {
 z-index:2;
 }
 
-a-scene {
+#nav {
+background-color: #FFFFFF !important;
+}
+
+.foo {
 height: 500px;
 width: 500px;
 z-index:1;
@@ -50,15 +53,15 @@ z-index:1;
 <body>
 
 <nav class="navbar navbar-default">
-<div id="nav" class="container-fluid">
+<div id = "bar" class="container-fluid">
     <div class="navbar-header">
       <a id="brand" class="navbar-brand" href="https://www.slalom.com/">Slalom</a>
     </div>
     </div>
 </nav>
 
-<div class="container-fluid">
-<a-scene embedded artoolkit='sourceType: webcam;'>
+<div>
+<a-scene class="foo" embedded artoolkit='sourceType: webcam;'>
 <a-assets>
 <img id="nukes" src="nukes.gif">
 </a-assets>
