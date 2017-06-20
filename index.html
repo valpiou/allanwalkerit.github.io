@@ -23,8 +23,6 @@
 <style>
 
 body{
-margin: 0;
-overflow:hidden;
 }
 
 .navbar {
@@ -42,20 +40,11 @@ font-weight:bold;
 position:absolute;
 top: 0px;
 left: 0px;
-z-index:2;
+z-index:999;
 }
 
 #nav {
 background-color: #FFFFFF !important;
-}
-
-#foo {
-position:absolute;
-top: 0px;
-left: 0px;
-z-index:1;
-height:200px;
-width:200px;
 }
 </style>
 <body>
@@ -68,7 +57,6 @@ width:200px;
     </div>
 </nav>
 
-<div id="foo">
 <a-scene embedded artoolkit='sourceType: webcam;'>
 <a-assets>
 <img id="nukes" src="nukes.gif">
@@ -78,7 +66,7 @@ width:200px;
 </a-entity>
 <a-marker-camera preset='hiro'></a-marker-camera>
 </a-scene>
-</div>
+
 
 </body>
 
