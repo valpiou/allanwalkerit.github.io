@@ -44,10 +44,9 @@ z-index:2;
 background-color: #FFFFFF !important;
 }
 
-.foo {
-height: 500px;
-width: 500px;
+#foo {
 z-index:1;
+overflow:hidden;
 }
 </style>
 <body>
@@ -61,7 +60,7 @@ z-index:1;
 </nav>
 
 <div>
-<a-scene class="foo" embedded>
+<a-scene id="foo" embedded artoolkit='sourceType: webcam;'>
 <a-assets>
 <img id="nukes" src="nukes.gif">
 </a-assets>
