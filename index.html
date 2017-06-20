@@ -44,6 +44,8 @@ z-index:2;
 }
 
 #ascene {
+height: 500px;
+width: 500px;
 z-index:1;
 }
 </style>
@@ -56,8 +58,8 @@ z-index:1;
     </div>
     </div>
 </nav>
-<div id="ascene">
-<a-scene embedded artoolkit='sourceType: webcam;'>
+
+<a-scene class="ascene" embedded artoolkit='sourceType: webcam;'>
 <a-assets>
 <img id="nukes" src="nukes.gif">
 </a-assets>
@@ -66,7 +68,7 @@ z-index:1;
 </a-entity>
 <a-marker-camera preset='hiro'></a-marker-camera>
 </a-scene>
-</div>
+
 
 </body>
 
