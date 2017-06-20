@@ -19,20 +19,26 @@
 <script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
 <style>
 
+body {
+margin:0;
+overflow:hidden;
+}
+
 #bar{
 position:absolute;
 top: 0px;
 left: 0px;
 z-index:999;
-height: 100px;
+height: 50px;
+width: 100%;
 background-color: #000000;
 }
 
 </style>
+
+
 <body>
-
-
-<div id = "bar">ALLAN</div>
+<div id = "bar">Slalom</div>
 <a-scene embedded artoolkit='sourceType: webcam;'>
 <a-assets>
 <img id="nukes" src="nukes.gif">
