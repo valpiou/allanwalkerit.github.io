@@ -50,6 +50,9 @@ background-color: #FFFFFF !important;
 }
 
 #foo {
+position:absolute;
+top: 0px;
+left: 0px;
 z-index:1;
 
 }
@@ -64,8 +67,8 @@ z-index:1;
     </div>
 </nav>
 
-<div>
-<a-scene id="foo" embedded artoolkit='sourceType: webcam;'>
+<div id="foo">
+<a-scene embedded artoolkit='sourceType: webcam;'>
 <a-assets>
 <img id="nukes" src="nukes.gif">
 </a-assets>
