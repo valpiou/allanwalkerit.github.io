@@ -37,11 +37,11 @@ background-color: #FFFFFF !important;
 z-index:2;
 }
 
-#ascene{
+#ascene {
 z-index:1;
 }
 </style>
-<body style='margin : 0px; overflow: hidden;'>
+<body>
 
 <nav class="navbar navbar-default">
 <div id="nav" class="container-fluid">
@@ -55,7 +55,6 @@ z-index:1;
 <a-assets>
 <img id="nukes" src="nukes.gif">
 </a-assets>
-
 <a-entity geometry="primitive:sphere;" position="0 0.5 0" material="shader:gif;src:url(nukes.gif);";opacity:.8;>
 <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
 </a-entity>
