@@ -9,9 +9,6 @@
 <title>TabAR</title>
 
 <!-- CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
 <link rel="shortcut icon" href="http://slalom.rocks.s3.amazonaws.com/data_viz/favicon.ico" type="image/x-icon">
 <link rel="icon" href="http://slalom.rocks.s3.amazonaws.com/data_viz/favicon.ico" type="image/x-icon">
 
@@ -25,38 +22,25 @@
 body{
 }
 
-.navbar {
-border-radius: 0px;
-}
-
-.navbar-brand {
-text-transform: lowercase;
-color: #0072C8 !important;
-font-family:Arial;
-font-weight:bold;
-}
-
 #bar {
 position:absolute;
 top: 0px;
 left: 0px;
 z-index:999;
+height: 100px;
+background-color: #000000;
 }
 
-#nav {
-background-color: #FFFFFF !important;
+a-scene {
+height: 500px;
+width: 500px;
 }
+
 </style>
 <body>
 
-<nav class="navbar navbar-default">
-<div id = "bar" class="container-fluid">
-    <div class="navbar-header">
-      <a id="brand" class="navbar-brand" href="https://www.slalom.com/">Slalom</a>
-    </div>
-    </div>
-</nav>
 
+<div id = "bar"></div>
 <a-scene embedded artoolkit='sourceType: webcam;'>
 <a-assets>
 <img id="nukes" src="nukes.gif">
