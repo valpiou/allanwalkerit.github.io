@@ -23,11 +23,12 @@ color: #333;
 font-size: 48px;
 z-index: 1;
 }
-
+</style>
 <body>
   <a-scene>
-    <a-entity geometry="primitive: box" position="0 0 0" material="shader: html; target: #htmlElement"></a-entity>
+    <a-entity geometry="primitive: box" material="shader: html; target: #htmlElement"></a-entity>
   </a-scene>
+
   <div id="hidden">
     <div id="htmlElement">Hello, HTML!</div>
   </div>
