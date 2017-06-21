@@ -9,44 +9,10 @@
 
 <body>
   <a-scene>
-    <a-entity geometry="primitive: box" material="shader: html; target: #htmlElement"></a-entity>
+    <a-entity geometry="primitive: box" material="shader: html; target: #target"></a-entity>
   </a-scene>
-  <div id="htmlElement"></div>
+  <div id="target">ALLAN</div>
   </div>
 
 </body>
-
-<script>
-    var viz, one, workbooka, activeSheet, Worksheet, worksheet;
-    $(function() {
-        var onePh = document.getElementById("htmlElement");
-        var oneUrl = "https://public.tableau.com/views/ANIMATEDAIRCRAFT/AIRCRAFT?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes";
-	var oneOptions = {
-	width: "100%",
-	height: "100%",
-            hideTabs: false,
-            onFirstInteractive: function() {
-workbooka = viz1.getWorkbook();
-window.setTimeout("animate()","50");
-}
-        };
-viz1 = new tableauSoftware.Viz(onePh, oneUrl, oneOptions);
-    i=1;
-});
-function animate() {
-if(i<=290) {
-window.setTimeout("animate()","1000");
-animate1(i);
-i++;
-}
-if(i>=290) {
-i=-1;
-}
-}
-
-function animate1(a) {
-workbooka.changeParameterValueAsync("ANIMATE", [a]);
-}
-
-</script>
 </html>
