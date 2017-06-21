@@ -4,53 +4,19 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Animation Showcase">
+<meta name="description" content="AR Demo">
 <meta name="author" content="Allan Walker">
 <title>TabAR</title>
 
 <!-- CSS -->
-<link rel="shortcut icon" href="http://slalom.rocks.s3.amazonaws.com/data_viz/favicon.ico" type="image/x-icon">
-<link rel="icon" href="http://slalom.rocks.s3.amazonaws.com/data_viz/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="TabAR.css">
 
 <!-- SCRIPTS -->
 <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script> 
 <script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
-<style>
-
-body {
-margin:0;
-overflow:hidden;
-}
-
-#bar{
-position:absolute;
-top: 0px;
-left: 0px;
-z-index:999;
-height: 50px;
-line-height: 50px;
-width: 100%;
-background-color: #ffffff;
-text-transform: lowercase;
-color: #0072C8 !important;
-font-family:Arial;
-font-weight:bold;
-}
-
-.button {
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
-}
-
-.button:hover {
-    background-color: #555555;
-    color: white;
-}
-
-</style>
+</head>
 
 
 <body>
@@ -64,7 +30,5 @@ font-weight:bold;
 </a-entity>
 <a-marker-camera preset='hiro'></a-marker-camera>
 </a-scene>
-
-
 </body>
-
+</html>
