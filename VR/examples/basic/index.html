@@ -35,27 +35,11 @@
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-workbooka = viz1.getWorkbook();
-window.setTimeout("animate()","50");
 }
         };
 viz1 = new tableauSoftware.Viz(onePh, oneUrl, oneOptions);
-    i=1;
 });
-function animate() {
-if(i<=290) {
-window.setTimeout("animate()","1000");
-animate1(i);
-i++;
-}
-if(i>=290) {
-i=-1;
-}
-}
 
-function animate1(a) {
-workbooka.changeParameterValueAsync("ANIMATE", [a]);
-}
 
 </script>
 </html>
