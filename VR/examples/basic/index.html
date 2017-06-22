@@ -57,8 +57,7 @@ var line = d3.line()
   Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/1fU5rNOkeHUeboxUhf3XS24O_jd4g6Cb3Zv5hFdK3Hnc/pubhtml',
                      callback: showInfo,
                      simpleSheet: true } )
-}
-   
+
 function showInfo(data, tabletop) {
   x.domain(d3.extent(data, function(d) { return parseTime(d.Date); }));
   y.domain(d3.extent(data, function(d) { return +d.Close; }));
