@@ -10,7 +10,7 @@
   </head>
   <body>
       <a-scene>
-      <a-plane material="shader: html; target: #planeHTML; ratio: height; transparent: true; side: double" position="0 0 0"></a-plane>
+      <a-plane material="shader: html; target: #planeHTML; ratio: height; transparent: true; side: double" position="0 2 -6"></a-plane>
       <a-sky material="shader: html; target: #skyHTML"></a-sky>
     </a-scene>
 
@@ -18,9 +18,7 @@
     <div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
     </div>
     <div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
-      <div id="planeHTML" style="background:#ffffff; width: 320px; height: 425px">
-        <p>Awwww, YEAHHHHHH</p>
-      </div>
+      <div id="planeHTML" style="background:#ffffff; width: 320px; height: 425px"></div>
     </div>
     <div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
       <div id="skyHTML" style="background: linear-gradient(to top, #222, #EEE); width: 500px; height: 800px; font-size: 100px; color: #111">
@@ -59,43 +57,5 @@ function animate1(a) {
 workbooka.changeParameterValueAsync("ANIMATE", [a]);
 }
 
-</script>
-<script>
-var isMobile = {
-    Android: function() {
-        return /Android/i.test(navigator.userAgent);
-    },
-    iOS: function() {
-        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    }
-};
-if(isMobile.Android())
-    {
-        var previousWidth=$(window).width();
-        $(window).on({
-        resize: function(e) {
-        var YourFunction=(function(){
-
-            var screenWidth=$(window).width();
-            if(previousWidth!=screenWidth)
-            {
-                previousWidth=screenWidth;
-                window.location.reload();
-            }
-
-        })();
-
-        }
-    });
-
-    }
-    else//mainly for ios
-    {
-        $(window).on({
-            orientationchange: function(e) {
-               window.location.reload();
-            }   
-        });
-    }
 </script>
 </html>
