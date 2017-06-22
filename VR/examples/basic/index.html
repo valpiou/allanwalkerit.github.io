@@ -28,7 +28,7 @@ z-index: 1;
 
     <!-- HTML to render as a material. -->
     <div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
-      <div id="planeHTML"></div>
+      <div id="planeHTML"><svg width="960" height="500"></svg></div>
     </div>
     <div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
       <div id="skyHTML" style="background: linear-gradient(to top, #222, #EEE); z-index: 1; width: 100%; height: 100%"></div>    
@@ -37,7 +37,7 @@ z-index: 1;
 
 <script>
 
-var svg = d3.select("#planeHTML"),
+var svg = d3.select("svg"),
     margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = +svg.attr("width") - margin.left - margin.right,
     height = +svg.attr("height") - margin.top - margin.bottom,
