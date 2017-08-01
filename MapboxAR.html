@@ -32,13 +32,6 @@ height:100%;
 </head>
   <body>
     
-<script>
-  AFRAME.registerComponent('listener', {
-  tick: function () {
-    console.log(this.el.getAttribute('position'));
-  }
-});  
-    </script>
     <a-scene>
       <a-box material="shader: html; target: #map;" position="0 1.5 -1"></a-box>
       <a-sky material="shader: html; target: #skyHTML"></a-sky>
