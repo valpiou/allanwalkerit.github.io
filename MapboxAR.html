@@ -1,4 +1,4 @@
-<html>
+﻿<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
@@ -30,8 +30,7 @@ top: 0; left: 0; bottom: 0; right: 0;
 </head>
   <body> 
     <a-scene>
-      <a-entity geometry="primitive:box;" material="shader: html; target: #map;" position="0 1.5 -1">
-      <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+      <a-entity geometry="primitive:plane;" material="shader: html; target: #map;" position="0 1.5 -1">
       </a-entity>
    
       <a-sky material="shader: html; target: #skyHTML"></a-sky>                                 
