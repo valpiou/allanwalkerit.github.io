@@ -7,7 +7,8 @@
     <title>Mapbox AR</title>
     <script src="https://allanwalkerit.github.io/aframe.min.js"></script>
     <script src="https://allanwalkerit.github.io/aframe-html-shader.js"></script>
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+    <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
 
 <style>
 body { margin:0; padding:0; }
@@ -21,9 +22,7 @@ z-index: -1;
 
 #map {
 width: 500px; 
-height: 200px; 
-display: flex; 
-align-items: center;
+height: 200px;
 }
 
 
@@ -41,13 +40,9 @@ align-items: center;
 <div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden"><div id="skyHTML"></div></div>
 
 <script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    center: [0, 0], // starting position [lng, lat]
-    zoom: 1
-});
+L.mapbox.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
+var map = L.mapbox.map('map', 'mapbox.streets')
+    .setView([40, -74.50], 9);
 </script>
 </body>
 </html>
