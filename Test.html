@@ -1,35 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="AR Demo">
-<meta name="author" content="Allan Walker">
-<title>MapboxAR</title>
+<html>
+  <head>
+    <title>A-Frame Map - Basic</title>
+    <script src="mapbuild.js"></script>
+  </head>
+  <body>
+    <a-scene>
 
-<!-- CSS -->
-<link rel="stylesheet" href="TabAR.css">
-
-<!-- SCRIPTS -->
-<script src="aframe.min.js"></script>
-<script src="https://unpkg.com/aframe-map"></script>
-
-</head>
-
-
-<body>
-<div id = "bar">&nbsp;&nbsp;&nbsp;<button class="button" type ="submit" onclick="window.open('Hiro.png')"><span class="glyphicon glyphicon-th-print"></span>Get the HIRO Marker</button></div>
-<a-scene embedded artoolkit='sourceType: webcam;'>
-
-<a-map
+      <a-map
         map="center: 150.6510958 -33.8474024; zoom: 8"
         width="7"
         height="4"
-        position="0 0.5 0"
+        position="0 2 -2"
       ></a-map>
-
-<a-marker-camera preset='hiro'></a-marker-camera>
-</a-scene>
-</body>
+      <a-entity position="0 0 3.8">
+        <a-camera></a-camera>
+      </a-entity>
+    </a-scene>
+  </body>
 </html>
