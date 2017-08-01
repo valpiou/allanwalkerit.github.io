@@ -48,6 +48,12 @@ var map = new mapboxgl.Map({
     zoom: 1
 });
 
+AFRAME.registerComponent('listener', {
+  tick: function () {
+    console.log(this.el.getAttribute('position'));
+  }
+});  
+
 </script>
 </body>
 </html>
