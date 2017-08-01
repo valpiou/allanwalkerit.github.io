@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="description" content="360 Video — A-Frame">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Mapbox AR</title>
+    <script src="http://www.slalom.rocks.s3.amazonaws.com/data_viz/js/aframe.min.js"></script>
+    <script src="http://www.slalom.rocks.s3.amazonaws.com/data_viz/js/aframe-html-shader.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
+
+<style>
+
+body { margin:0; padding:0; }
+
+#skyHTML{
+background-color: #FFFFFF;
+width: 1px; 
+height: 1px; 
+}
+
+#map {
+position:fixed; 
+top:0; 
+bottom:0;
+width:100%;
+height:100%;
+}
+
+</style>
+</head>
+  <body>
+    <a-scene>
+      <a-box material="shader: html; target: #map;" position="0 1.5 -1"></a-box>
+      <a-sky material="shader: html; target: #skyHTML"></a-sky>
+    </a-scene>
+    
+<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden"><div id="map"></div></div>
+<div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden"><div id="skyHTML"></div></div>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center: [0, 0], // starting position [lng, lat]
+    zoom: 1
+});
+
+</script>
+</body>
+</html>
