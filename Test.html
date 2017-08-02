@@ -1,10 +1,11 @@
 <html>
   <head>
     <title>A-Frame Map - Basic</title>
-<script src="build.js"></script>
+    <script src="build.js"></script>
+    <script src="aframe-ar.js"></script>	
   </head>
   <body>
-    <a-scene>
+    <a-scene embedded artoolkit='sourceType: webcam;'>
 
       <a-map
         map="center: 150.6510958 -33.8474024; zoom: 8"
