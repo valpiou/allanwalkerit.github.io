@@ -40,7 +40,7 @@ this.ctx = this.canvas.getContext('2d');
 <canvas id="mapcanvas" class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="550" height="412" crossorigin="anonymous"></canvas>
 </a-assets>
 <a-entity geometry="primitive: plane" color="black" material="src: #mapcanvas"
-          draw-canvas="c" position="0 1 -5"></a-entity>
+          draw-canvas="mapcanvas" position="0 1 -5"></a-entity>
 </a-scene>
 </body>
 <script>
@@ -50,12 +50,6 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/streets-v9'
 });
 
-map.on('load', function() {
-var c = document.querySelector('#map canvas');
-console.log(c);
-var x = document.getElementsByClassName('mapboxgl-canvas')[0];
-x.setAttribute("id", "mapcanvas");
-console.log(x);
-});
+
 </script>
 </html>
