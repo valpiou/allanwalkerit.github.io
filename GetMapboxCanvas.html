@@ -22,17 +22,13 @@ var map = new mapboxgl.Map({
 });
 
 map.on('load', function() {
-AFRAME.registerComponent('draw-canvas', {
-    schema: {default: ''},
-    init: function () {
-      this.canvas = document.querySelector('#map canvas');
+this.canvas = document.querySelector('#map canvas');
 var canvas = this.canvas;
 console.log(canvas);
-      this.ctx = this.canvas.getContext('2d');
-    }
+ctx = this.canvas.getContext('2d');
+console.log(ctx);
+});
 
-});
-});
 </script>
 </head>
 
