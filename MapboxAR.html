@@ -11,8 +11,8 @@
   AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
     init: function () {
-      this.canvas = document.getElementById('map');
-      this.ctx = this.canvas.getContext('2d');
+      //this.canvas = document.getElementById('map');
+      //this.ctx = this.canvas.getContext('2d');
     }
   });
 </script>
@@ -43,6 +43,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZ
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9'
+var canvas = map.getCanvas();
+console.log(canvas);
 });
 </script>
 </html>
