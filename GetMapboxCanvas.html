@@ -17,6 +17,7 @@ height: 300px;
 AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
 init: function () {
+//pick up the canvas
 this.canvas = document.getElementById(this.data);
 this.ctx = this.canvas.getContext('2d');
 }
