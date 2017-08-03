@@ -11,7 +11,7 @@
   AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
     init: function () {
-      canvas = document.getElementById('canvas');
+      canvas = document.getElementById('map');
       context = canvas.getContext('2d');
       width = canvas.width;
       height = canvas.height;
@@ -21,7 +21,7 @@
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
 var map = new mapboxgl.Map({
-    container: 'canvas',
+    container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9'
 });
 </script>    
@@ -36,6 +36,6 @@ var map = new mapboxgl.Map({
           draw-canvas="canvas"></a-entity>
       
     </a-scene>
-<div id='canvas'></div>
+<div id="map"></div>
   </body>
 </html>
