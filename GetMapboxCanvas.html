@@ -13,23 +13,6 @@ width: 400px;
 height: 300px;
 }
 </style>
-
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9'
-});
-
-map.on('load', function() {
-this.canvas = document.querySelector('#map canvas');
-var canvas = this.canvas;
-console.log(canvas);
-ctx = this.canvas.getContext('2d');
-console.log(ctx);
-});
-
-</script>
 </head>
 
 <body>
@@ -41,4 +24,19 @@ console.log(ctx);
           draw-canvas="canvas"></a-entity>
 </a-scene>
 </body>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9'
+});
+
+map.on('load', function() {
+var c = document.querySelector('#map canvas');
+console.log(c);
+var ctx = c.getContext('2d');
+console.log(ctx);
+});
+
+</script>
 </html>
