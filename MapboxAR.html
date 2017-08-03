@@ -4,21 +4,27 @@
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
     <title>Mapbox AR A-Frame Canvas</title>
     <script src="aframe.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
 
 <script>
   AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
     init: function () {
-      this.canvas = document.getElementById(this.data);
-      this.ctx = this.canvas.getContext('2d');
-var ctx = this.ctx;
-      ctx.beginPath();
-	ctx.arc(95,50,40,0,2*Math.PI);
-	ctx.stroke();
+      canvas = document.getElementById('canvas');
+      context = canvas.getContext('2d');
+      width = canvas.width;
+      height = canvas.height;
     }
   });
 </script>
-    
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
+var map = new mapboxgl.Map({
+    container: 'canvas',
+    style: 'mapbox://styles/mapbox/streets-v9'
+});
+</script>    
   </head>
   <body>
     <a-scene>
