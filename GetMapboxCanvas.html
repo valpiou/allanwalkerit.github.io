@@ -13,12 +13,18 @@ width: 400px;
 height: 300px;
 }
 </style>
+<script>
+AFRAME.registerComponent('draw-canvas', {
+    schema: {default: ''},
+});
+</script>
 </head>
 
 <body>
 <div id="map"></div>
 <a-scene>
 <a-assets>
+<canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="550" height="412" id="mapcanvas" style="position: absolute; width: 400px; height: 300px;"></canvas>
 </a-assets>
 <a-entity geometry="primitive: plane" material="src: #mapcanvas"
           draw-canvas="c" position="0 1 -1"></a-entity>
@@ -40,10 +46,5 @@ console.log(x);
 var ctx = c.getContext('2d');
 });
 
-</script>
-<script>
-AFRAME.registerComponent('draw-canvas', {
-    schema: {default: ''},
-});
 </script>
 </html>
