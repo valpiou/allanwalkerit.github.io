@@ -25,7 +25,7 @@ AFRAME.registerComponent('draw-canvas', {
 <a-scene>
 <a-assets>
 </a-assets>
-<a-entity geometry="primitive: plane" material="src: #mapboxgl-canvas"
+<a-entity geometry="primitive: plane" material="src: #mapcanvas"
           draw-canvas="c" position="0 1 -1"></a-entity>
 </a-scene>
 </body>
@@ -39,6 +39,7 @@ var map = new mapboxgl.Map({
 map.on('load', function() {
 var c = document.querySelector('#map canvas');
 console.log(c);
+c.setAttribute("id", "mapcanvas");
 var ctx = c.getContext('2d');
 console.log(ctx);
 var x = document.getElementById("#map canvas").id;
