@@ -25,6 +25,8 @@ this.canvas = document.getElementById('mapcanvas');
 var a = this.canvas;
 console.log(a);
 this.ctx = this.canvas.getContext('2d');
+var c = this.ctx;
+console.log(c);
 }
 });
 
@@ -39,7 +41,7 @@ this.ctx = this.canvas.getContext('2d');
 <a-assets>
 <canvas id="mapcanvas" class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="550" height="412" crossorigin="anonymous"></canvas>
 </a-assets>
-<a-entity geometry="primitive: plane" color="black" material="src: #mapcanvas"
+<a-entity geometry="primitive: plane" material="src: #mapcanvas"
           draw-canvas="mapcanvas" position="0 1 -5"></a-entity>
 </a-scene>
 </body>
