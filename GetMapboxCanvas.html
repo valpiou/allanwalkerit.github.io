@@ -13,6 +13,10 @@ width: 400px;
 height: 300px;
 }
 </style>
+<script>
+AFRAME.registerComponent('draw-canvas', {
+    schema: {default: ''},
+});
 </head>
 
 <body>
@@ -20,8 +24,8 @@ height: 300px;
 <a-scene>
 <a-assets>
 </a-assets>
-<a-entity geometry="primitive: plane" material="src: #map"
-          draw-canvas="canvas"></a-entity>
+<a-entity geometry="primitive: plane" material="src: #map canvas"
+          draw-canvas="c"></a-entity>
 </a-scene>
 </body>
 <script>
