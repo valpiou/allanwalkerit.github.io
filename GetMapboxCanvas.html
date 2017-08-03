@@ -21,8 +21,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZ
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9'
-var canvas = map.getCanvas()
-console.log(canvas);
 });
 </script>
+map.on('load', function() {
+    var canvas = document.getElementsByClassName('mapboxgl-canvas')[0];
+});
 </html>
