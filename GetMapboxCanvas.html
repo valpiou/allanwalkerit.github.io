@@ -15,30 +15,16 @@ height: 300px;
 </style>
 <script>
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9'
-});
+
 
 AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
 init: function () {
 console.log("component registered");
-map();
+});
 
-function map() {
-map.on('load', function() {
-var c = document.querySelector('#map canvas');
-console.log(c);
-var x = document.getElementsByClassName('mapboxgl-canvas')[0];
-x.setAttribute("id", "mapcanvas");
-console.log(x);
-});
-};
-;
-}
-});
+
+
 </script>
 </head>
 
@@ -52,4 +38,19 @@ console.log(x);
           draw-canvas="c" position="0 1 -5"></a-entity>
 </a-scene>
 </body>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9'
+});
+
+map.on('load', function() {
+var c = document.querySelector('#map canvas');
+console.log(c);
+var x = document.getElementsByClassName('mapboxgl-canvas')[0];
+x.setAttribute("id", "mapcanvas");
+console.log(x);
+});
+</script>
 </html>
