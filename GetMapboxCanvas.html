@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
     <title>Mapbox Canvas</title>
+    <script src="aframe.min.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
 
@@ -12,11 +13,7 @@ width: 400px;
 height: 300px;
 }
 </style>
-</head>
-<body>
-<div id="map"></div>
 
-</body>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
 var map = new mapboxgl.Map({
@@ -25,9 +22,24 @@ var map = new mapboxgl.Map({
 });
 
 map.on('load', function() {
-var canvas = document.querySelector('#map canvas');
-console.log(canvas);
+AFRAME.registerComponent('draw-canvas', {
+    schema: {default: ''},
+    init: function () {
+      this.canvas = document.querySelector('#map canvas');
+      this.ctx = this.canvas.getContext('2d');
+    }
+
 });
 </script>
+</head>
 
+<body>
+<div id="map"></div>
+<a-scene>
+<a-assets>
+</a-assets>
+<a-entity geometry="primitive: plane" material="src: #map canvas"
+          draw-canvas="map canvas"></a-entity>
+</a-scene>
+</body>
 </html>
