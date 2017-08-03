@@ -39,11 +39,9 @@ var map = new mapboxgl.Map({
 map.on('load', function() {
 var c = document.querySelector('#map canvas');
 console.log(c);
-c.setAttribute("id", "mapcanvas");
+var x = document.getElementByClassName('mapboxgl-canvas').ID('mapcanvas');
 var ctx = c.getContext('2d');
-console.log(ctx);
-var x = document.getElementById("#map canvas").id;
-console.log(ctx);
+console.log(x);
 });
 
 </script>
