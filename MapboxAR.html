@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Mapbox AR</title>
     <script src="https://allanwalkerit.github.io/aframe.min.js"></script>
-    <script src="https://allanwalkerit.github.io/aframe-html-shader.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-draw-shader/master/dist/aframe-draw-shader.min.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
 
@@ -20,7 +20,7 @@ body { margin:0; padding:0; }
 </head>
   <body> 
     <a-scene>
-      <a-entity geometry="primitive:plane;" material="shader: html; target: #myCanvas;" position="0 1.5 -1">
+      <a-entity geometry="primitive:plane;" material="material="shader:draw;" position="0 1.5 -1">
       </a-entity>
 </a-scene>
 
