@@ -14,6 +14,13 @@ height: 300px;
 }
 </style>
 <script>
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9'
+});
+
 AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
 init: function () {
@@ -45,14 +52,4 @@ console.log(x);
           draw-canvas="c" position="0 1 -5"></a-entity>
 </a-scene>
 </body>
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9'
-});
-
-
-
-</script>
 </html>
