@@ -11,6 +11,7 @@
 #map {
 width: 400px;
 height: 300px;
+display:none;
 }
 </style>
 <script>
@@ -26,7 +27,7 @@ AFRAME.registerComponent('draw-canvas', {
 <a-assets>
 <canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="550" height="412" id="mapcanvas"></canvas>
 </a-assets>
-<a-entity geometry="primitive: sphere" material="src: #mapcanvas"
+<a-entity geometry="primitive: plane" material="src: #mapcanvas"
           draw-canvas="c" position="0 1 -1"></a-entity>
 </a-scene>
 </body>
