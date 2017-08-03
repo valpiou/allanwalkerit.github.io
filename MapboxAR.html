@@ -24,10 +24,10 @@ var ctx = this.ctx;
     <a-scene>
 
 <a-assets>
-  <canvas id="my-canvas" crossorigin="anonymous"></canvas>
+  <canvas id="canvas" width="400" height="300" style="display:none;" crossorigin="anonymous"></canvas>
 </a-assets>
-<a-entity geometry="primitive: plane" material="src: #my-canvas"
-          draw-canvas="my-canvas"></a-entity>
+<a-entity geometry="primitive: plane" material="src: #canvas"
+          draw-canvas="canvas"></a-entity>
       
     </a-scene>
 
