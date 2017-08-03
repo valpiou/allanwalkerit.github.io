@@ -26,6 +26,8 @@ AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
     init: function () {
       this.canvas = document.querySelector('#map canvas');
+var canvas = this.canvas;
+console.log(canvas);
       this.ctx = this.canvas.getContext('2d');
     }
 
@@ -39,8 +41,8 @@ AFRAME.registerComponent('draw-canvas', {
 <a-scene>
 <a-assets>
 </a-assets>
-<a-entity geometry="primitive: plane" material="src: #map canvas"
-          draw-canvas="map canvas"></a-entity>
+<a-entity geometry="primitive: plane" material="src: #map"
+          draw-canvas="canvas"></a-entity>
 </a-scene>
 </body>
 </html>
