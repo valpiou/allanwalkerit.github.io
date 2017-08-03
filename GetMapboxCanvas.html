@@ -22,8 +22,11 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9'
 });
-</script>
+
 map.on('load', function() {
     var canvas = document.getElementsByClassName('mapboxgl-canvas')[0];
+console.log(canvas);
 });
+</script>
+
 </html>
