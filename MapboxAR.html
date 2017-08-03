@@ -11,6 +11,7 @@
     init: function () {
       this.canvas = document.getElementById(this.data);
       this.ctx = this.canvas.getContext('2d');
+var ctx = this.ctx;
       ctx.beginPath();
 	ctx.arc(95,50,40,0,2*Math.PI);
 	ctx.stroke();
