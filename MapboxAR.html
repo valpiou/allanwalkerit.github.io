@@ -24,7 +24,13 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9'
 });
-</script>    
+</script>
+
+<style>
+#map {
+height: 300px;
+width: 400px;
+}    
   </head>
   <body>
 
@@ -33,7 +39,7 @@ var map = new mapboxgl.Map({
     <a-scene>
 
 <a-assets>
-  <canvas id="canvas" width="400" height="300" style="display:none;" crossorigin="anonymous"></canvas>
+  <canvas id="canvas" width="400" height="300" crossorigin="anonymous"></canvas>
 </a-assets>
 <a-entity geometry="primitive: plane" material="src: #canvas"
           draw-canvas="canvas"></a-entity>
