@@ -17,9 +17,7 @@ height: 300px;
 AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
 init: function () {
-//pick up the canvas
-this.canvas = document.getElementById(this.data);
-this.ctx = this.canvas.getContext('2d');
+alert("component registered");
 }
 });
 </script>
@@ -48,7 +46,6 @@ console.log(c);
 var x = document.getElementsByClassName('mapboxgl-canvas')[0];
 x.setAttribute("id", "mapcanvas");
 console.log(x);
-var ctx = c.getContext('2d');
 });
 
 </script>
