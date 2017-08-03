@@ -18,6 +18,7 @@ AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
 init: function () {
 console.log("component registered");
+function map();
 }
 });
 </script>
@@ -40,13 +41,17 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/streets-v9'
 });
 
+function map() {
 map.on('load', function() {
 var c = document.querySelector('#map canvas');
 console.log(c);
 var x = document.getElementsByClassName('mapboxgl-canvas')[0];
 x.setAttribute("id", "mapcanvas");
 console.log(x);
-});
+}
+);
+};
+;
 
 </script>
 </html>
