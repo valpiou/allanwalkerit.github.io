@@ -11,12 +11,13 @@
 #map {
 width: 400px;
 height: 300px;
-display:none;
 }
 </style>
 <script>
 AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
+this.canvas = document.getElementById(this.data);
+this.ctx = this.canvas.getContext('2d');
 });
 </script>
 </head>
