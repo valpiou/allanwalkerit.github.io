@@ -11,10 +11,8 @@
   AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
     init: function () {
-      canvas = document.getElementById('map');
-      context = canvas.getContext('2d');
-      width = canvas.width;
-      height = canvas.height;
+      this.canvas = document.getElementById('map');
+      this.ctx = this.canvas.getContext('2d');
     }
   });
 </script>
@@ -22,8 +20,8 @@
 
 <style>
 #map {
-height: 300px;
 width: 400px;
+height: 300px;
 }
 </style>
   </head>
@@ -31,15 +29,13 @@ width: 400px;
 
 <div id="map"></div>
 
-    <a-scene>
-
+<a-scene>
 <a-assets>
-  <canvas id="canvas" width="400" height="300" crossorigin="anonymous"></canvas>
+  <canvas id="mapboxcanvas" crossorigin="anonymous"></canvas>
 </a-assets>
-<a-entity geometry="primitive: plane" material="src: #canvas"
-          draw-canvas="canvas"></a-entity>
-      
-    </a-scene>
+<a-entity geometry="primitive: plane" material="src: #mapboxcanvas"
+          draw-canvas="mapboxcanvas"></a-entity>
+</a-scene>
 
   </body>
 <script>
