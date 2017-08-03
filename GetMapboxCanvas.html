@@ -17,7 +17,7 @@ height: 300px;
 AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
 init: function () {
-alert("component registered");
+console.log("component registered");
 }
 });
 </script>
@@ -27,10 +27,9 @@ alert("component registered");
 <div id="map"></div>
 <a-scene>
 <a-assets>
-<canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="550" height="412" id="mapcanvas"></canvas>
+<canvas id="mapcanvas" class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="550" height="412" ></canvas>
 </a-assets>
-<a-entity geometry="primitive: plane" material="src: #mapcanvas"
-          draw-canvas="c" position="0 1 -1"></a-entity>
+<a-entity geometry="primitive: plane" color="black" position="0 1 -1"></a-entity>
 </a-scene>
 </body>
 <script>
