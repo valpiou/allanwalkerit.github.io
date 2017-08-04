@@ -9,6 +9,7 @@
 </head>
 
 <body>
+<div id="image"></div>
 <div id="map"></div>
 
 </body>
@@ -26,6 +27,9 @@ var c = document.querySelector("#map canvas");
 console.log(c);
 var img    = c.toDataURL("image/png");
 console.log(img);
+var elem = document.createElement("img");
+elem.setAttribute("src", img);
+document.getElementById("image").appendChild(elem);
 });
 </script>
 </html>
