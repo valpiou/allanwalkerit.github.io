@@ -23,16 +23,15 @@ console.log(c);
 </script>
 <style>
 
-#map { 
-width:100vw; 
-height:100vh; 
-}
+
+#map { position:absolute; top:0; bottom:0; width:100%; }
+
 </style>
 </head>
 
 <body>
 <div id="map"></div>
-<a-scene embedded artoolkit='sourceType: webcam;'>
+<a-scene embedded>
 <a-assets>
 <canvas id="mapcanvas" class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="550" height="412" crossorigin="anonymous"></canvas>
 </a-assets>
@@ -46,8 +45,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZ
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
-    center: [-74.50, 40], // starting position [lng, lat]
-    zoom: 9 // starting zoom
+    center: [0, 0], // starting position [lng, lat]
+    zoom: 1 // starting zoom
 });
 </script>
 </html>
