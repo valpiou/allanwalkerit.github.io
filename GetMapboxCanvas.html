@@ -3,17 +3,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
     <title>Mapbox Canvas</title>
+<!-- Scripts -->
 	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
 	<script src="aframe.min.js"></script>
-
+<!-- CSS -->
 	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body>
 <a-scene>
+<a-assets>
 <a-asset-item id="image"></a-asset-item>
-<a-plane src="#image"></a-plane>
+</a-assets>
+<a-entity geometry="primitive: box" material="src: #image"></a-entity>
 <a-scene>
+
 <div id="map"></div>
 
 </body>
