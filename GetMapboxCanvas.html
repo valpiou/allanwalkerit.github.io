@@ -13,7 +13,7 @@ AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
 init: function () {
 console.log("component registered");
-this.canvas = document.getElementById('mapcanvas');
+this.canvas = document.getElementById('map');
 var a = this.canvas;
 console.log(a);
 this.ctx = this.canvas.getContext('2d');
@@ -23,7 +23,10 @@ console.log(c);
 });
 </script>
 <style>
-#map { position:absolute; top:0; bottom:0; width:100%; }
+#map { 
+width:550px; 
+height:412px;
+}
 </style>
 </head>
 
