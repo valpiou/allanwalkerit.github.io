@@ -43,6 +43,21 @@ console.log(c);
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
 var map = L.mapbox.map('map', 'mapbox.streets')
-    .setView([0, 0], 1);
+    .setView([42.3619, -71.0606], 15);
+
+// Since it's using the HTML5 Canvas API, it is not
+// compatible with IE8 and below. See full documentation:
+// https://www.mapbox.com/mapbox.js/api/v3.1.1/l-tilelayer-canvas/
+var canvasTiles = L.tileLayer.canvas();
+
+canvasTiles.drawTile = function(canvas, tilePoint, zoom) {
+      var ctx = canvas.getContext('2d');
+      ctx.fillText(tilePoint.toString(), 50, 50);
+      ctx.globalAlpha = 0.2;
+      ctx.fillStyle = '#000';
+      ctx.fillRect(10, 10, 246, 246);
+};
+
+canvasTiles.addTo(map);
 </script>
 </html>
