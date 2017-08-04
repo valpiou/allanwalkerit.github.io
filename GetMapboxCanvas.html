@@ -12,7 +12,7 @@ AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
 init: function () {
 console.log("component registered");
-this.canvas = document.getElementById('mapcanvas');
+this.canvas = document.getElementById('map');
 var a = this.canvas;
 console.log(a);
 this.ctx = this.canvas.getContext('2d');
