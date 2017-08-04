@@ -4,7 +4,6 @@
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
     <title>Mapbox Canvas</title>
     <script src="aframe.min.js"></script>
-    <script src="aframe-fit-texture-component.min.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
     
@@ -37,7 +36,7 @@ height:412px;
 <canvas id="mapcanvas" class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="550" height="412" crossorigin="anonymous"></canvas>
 </a-assets>
 <a-entity geometry="primitive: plane" material="src: #mapcanvas"
-          draw-canvas="mapcanvas" position="0 1.5 -1" fit-texture></a-entity>
+          draw-canvas="mapcanvas" position="0 1.5 -1"></a-entity>
 <a-sky color="#6EBAA7"></a-sky>
 </a-scene>
 </body>
