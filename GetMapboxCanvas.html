@@ -37,7 +37,8 @@ z-index: -999;}
 <a-assets>
 <canvas id="mapcanvas" class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="550" height="412" crossorigin="anonymous"></canvas>
 </a-assets>
-<a-entity geometry="primitive: box" color="#4CC3D9" "0 0.5 0"></a-entity>
+<a-entity geometry="primitive: box" material="src: #mapcanvas"
+          draw-canvas="mapcanvas" "0 0.5 0"></a-entity>
 <a-marker-camera preset='hiro'></a-marker-camera>
 </a-scene>
 </body>
