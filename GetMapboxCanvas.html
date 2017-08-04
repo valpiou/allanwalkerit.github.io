@@ -2,19 +2,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
-    <title>Mapbox Canvas</title>
+    <title>Mapbox AR/VR</title>
 <!-- Scripts -->
 	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
 	<script src="aframe.min.js"></script>
+	<script src="aframe-ar.js"></script>
 <!-- CSS -->
 	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body>
 
-<a-scene>
-  <a-sphere id="image" position="0 2 -5"></a-sphere>
-  <a-sky color="#222"></a-sky>
+<a-scene embedded artoolkit='sourceType: webcam;'>
+  <a-sphere id="image" position="0 0.5 0"></a-sphere>
+<a-marker-camera preset='hiro'></a-marker-camera>
 </a-scene>
 
 
@@ -25,10 +26,10 @@
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
 var map = new mapboxgl.Map({
-    container: 'map', // container id
-    style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
-    center: [0, 0], // starting position [lng, lat]
-    zoom: 1 // starting zoom
+    container: 'map', 
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center: [0, 0],
+    zoom: 1
  });
 
 map.on('load', function () {
