@@ -34,10 +34,8 @@ var map = new mapboxgl.Map({
 map.on('load', function () {
 var c = document.querySelector("#map canvas");
 var img    = c.toDataURL("image/png");
-var texture = document.createElement("img");
+var texture = getElementById("image");
 texture.setAttribute("src", img);
-texture.setAttribute("height", "768");
-texture.setAttribute("width", "1024");
 document.getElementById("image").appendChild(texture);
 });
 </script>
