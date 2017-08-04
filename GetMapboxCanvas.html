@@ -6,31 +6,11 @@
     <script src="aframe.min.js"></script>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
-    
-<script>
-AFRAME.registerComponent('draw-canvas', {
-    schema: {default: ''},
-init: function () {
-console.log("component registered");
-this.canvas = document.getElementById('mapcanvas');
-var a = this.canvas;
-console.log(a);
-this.ctx = this.canvas.getContext('2d');
-var c = this.ctx;
-console.log(c);
-var img    = a.toDataURL("image/png");
-console.log(img);
-}
-});
-</script>
 </head>
 
 <body>
 <div id="map"></div>
 <a-scene >
-<a-assets>
-<canvas id="mapcanvas" class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="400" height="300" crossorigin="anonymous"></canvas>
-</a-assets>
 <a-box position="0 1.5 -1"></a-box>
 <a-sky color="#6EBAA7"></a-sky>
 </a-scene>
@@ -42,6 +22,14 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
     center: [-74.50, 40], // starting position [lng, lat]
     zoom: 9 // starting zoom
+this.canvas = document.getElementById('mapcanvas');
+var a = this.canvas;
+console.log(a);
+this.ctx = this.canvas.getContext('2d');
+var c = this.ctx;
+console.log(c);
+var img    = a.toDataURL("image/png");
+console.log(img);
 });
 </script>
 </html>
