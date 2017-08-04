@@ -19,9 +19,9 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
     center: [0, 0], // starting position [lng, lat]
     zoom: 1 // starting zoom
-var c = document.querySelector('#map canvas');
+c = document.querySelector('#map canvas');
 console.log(c);
-var ctx = c.getContext('2d');
+ctx = c.getContext('2d');
 console.log(ctx);
 var img    = c.toDataURL("image/png");
 console.log(img);
