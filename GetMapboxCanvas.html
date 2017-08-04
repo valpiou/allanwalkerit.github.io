@@ -21,19 +21,13 @@ console.log(c);
 }
 });
 </script>
-<style>
-
-
-
-
-</style>
 </head>
 
 <body>
 <div id="map"></div>
 <a-scene >
 <a-assets>
-<canvas id="mapcanvas" class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="550" height="412" crossorigin="anonymous"></canvas>
+<canvas id="mapcanvas" class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="400" height="300" crossorigin="anonymous"></canvas>
 </a-assets>
 <a-entity geometry="primitive: box" material="src: #mapcanvas"
           draw-canvas="mapcanvas" position="0 1.5 -1"></a-entity>
@@ -44,20 +38,5 @@ console.log(c);
 L.mapbox.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
 var map = L.mapbox.map('map', 'mapbox.streets')
     .setView([42.3619, -71.0606], 15);
-
-// Since it's using the HTML5 Canvas API, it is not
-// compatible with IE8 and below. See full documentation:
-// https://www.mapbox.com/mapbox.js/api/v3.1.1/l-tilelayer-canvas/
-var canvasTiles = L.tileLayer.canvas();
-
-canvasTiles.drawTile = function(canvas, tilePoint, zoom) {
-      var ctx = canvas.getContext('2d');
-      ctx.fillText(tilePoint.toString(), 50, 50);
-      ctx.globalAlpha = 0.2;
-      ctx.fillStyle = '#000';
-      ctx.fillRect(10, 10, 246, 246);
-};
-
-canvasTiles.addTo(map);
 </script>
 </html>
