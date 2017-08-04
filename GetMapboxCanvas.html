@@ -18,7 +18,8 @@ console.log(a);
 this.ctx = this.canvas.getContext('2d');
 var c = this.ctx;
 console.log(c);
-
+var img    = a.toDataURL("image/png");
+console.log(img);
 }
 });
 </script>
@@ -31,7 +32,7 @@ console.log(c);
 <img id="map" src="">
 <canvas id="mapcanvas" class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="400" height="300" crossorigin="anonymous"></canvas>
 </a-assets>
-<a-box source="#map" position="0 1.5 -1"></a-box>
+<a-box position="0 1.5 -1"></a-box>
 <a-sky color="#6EBAA7"></a-sky>
 </a-scene>
 </body>
