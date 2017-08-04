@@ -13,8 +13,7 @@
 <body>
 
 <a-scene>
-  <a-box id="image" position="0 2 -5" rotation="0 45 45"
-    scale="2 2 2"></a-box>
+  <a-plane id="image" position="0 2 -5" scale="2 2 2"></a-plane>
 </a-scene>
 
 
@@ -33,12 +32,10 @@ var map = new mapboxgl.Map({
 
 map.on('load', function () {
 var c = document.querySelector("#map canvas");
-console.log(c);
 var img    = c.toDataURL("image/png");
-console.log(img);
-var elem = document.createElement("img");
-elem.setAttribute("src", img);
-document.getElementById("image").appendChild(elem);
+var texture = document.createElement("img");
+texture.setAttribute("src", img);
+document.getElementById("image").appendChild(texture);
 });
 </script>
 </html>
