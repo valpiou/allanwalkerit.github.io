@@ -23,8 +23,10 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
     center: [0, 0], // starting position [lng, lat]
     zoom: 1 // starting zoom
-var x = document.getElementById("map");
-var c = x.document.querySelector("#map canvas");
+ });
+
+map.on('load', function () {
+c = document.querySelector("#map canvas");
 console.log(c);
 ctx = c.getContext('2d');
 console.log(ctx);
