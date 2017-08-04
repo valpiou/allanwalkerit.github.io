@@ -12,7 +12,7 @@ AFRAME.registerComponent('draw-canvas', {
     schema: {default: ''},
 init: function () {
 console.log("component registered");
-this.canvas = document.getElementById('map');
+this.canvas = document.getElementById('mapcanvas');
 var a = this.canvas;
 console.log(a);
 this.ctx = this.canvas.getContext('2d');
@@ -20,6 +20,7 @@ var c = this.ctx;
 console.log(c);
 var img    = a.toDataURL("image/png");
 console.log(img);
+document.write('<img id="map'+img src="'+img+'"/>');
 }
 });
 </script>
@@ -31,8 +32,7 @@ console.log(img);
 <a-assets>
 <canvas id="mapcanvas" class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="400" height="300" crossorigin="anonymous"></canvas>
 </a-assets>
-<a-entity geometry="primitive: box" material="src: #mapcanvas"
-          draw-canvas="mapcanvas" position="0 1.5 -1"></a-entity>
+<a-box source="#map" position="0 1.5 -1"></a-box>
 <a-sky color="#6EBAA7"></a-sky>
 </a-scene>
 </body>
