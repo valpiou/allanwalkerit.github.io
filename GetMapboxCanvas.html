@@ -3,13 +3,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
     <title>Mapbox Canvas</title>
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+	<script src="aframe.min.js"></script>
+
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body>
 <a-scene>
 <a-asset-item id="image"></a-asset-item>
+<a-plane src="#image"></a-plane>
 <a-scene>
 <div id="map"></div>
 
@@ -33,5 +36,4 @@ elem.setAttribute("src", img);
 document.getElementById("image").appendChild(elem);
 });
 </script>
-<script src="aframe.min.js"></script>
 </html>
