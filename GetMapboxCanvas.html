@@ -20,6 +20,9 @@ console.log(c);
 }
 });
 </script>
+<style>
+#map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
 </head>
 
 <body>
@@ -36,10 +39,10 @@ console.log(c);
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
 var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9'
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
+    center: [-74.50, 40], // starting position [lng, lat]
+    zoom: 9 // starting zoom
 });
-
-
 </script>
 </html>
