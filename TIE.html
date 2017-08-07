@@ -27,7 +27,7 @@ margin: 0 auto;
     var viz, one, two, three, four, workbooka, workbookb, workbookc, workbookd, activeSheet, Worksheet, worksheet;
     $(function() {
         var onePh = document.getElementById("tableauViz1");
-        var oneUrl = "https://public.tableau.com/views/TieFighter/TIE?:showVizHome=no&:display_spinner=yes&:jsdebug=y&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
+        var oneUrl = "https://public.tableau.com/views/TieFighter/TIE?:showVizHome=no&:display_spinner=no&:jsdebug=y&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes";
 
 	var vizOptions = {
 	width: "100%",
@@ -43,7 +43,7 @@ viz1 = new tableauSoftware.Viz(onePh, oneUrl, vizOptions);
 });
 function animate() {
 if(i<=31) {
-window.setTimeout("animate()","2000");
+window.setTimeout("animate()","4000");
 animate1(i);
 i++;
 }
