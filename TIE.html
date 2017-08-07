@@ -28,12 +28,14 @@ height:90vh;
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+workbooka = viz1.getWorkbook();
 animate();
 }
         };
 viz1 = new tableauSoftware.Viz(onePh, oneUrl, vizOptions);
     i=1;
 });
+
 function animate() {
 if(i<=31) {
 window.setTimeout("animate()","4000");
@@ -43,9 +45,9 @@ i++;
 }
 
 function animate1(a) {
-viz1.getWorkbook.changeParameterValueAsync("ANIMATEXY", [a]);
-viz1.getWorkbook.changeParameterValueAsync("ANIMATEXZ", [a]);
-viz1.getWorkbook.changeParameterValueAsync("ANIMATEYZ", [a]);
+workbooka.changeParameterValueAsync("ANIMATEXY", [a]);
+workbooka.changeParameterValueAsync("ANIMATEXZ", [a]);
+workbooka.changeParameterValueAsync("ANIMATEYZ", [a]);
 }
 
 </script>
