@@ -9,135 +9,35 @@
 body {
 
 }
-#container {
-width: 100%;
-height: 100%;
 
-}
-
-#a {
-height:50vh;
-}
-#b {
-height:50vh;
-}
 
 #tableauViz1 {
 width:100%;
-height:45vh;
-overflow: hidden;
-}
-
-#tableauViz2 {
-width:100%;
-height:45vh;
-overflow: hidden;
-}
-
-#tableauViz3 {
-width:100%;
-height:45vh;
-overflow: hidden;
-}
-
-#tableauViz4 {
-width:100%;
-height:45vh;
-overflow: hidden;
-}
-
-/*  SECTIONS  */
-.section {
-	clear: both;
-	padding: 0px;
-	margin: 0px;
-
-}
-
-/*  COLUMN SETUP  */
-.col {
-	display: block;
-	float:left;
-	margin: 1% 0 1% 0%;
-}
-.col:first-child { margin-left: 0; }
-
-/*  GROUPING  */
-.group:before,
-.group:after { content:""; display:table; }
-.group:after { clear:both;}
-.group { zoom:1; /* For IE 6/7 */ }
-
-/*  GRID OF TWO  */
-.span_2_of_2 {
-	width: 100%;
-}
-.span_1_of_2 {
-	width: 50%;
-}
-
-/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
-
-@media only screen and (max-width: 480px) {
-	.col { 
-		margin: 1% 0 1% 0%;
-	}
-}
-
-@media only screen and (max-width: 480px) {
-	.span_2_of_2, .span_1_of_2 { width: 100%; }
+height:90vh;
 }
 </style>
 </head>
 <body>
-<div id=container>
-<div class="section group" id="a">
-	<div class="col span_1_of_2">
-	<div id=tableauViz1></div>
-	</div>
-	<div class="col span_1_of_2">
-	<div id=tableauViz2></div>
-	</div>
-</div>
-<div class="section group" id="b">
-	<div class="col span_1_of_2">
-	<div id=tableauViz3></div>
-	</div>
-	<div class="col span_1_of_2">
-	<div id=tableauViz4></div>
-	</div>
-</div>
 
-
-</div>
+<div id=tableauViz1></div>
+	
 </body> 
 <script>
     var viz, one, two, three, four, workbooka, workbookb, workbookc, workbookd, activeSheet, Worksheet, worksheet;
     $(function() {
         var onePh = document.getElementById("tableauViz1");
-        var twoPh = document.getElementById("tableauViz2");
-        var threePh = document.getElementById("tableauViz3");
-        var fourPh = document.getElementById("tableauViz4");
         var oneUrl = "https://public.tableau.com/views/TieFighter/TIE?:showVizHome=no&:display_spinner=no&:jsdebug=y&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes";
-var twoUrl = "https://public.tableau.com/views/TieFighter/X?:showVizHome=no&:display_spinner=no&:jsdebug=y&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes";
-var threeUrl = "https://public.tableau.com/views/TieFighter/Y?:showVizHome=no&:display_spinner=no&:jsdebug=y&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes";
-var fourUrl = "https://public.tableau.com/views/TieFighter/V?:showVizHome=no&:display_spinner=no&:jsdebug=y&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes";
+
 	var vizOptions = {
 	width: "100%",
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
 workbooka = viz1.getWorkbook();
-workbookb = viz2.getWorkbook();
-workbookc = viz3.getWorkbook();
-workbookd = viz4.getWorkbook();
 animate();
 }
         };
 viz1 = new tableauSoftware.Viz(onePh, oneUrl, vizOptions);
-viz2 = new tableauSoftware.Viz(twoPh, twoUrl, vizOptions);
-viz3 = new tableauSoftware.Viz(threePh, threeUrl, vizOptions);
-viz4 = new tableauSoftware.Viz(fourPh, fourUrl, vizOptions);
     i=1;
 });
 function animate() {
@@ -152,55 +52,7 @@ function animate1(a) {
 workbooka.changeParameterValueAsync("ANIMATEXY", [a]);
 workbooka.changeParameterValueAsync("ANIMATEXZ", [a]);
 workbooka.changeParameterValueAsync("ANIMATEYZ", [a]);
-workbookb.changeParameterValueAsync("ANIMATEXY", [a]);
-workbookb.changeParameterValueAsync("ANIMATEXZ", [a]);
-workbookb.changeParameterValueAsync("ANIMATEYZ", [a]);
-workbookc.changeParameterValueAsync("ANIMATEXY", [a]);
-workbookc.changeParameterValueAsync("ANIMATEXZ", [a]);
-workbookc.changeParameterValueAsync("ANIMATEYZ", [a]);
-workbookd.changeParameterValueAsync("ANIMATEXY", [a]);
-workbookd.changeParameterValueAsync("ANIMATEXZ", [a]);
-workbookd.changeParameterValueAsync("ANIMATEYZ", [a]);
 }
 
-</script>
-
-<script>
-var isMobile = {
-    Android: function() {
-        return /Android/i.test(navigator.userAgent);
-    },
-    iOS: function() {
-        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    }
-};
-if(isMobile.Android())
-    {
-        var previousWidth=$(window).width();
-        $(window).on({
-        resize: function(e) {
-        var YourFunction=(function(){
-
-            var screenWidth=$(window).width();
-            if(previousWidth!=screenWidth)
-            {
-                previousWidth=screenWidth;
-                window.location.reload();
-            }
-
-        })();
-
-        }
-    });
-
-    }
-    else//mainly for ios
-    {
-        $(window).on({
-            orientationchange: function(e) {
-               window.location.reload();
-            }   
-        });
-    }
 </script>
 </html>
