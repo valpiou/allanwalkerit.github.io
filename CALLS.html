@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <!-- disable zooming -->
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=0" />
-    <title>Live Calls</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tableau Desktop Widget">
+<meta name="author" content="Allan Walker, Anya A'Hearn, Jonathan Drummey">
 
 <script src="https://public.tableau.com/javascripts/api/tableau-2.0.0.min.js" type="text/javascript"></script>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -25,7 +26,7 @@ margin: 0 auto;
     var viz, one, workbook, activeSheet, Worksheet, worksheet;
     $(function() {
         var onePh = document.getElementById("tableauViz1");
-        var oneUrl = "https://public.tableau.com/views/CALLS_0/CallstoCallCenter?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes";
+        var oneUrl = "https://public.tableau.com/views/CALLS_0/CallstoCallCenter?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes";
 
         var oneOptions = {
             width: "100%",
