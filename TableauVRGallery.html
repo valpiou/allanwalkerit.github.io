@@ -11,24 +11,12 @@
 </head>
 
 <body>
-<canvas id="canv"></canvas>
+
 <a-scene>
-<a-box id="image" position="0 2 -5" rotation="45 0 45" scale="2 2 2"</a-box>
+  <a-assets>
+    <img id="viz1" src="//images.weserv.nl/?url=public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes">
+  </a-assets>
+  <a-image src="#viz1"></a-image>
 </a-scene>
 </body>
-<script>
-viz1 = new Image();
-viz1.setAttribute('crossOrigin', 'anonymous');
-url = '//images.weserv.nl/?url=public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes';
-viz1.src = url;
-viz1.onload = function() {
-        var c = document.getElementById('canv');
-        var ctx = c.getContext('2d');
-        ctx.drawImage(viz1, 300, 150);
-        var img    = c.toDataURL("image/png");
-        var texture = document.getElementById("image");
-        texture.setAttribute("src", img);
-        document.getElementById("image").appendChild(texture);
-}
-</script>
 </html>
