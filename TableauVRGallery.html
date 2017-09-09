@@ -4,22 +4,28 @@
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
     <title>Tableau AR/VR Viz Gallery</title>
 <!-- Scripts -->
+<script src="aframe.min.js"></script>
 <!-- CSS -->
 <style>
 </style>
 </head>
 
 <body>
-<canvas id="canv" width="1024" height="1024"></canvas>
+<canvas id="canv"></canvas>
+<a-scene>
+<a-box id="image" position="0 2 -5" rotation="45 0 45" scale="2 2 2"</a-box>
+</a-scene>
 </body>
 <script>
-x = 200;
-y = 200;
-myimage = new Image();
-myimage.onload = function() {
+viz1 = new Image();
+viz1.onload = function() {
         var canvas = document.getElementById('canv');
         var ctx = canvas.getContext('2d');
-        ctx.drawImage(myimage, x, y);
+        ctx.drawImage(viz1, 400, 300);
+        var img    = c.toDataURL("image/png");
+        var texture = document.getElementById("image");
+        texture.setAttribute("src", img);
+        document.getElementById("image").appendChild(texture);
                  }
 myimage.src = 'https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes';
 </script>
