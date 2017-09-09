@@ -34,13 +34,10 @@ var viz, one, workbook, activeSheet, Worksheet, worksheet;
 getTableauCanvas();
 }
         };      
-viz1 = new tableauSoftware.Viz(onePh, oneUrl, oneOptions);
+img = new tableauSoftware.Viz(onePh, oneUrl, oneOptions);
     });;
 
 function getTableauCanvas(){
-var c = document.querySelector("#tableauViz img");
-console.log(c);
-var img    = c.toDataURL("image/png");
 console.log(img);
 //var texture = document.getElementById("image");
 //texture.setAttribute("src", img);
