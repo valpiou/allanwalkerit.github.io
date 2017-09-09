@@ -24,7 +24,7 @@ viz1.src = url;
 viz1.onload = function() {
         var c = document.getElementById('canv');
         var ctx = c.getContext('2d');
-        ctx.drawImage(viz1, 400, 300);
+        ctx.drawImage(viz1, 300, 150);
         var img    = c.toDataURL("image/png");
         var texture = document.getElementById("image");
         texture.setAttribute("src", img);
