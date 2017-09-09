@@ -10,15 +10,16 @@
 </head>
 
 <body>
+<canvas id="canv" width="1024" height="1024"></canvas>
 </body>
 <script>
 x = 200;
 y = 200;
-var canvas = document.createElement('canvas');
-window.ctx = canvas.getContext("2d");
 myimage = new Image();
 myimage.onload = function() {
-                     ctx.drawImage(myimage, x, y);
+        var canvas = document.getElementById('canv');
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(myimage, x, y);
                  }
 myimage.src = 'https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes';
 </script>
