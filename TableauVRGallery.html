@@ -34,6 +34,9 @@ var viz, one, workbook, activeSheet, Worksheet, worksheet;
             hideTabs: false,
             hideToolbar: true,
             onFirstInteractive: function() {
+var c = document.querySelector("#tableauViz1 canvas");
+var img    = c.toDataURL("image/png");
+var texture = document.getElementById("image");
 texture.setAttribute("src", img);
 document.getElementById("image").appendChild(texture);
 }
@@ -41,9 +44,7 @@ document.getElementById("image").appendChild(texture);
 viz1 = new tableauSoftware.Viz(onePh, oneUrl, oneOptions);
     });;
 
-var c = document.querySelector("#tableauViz1 canvas");
-var img    = c.toDataURL("image/png");
-var texture = document.getElementById("image");
+
 
 </script>
 </html>
