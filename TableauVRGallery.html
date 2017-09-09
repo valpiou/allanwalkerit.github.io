@@ -12,6 +12,37 @@
 </head>
 
 <body>
-<img src="https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes">
+<img id="myImage" src="https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes" crossOrigin="anonymous">
+<img id="result">
+<script type="text/javascript">
+        function toDataURL(url, callback){
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', url);
+    xhr.responseType = 'blob';
+    xhr.onload = function(){
+      var fr = new FileReader();
+    
+      fr.onload = function(){
+        callback(this.result);
+      };
+    
+      fr.readAsDataURL(xhr.response); // async call
+    };
+    
+    xhr.send();
+}
+
+toDataURL(myImage.src, function(dataURL){
+  result.src = dataURL;
+
+  // now just to show that passing to a canvas doesn't hold the same results
+  var canvas = document.createElement('canvas');
+  canvas.width = myImage.naturalWidth;
+  canvas.height = myImage.naturalHeight;
+  canvas.getContext('2d').drawImage(myImage, 0,0);
+
+  console.log(canvas.toDataURL() === dataURL); // false - not same data
+  });
+</script>
 </body>
 </html>
