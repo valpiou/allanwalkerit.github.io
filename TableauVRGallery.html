@@ -18,10 +18,9 @@
 </body>
 <script>
 viz1 = new Image();
-var timestamp = new Date().getTime();
 viz1.setAttribute('crossOrigin', 'anonymous');
-url = 'https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes';
-viz1.src = url + '?' + timestamp;
+url = '//images.weserv.nl/?url=https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes';
+viz1.src = url;
 viz1.onload = function() {
         var c = document.getElementById('canv');
         var ctx = c.getContext('2d');
