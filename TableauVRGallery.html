@@ -10,7 +10,6 @@
 <style>
 
 #tableauViz {
-display:none;
 }
 </style>
 </head>
@@ -32,16 +31,17 @@ var viz, one, workbook, activeSheet, Worksheet, worksheet;
             hideToolbar: true,
             onFirstInteractive: function() {
 getTableauCanvas();
+var cached = document.getElementById('iframe[0]').innerHTML;
+localStorage.setItem('1', JSON.stringify(cached));
+lsviz = JSON.parse(localStorage.getItem('1'));
+//document.getElementById('ls').innerHTML = lsviz;
+console.log(JSON.stringify(localStorage).length);
 }
         };      
-img = new tableauSoftware.Viz(onePh, oneUrl, oneOptions);
+viz = new tableauSoftware.Viz(onePh, oneUrl, oneOptions);
     });;
 
-function getTableauCanvas(){
-console.log(img);
-//var texture = document.getElementById("image");
-//texture.setAttribute("src", img);
-//document.getElementById("image").appendChild(texture);
+function getTableau(){
 }
 
 </script>
