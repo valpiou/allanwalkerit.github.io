@@ -19,6 +19,7 @@
 <script>
 viz1 = new Image();
 viz1.setAttribute('crossOrigin', 'anonymous');
+viz1.src = 'https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes';
 viz1.onload = function() {
         var c = document.getElementById('canv');
         var ctx = c.getContext('2d');
@@ -27,7 +28,6 @@ viz1.onload = function() {
         var texture = document.getElementById("image");
         texture.setAttribute("src", img);
         document.getElementById("image").appendChild(texture);
-                 }
-viz1.src = 'https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes';
+}
 </script>
 </html>
