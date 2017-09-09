@@ -8,41 +8,10 @@
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <!-- CSS -->
 <style>
-
-#tableauViz {
-}
 </style>
 </head>
 
 <body>
-<div id="tableauViz"></div>
+<img src="https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes">
 </body>
-
-<script>
-var viz, one, workbook, activeSheet, Worksheet, worksheet;
-    $(function() {
-        var onePh = document.getElementById("tableauViz");
-        var oneUrl = "https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes";
-
-        var oneOptions = {
-            width: "100%",
-            height: "100%",
-            hideTabs: false,
-            hideToolbar: true,
-            onFirstInteractive: function() {
-getTableauCanvas();
-var cached = document.getElementById('iframe[0]').innerHTML;
-localStorage.setItem('1', JSON.stringify(cached));
-lsviz = JSON.parse(localStorage.getItem('1'));
-//document.getElementById('ls').innerHTML = lsviz;
-console.log(JSON.stringify(localStorage).length);
-}
-        };      
-viz = new tableauSoftware.Viz(onePh, oneUrl, oneOptions);
-    });;
-
-function getTableau(){
-}
-
-</script>
 </html>
