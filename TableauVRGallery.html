@@ -16,7 +16,7 @@
 </body>
 <script>
 var oReq = new XMLHttpRequest();
-oReq.open("post", 'https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes', true );        
+oReq.open("get", 'https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes', true );        
 oReq.responseType = "blob";
 oReq.onload = function ( oEvent )
 {
