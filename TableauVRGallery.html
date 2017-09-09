@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<div id="tableauViz1"></div>
+<div id="tableauViz"></div>
 <a-scene>
 <a-plane id="image" position="0 2 -5"</a-plane>
 </a-scene>
@@ -25,7 +25,7 @@
 <script>
 var viz, one, workbook, activeSheet, Worksheet, worksheet;
     $(function() {
-        var onePh = document.getElementById("tableauViz1");
+        var onePh = document.getElementById("tableauViz");
         var oneUrl = "https://public.tableau.com/views/TieFighter/TIE?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes";
 
         var oneOptions = {
@@ -34,7 +34,7 @@ var viz, one, workbook, activeSheet, Worksheet, worksheet;
             hideTabs: false,
             hideToolbar: true,
             onFirstInteractive: function() {
-var c = document.querySelector("#tableauViz1 canvas");
+var c = document.querySelector("#tableauViz canvas");
 var img    = c.toDataURL("image/png");
 var texture = document.getElementById("image");
 texture.setAttribute("src", img);
