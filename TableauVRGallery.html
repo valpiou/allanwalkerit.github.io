@@ -13,9 +13,24 @@
 <body>
 <a-scene>
 <a-assets>
-<img id="viz1" src="https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes" crossOrigin="anonymous">
 </a-assets>
-<a-image src="#viz1" width="200" height="100"></a-image>
+<img src="viz1" width="200" height="100"></img>
 </a-scene>
 </body>
+<script>
+var oReq = new XMLHttpRequest();
+oReq.open("post", 'https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes', true );        
+oReq.responseType = "blob";
+oReq.onload = function ( oEvent )
+{
+    var blob = oReq.response;
+    var imgSrc = URL.createObjectURL( blob );                        
+    var $img = $( '<img/>', {                
+        "alt": "test image",
+        "src": imgSrc
+    } ).appendTo( $( '#viz1' ) );
+    window.URL.revokeObjectURL( imgSrc );
+};
+oReq.send( null );
+</script>
 </html>
