@@ -4,45 +4,18 @@
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
     <title>Tableau AR/VR Viz Gallery</title>
 <!-- Scripts -->
-<script src="https://public.tableau.com/javascripts/api/tableau-2.0.0.min.js" type="text/javascript"></script>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="aframe.min.js"></script>
 <!-- CSS -->
 <style>
 </style>
 </head>
 
 <body>
-<img id="myImage" src="https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes" crossOrigin="anonymous">
-<img id="result">
-<script type="text/javascript">
-        function toDataURL(url, callback){
-    var xhr = new XMLHttpRequest();
-    xhr.open('get', url);
-    xhr.responseType = 'blob';
-    xhr.onload = function(){
-      var fr = new FileReader();
-    
-      fr.onload = function(){
-        callback(this.result);
-      };
-    
-      fr.readAsDataURL(xhr.response); // async call
-    };
-    
-    xhr.send();
-}
-
-toDataURL(myImage.src, function(dataURL){
-  result.src = dataURL;
-
-  // now just to show that passing to a canvas doesn't hold the same results
-  var canvas = document.createElement('canvas');
-  canvas.width = myImage.naturalWidth;
-  canvas.height = myImage.naturalHeight;
-  canvas.getContext('2d').drawImage(myImage, 0,0);
-
-  console.log(canvas.toDataURL() === dataURL); // false - not same data
-  });
-</script>
+<a-scene>
+<a-assets>
+<img id="viz1" src="https://public.tableau.com/views/TieFighter/TIE.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes" crossOrigin="anonymous">
+</a-assets>
+<a-image src="#viz1" width="200" height="100"></a-image>
+</a-scene>
 </body>
 </html>
