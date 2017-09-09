@@ -19,8 +19,8 @@
 <script>
 viz1 = new Image();
 viz1.onload = function() {
-        var canvas = document.getElementById('canv');
-        var ctx = canvas.getContext('2d');
+        var c = document.getElementById('canv');
+        var ctx = c.getContext('2d');
         ctx.drawImage(viz1, 400, 300);
         var img    = c.toDataURL("image/png");
         var texture = document.getElementById("image");
