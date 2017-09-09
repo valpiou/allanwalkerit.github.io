@@ -34,17 +34,19 @@ var viz, one, workbook, activeSheet, Worksheet, worksheet;
             hideTabs: false,
             hideToolbar: true,
             onFirstInteractive: function() {
+getTableauCanvas();
+}
+        };      
+viz1 = new tableauSoftware.Viz(onePh, oneUrl, oneOptions);
+    });;
+
+function getTableauCanvas(){
 var c = document.querySelector("#tableauViz canvas");
 var img    = c.toDataURL("image/png");
 var texture = document.getElementById("image");
 texture.setAttribute("src", img);
 document.getElementById("image").appendChild(texture);
 }
-        };      
-viz1 = new tableauSoftware.Viz(onePh, oneUrl, oneOptions);
-    });;
-
-
 
 </script>
 </html>
