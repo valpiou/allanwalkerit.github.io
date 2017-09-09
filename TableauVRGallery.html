@@ -10,6 +10,7 @@
 <style>
 
 #tableauViz1 {
+display:none;
 }
 </style>
 </head>
@@ -39,7 +40,8 @@ viz1 = new tableauSoftware.Viz(onePh, oneUrl, oneOptions);
 function getTableauCanvas(){
 var c = document.querySelector("#tableauViz canvas");
 console.log(c);
-//var img    = c.toDataURL("image/png");
+var img    = c.toDataURL("image/png");
+console.log(img);
 //var texture = document.getElementById("image");
 //texture.setAttribute("src", img);
 //document.getElementById("image").appendChild(texture);
