@@ -5,6 +5,8 @@
     <title>Tableau AR/VR Viz Gallery</title>
 <!-- Scripts -->
 <script src="aframe.min.js"></script>
+<script src="aframe-gif-shader.min.js"></script> 
+<script src="aframe-gif-component.min.js"></script>
 <!-- CSS -->
 <style>
 </style>
@@ -108,7 +110,9 @@
       <a-entity position="2.5 0 -5">
         <a-entity mixin="column">
           <a-entity mixin="column-light"></a-entity>
-<a-sphere src="Green.png" position=".18 1.2 .1"></a-sphere>
+<a-entity geometry="primitive:sphere;" position=".18 1.2 .1" material="shader:gif;src:url(nukes.gif);";opacity:1;>
+<a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+</a-entity>
         </a-entity>
         <a-entity mixin="column-bottom"></a-entity>
       </a-entity>
