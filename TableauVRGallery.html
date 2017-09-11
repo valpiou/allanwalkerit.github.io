@@ -14,31 +14,7 @@
 
 <a-scene>
       <a-assets>
-        <!-- Geometry mixins. -->
-        <a-mixin id="box"
-                 geometry="primitive: box; depth: .125; height: .125;
-                           width: .125"></a-mixin>
-        <a-mixin id="circle"
-                 geometry="primitive: circle; radius: .2;
-                           segments: 100; thetaStart: 0; thetaLength: 360">
-        </a-mixin>
-        <a-mixin id="cylinder"
-                 geometry="primitive: cylinder; radius: 0.2; height: .5;
-                           segmentsRadial: 50; segmentsHeight: 50:
-                           openEnded: true; thetaStart: 0; thetaLength: 360">
-        </a-mixin>
-        <a-mixin id="ring"
-                  geometry="primitive: ring; radiusInner: .3; radiusOuter: .5;
-                            segmentsTheta: 50"></a-mixin>
-        <a-mixin id="sphere"
-                  geometry="primitive: sphere; radius: .1"></a-mixin>
-        <a-mixin id="torus"
-                  geometry="primitive: torus; arc: 720; radius: .3; radiusTubular: .05;
-                            segmentsTubular: 10;"></a-mixin>
-        <a-mixin id="torus-knot"
-                  geometry="primitive: torusKnot; p: 3; q: 7; radius: .25;
-                            segmentsRadial: 10; radiusTubular: .07; segmentsTubular: 32">
-        </a-mixin>
+        
 
         <!-- Layout mixins. -->
         <a-mixin id="column"
@@ -98,7 +74,7 @@
       <a-entity position="-2.5 0 -2">
         <a-entity mixin="column">
           <a-entity mixin="column-light"></a-entity>
-<a-image src="//images.weserv.nl/?url=public.tableau.com/views/LONDONsPARAKEETS/Dashboard3?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes" position=".18 1.2 .1"></a-image>
+<a-image src="//images.weserv.nl/?url=public.tableau.com/views/LONDONsPARAKEETS/Dashboard3.png?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes" position=".18 1.2 .1"></a-image>
         </a-entity>
         <a-entity mixin="column-bottom"></a-entity>
       </a-entity>
