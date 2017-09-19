@@ -22,11 +22,13 @@ margin: 0 Auto;
 <select id="picker">
 <option disabled selected>Select Region:</option>
 <option selected>ALL</option>
-</select>
+</select>
+<div id="tableauViz1"></div>
 <div id="tableauViz2"></div>
 </body> 
 
 <script>
+$('#picker').hide();
 var viz, one, workbooka, activeSheet, Worksheet, worksheet;
     $(function() {
         var onePh = document.getElementById("tableauViz1");
@@ -83,6 +85,7 @@ var options = deDup;
 options.sort();
 for (var i=0;i<options.length;i++){
    $('<option/>').val(options[i]).html(options[i]).appendTo('#picker');
+$('#picker').show();
 }
 
 $( "#picker" ).change(function() {
