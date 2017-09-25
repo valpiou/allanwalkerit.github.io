@@ -320,6 +320,7 @@ var twelveOptions = {
 
      onFirstInteractive: function () {
 workbookl = viz12.getWorkbook();
+animate();
         }	
       };
 
@@ -339,6 +340,19 @@ viz11 = new tableauSoftware.Viz(elevenPh, elevenUrl, elevenOptions);
 viz12 = new tableauSoftware.Viz(twelvePh, twelveUrl, twelveOptions);
 i=1;
 
+function animate() {
+if(i<=53) {
+window.setTimeout("animate()","2000");
+animate1(i);
+i++;
+}
+if(i>=53) {
+i=-1;
+}
+}
 
+function animate1(a) {
+workbooka.changeParameterValueAsync("ANIMATE", [a]);
+}
 </script>
 </html>
