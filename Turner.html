@@ -139,6 +139,134 @@ Spark
 </body>
 
 <script>
-    
+var viz, one, two, three, four, five, six, seven, eight, workbooka, workbookb, workbookc, workbookd, workbooke, workbookf, workbookg, workbookh, activeSheet, Worksheet, worksheet;
+var onePh = document.getElementById("tableauViz1");
+var twoPh = document.getElementById("tableauViz2");
+var threePh = document.getElementById("tableauViz3");
+var fourPh = document.getElementById("tableauViz4");
+var fivePh = document.getElementById("tableauViz5");
+var sixPh = document.getElementById("tableauViz6");
+var sevenPh = document.getElementById("tableauViz7");
+var eightPh = document.getElementById("tableauViz8");
+
+var oneUrl = "https://public.tableau.com/views/WargamesUSA/USA?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; //USA
+var twoUrl = "https://public.tableau.com/views/WargamesTICTACTOEUSA/TICTACTOEUSA?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; //TIC TAC TOE
+var threeUrl = "https://public.tableau.com/views/WargamesRUSSIA/RUSSIA?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; //RUSSIA
+var fourUrl = "https://public.tableau.com/views/WargamesCLOSEUPUSA/CLOSEUPUSA?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; //CLOSE UP USA
+var fiveUrl = "https://public.tableau.com/views/WargamesDECRYPTUSA/DECRYPTUSA?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; //DECRYPT
+var sixUrl = "https://public.tableau.com/views/WargamesWORLD/WORLD?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; //POLAR PROJECTION
+var sevenUrl = "https://public.tableau.com/views/WargamesMAPBOX/MAPBOX?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; //MAPBOX SHOWCASE
+var eightUrl = "https://public.tableau.com/views/WargamesMAPBOXBIG/MAPBOXBIG?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; //MAPBOX BIG
+
+var oneOptions = {
+
+    width: "100%",   
+    height: "100%",
+    hideTabs: false,
+    hideToolbar: true,
+    hideSpinner: true,
+
+     onFirstInteractive: function () {
+workbooka = viz1.getWorkbook();
+}	
+};
+
+var twoOptions = {
+
+    width: "100%",   
+    height: "100%",
+    hideTabs: false,
+    hideToolbar: true,
+
+     onFirstInteractive: function () {
+workbookb = viz2.getWorkbook();  
+        }	
+      };
+
+var threeOptions = {
+
+    width: "100%",   
+    height: "100%",
+    hideTabs: false,
+    hideToolbar: true,
+
+     onFirstInteractive: function () {
+workbookc = viz3.getWorkbook();  
+        }	
+      };
+
+var fourOptions = {
+
+    width: "100%",   
+    height: "100%",
+    hideTabs: false,
+    hideToolbar: true,
+
+     onFirstInteractive: function () {
+workbookd = viz4.getWorkbook();
+        }	
+      };
+
+var fiveOptions = {
+
+    width: "100%",   
+    height: "100%",
+    hideTabs: false,
+    hideToolbar: true,
+
+     onFirstInteractive: function () {
+workbooke = viz5.getWorkbook();
+        }	
+      };
+
+var sixOptions = {
+
+    width: "100%",   
+    height: "100%",
+    hideTabs: false,
+    hideToolbar: true,
+
+     onFirstInteractive: function () {
+workbookf = viz6.getWorkbook();
+        }	
+      };
+
+var sevenOptions = {
+
+    width: "100%",   
+    height: "100%",
+    hideTabs: false,
+    hideToolbar: true,
+
+     onFirstInteractive: function () {
+workbookg = viz7.getWorkbook();  
+        }	
+      };
+
+var eightOptions = {
+
+    width: "100%",   
+    height: "100%",
+    hideTabs: false,
+    hideToolbar: true,
+
+     onFirstInteractive: function () {
+workbookh = viz8.getWorkbook();
+        }	
+      };
+
+//initiate visualiztions
+
+viz1 = new tableauSoftware.Viz(onePh, oneUrl, oneOptions);
+viz2 = new tableauSoftware.Viz(twoPh, twoUrl, twoOptions);
+viz3 = new tableauSoftware.Viz(threePh, threeUrl, threeOptions);
+viz4 = new tableauSoftware.Viz(fourPh, fourUrl, fourOptions);
+viz5 = new tableauSoftware.Viz(fivePh, fiveUrl, fiveOptions);
+viz6 = new tableauSoftware.Viz(sixPh, sixUrl, sixOptions);
+viz7 = new tableauSoftware.Viz(sevenPh, sevenUrl, sevenOptions);
+viz8 = new tableauSoftware.Viz(eightPh, eightUrl, eightOptions);
+i=1;
+
+
 </script>
 </html>
