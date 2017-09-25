@@ -17,9 +17,17 @@
     <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.js"></script>
 
 <style>
-/* This makes the corners of the navbar square rather than rounded*/ 
+
+body {
+background-color:#000000;
+}
+
 .navbar {
 border-radius: 0px;
+}
+
+#nav {
+background-color: #FFFFFF !important;
 }
 
 .bannerhide {
@@ -46,7 +54,7 @@ color:#FFFFFF;
 
 <!-- Navigation Bar -->
 
-<nav class="navbar navbar-inverse">
+<nav id="nav" class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href=""></a>
@@ -123,12 +131,6 @@ Spark
 </div>
 
 </div>
-
-<footer class="footer">
-      <div class="container">
-        <p class="text-muted">Built with <a href="http://getbootstrap.com/">Bootstrap</a> and <a href="http://www.tableau.com/">Tableau</a></p>
-      </div>
-    </footer>
 </body>
 
 <script>
