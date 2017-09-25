@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A Bootstrap template for Tableau">
+    <meta name="author" content="Allan Walker">
+	<title>A template for Tableau with Bootstrap</title>
+<!-- CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<!-- Javascript -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.js"></script>
+
+<style>
+/* This makes the corners of the navbar square rather than rounded*/ 
+.navbar {
+border-radius: 0px;
+}
+
+.bannerhide {
+height:275px;
+overflow:hidden;
+}
+.tableau{
+height:350px;
+}
+
+.caption {
+width:100%;
+background-color:#000000;
+color:#FFFFFF;
+}
+
+</style>
+
+
+
+</head>
+
+  <body onload="tableau()">
+
+<!-- Navigation Bar -->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="http://getbootstrap.com/">Bootstrap for Tableau</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+      <li><a href="http://www.w3schools.com/bootstrap/default.asp">Bootstrap Tutorial</a></li>
+      <li><a href="https://onlinehelp.tableau.com/current/api/js_api/en-us/JavaScriptAPI/js_api_sample_basic_embed.html">Tableau JS API Example</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container">
+
+<div class="row">
+<div class="col-md-6"><div class="bannerhide"><div id="vizContainer1" class="tableau"></div></div><div class="caption">&nbsp;F-4 Phantom II <a href="https://grabcad.com/library/phantom-f4">Model by Hans de Ridder</a>, rendered using Tableau</div></div>
+<div class="col-md-6"><br></br>The McDonnell Douglas F-4 Phantom II is a tandem two-seat, twin-engine, all-weather, long-range supersonic jet interceptor aircraft/fighter-bomber originally developed for the United States Navy by McDonnell Aircraft. It first entered service in 1960 with the U.S. Navy. Proving highly adaptable, it was also adopted by the U.S. Marine Corps and the U.S. Air Force, and by the mid-1960s had become a major part of their respective air wings.<br></br>
+The Phantom is a large fighter with a top speed of over Mach 2.2. It can carry more than 18,000 pounds (8,400 kg) of weapons on nine external hardpoints, including air-to-air missiles, air-to-ground missiles, and various bombs. The F-4, like other interceptors of its time, was designed without an internal cannon. Later models incorporated an M61 Vulcan rotary cannon. Beginning in 1959, it set 15 world records for in-flight performance, including an absolute speed record, and an absolute altitude record. (source: <a href="https://en.wikipedia.org/wiki/McDonnell_Douglas_F-4_Phantom_II">wikipedia</a>)</div>
+</div>
+
+<div class="row">
+<div class="col-md-6"><br></br>During the Vietnam War, the F-4 was used extensively; it served as the principal air superiority fighter for both the Navy and Air Force, and became important in the ground-attack and aerial reconnaissance roles late in the war. The Phantom has the distinction of being the last U.S. fighter flown to attain ace status in the 20th century. During the Vietnam War, the U.S. Air Force had one pilot and two weapon systems officers (WSOs), and the US Navy had one pilot and one radar intercept officer (RIO) become aces by achieving five aerial kills against enemy fighter aircraft. The F-4 continued to form a major part of U.S. military air power throughout the 1970s and 1980s, being gradually replaced by more modern aircraft such as the F-15 Eagle and F-16 in the U.S. Air Force, the Grumman F-14 Tomcat in the U.S. Navy, and the F/A-18 Hornet in the U.S. Navy and U.S. Marine Corps.</div>
+<div class="col-md-6"><div class="bannerhide"><div id="vizContainer2" class="tableau"></div></div><div class="caption">&nbsp;F-4 Phantom II Missions by Month during the Vietnam War, data: <a href="https://insight.livestories.com/s/v2/vietnam/48973b96-8add-4898-9b33-af2a676b10bb/">Defence Digital Service</a></div></div>
+</div>
+
+</div>
+
+<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Built with <a href="http://getbootstrap.com/">Bootstrap</a> and <a href="http://www.tableau.com/">Tableau</a></p>
+      </div>
+    </footer>
+</body>
+
+<script>
+        function tableau() {
+		containerDiv1 = document.getElementById("vizContainer1"),
+		containerDiv2 = document.getElementById("vizContainer2"),
+                url1 = "https://public.tableau.com/views/PhantomBlueprint_0/PhantomBlueprint?:embed=y&:display_count=yes",
+		url2 = "https://public.tableau.com/views/PhantomBlueprint_0/Chart?:embed=y&:display_count=yes",
+                options = {
+		width: "100%",    
+   		height: "100%",
+                    onFirstInteractive: function () {
+                    }
+                };
+            
+		viz1 = new tableauSoftware.Viz(containerDiv1, url1, options);
+		viz2 = new tableauSoftware.Viz(containerDiv2, url2, options); 
+        }
+    </script>
+</html>
