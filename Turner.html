@@ -235,7 +235,6 @@ function tableau1(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-workbooka = viz1.getWorkbook();
 tableau2();
 }
         };
@@ -248,7 +247,6 @@ function tableau2(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-workbookb = viz2.getWorkbook();
 tableau3();
 }
         };
@@ -261,7 +259,6 @@ function tableau3(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-workbookc = viz3.getWorkbook();
 tableau4();
 }
         };
@@ -274,7 +271,6 @@ function tableau4(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-workbookd = viz4.getWorkbook();
 tableau5();
 }
         };
@@ -287,7 +283,6 @@ function tableau5(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-workbooke = viz5.getWorkbook();
 tableau6();
 }
         };
@@ -300,7 +295,6 @@ function tableau6(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-workbookf = viz6.getWorkbook();
 tableau7();
 }
         };
@@ -313,7 +307,6 @@ function tableau7(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-workbookg = viz7.getWorkbook();
 tableau8();
 }
         };
@@ -326,7 +319,6 @@ function tableau8(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-workbookh = viz8.getWorkbook();
 tableau9();
 }
         };
@@ -339,7 +331,6 @@ function tableau9(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-workbooki = viz9.getWorkbook();
 tableau10();
 }
         };
@@ -352,7 +343,6 @@ function tableau10(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-workbookj = viz10.getWorkbook();
 tableau11();
 }
         };
@@ -365,7 +355,6 @@ function tableau11(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-workbookk = viz11.getWorkbook();
 tableau12();
 }
         };
@@ -378,7 +367,6 @@ function tableau12(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-workbookl = viz12.getWorkbook();
 animate();
 $('#viz').show();
 }
@@ -399,18 +387,18 @@ i=-1;
 }
 
 function animate1(a) {
-workbooka.changeParameterValueAsync("ANIMATE", [a]);
-workbookb.changeParameterValueAsync("ANIMATE", [a]);
-workbookc.changeParameterValueAsync("ANIMATE", [a]);
-workbookd.changeParameterValueAsync("ANIMATE", [a]);
-workbooke.changeParameterValueAsync("ANIMATE", [a]);
-workbookf.changeParameterValueAsync("ANIMATE", [a]);
-workbookg.changeParameterValueAsync("ANIMATE", [a]);
-workbookh.changeParameterValueAsync("ANIMATE", [a]);
-workbooki.changeParameterValueAsync("ANIMATE", [a]);
-workbookj.changeParameterValueAsync("ANIMATE", [a]);
-workbookk.changeParameterValueAsync("ANIMATE", [a]);
-workbookl.changeParameterValueAsync("ANIMATE", [a]);
+viz1.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
+viz2.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
+viz3.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
+viz4.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
+viz5.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
+viz6.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
+viz7.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
+viz8.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
+viz9.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
+viz10.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
+viz11.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
+viz12.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 }
 </script>
 </html>
