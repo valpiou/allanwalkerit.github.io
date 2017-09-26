@@ -159,7 +159,8 @@ font-size: x-small !important;
 <div id="viz" class="container">
 
 <div class="row">
-<div class="col-md-4"><h2>6</h2>
+<div class="col-md-4">
+<div class="box"><h2>6</h2>
 <ul id="list">
 <li>
 <div class="bannerhidenumbers"><div id="tableauViz1" class="tableaunumbers"></div></div>
@@ -169,7 +170,9 @@ font-size: x-small !important;
 </li>
 </ul>
 </div>
-<div class="col-md-4"><h2>5</h2>
+</div>
+<div class="col-md-4">
+<div class="box"><h2>5</h2>
 <ul id="list">
 <li>
 <div class="bannerhidenumbers"><div id="tableauViz3" class="tableaunumbers"></div></div>
@@ -179,7 +182,9 @@ font-size: x-small !important;
 </li>
 </ul>
 </div>
-<div class="col-md-4"><h2>4</h2>
+</div>
+<div class="col-md-4">
+<div class="box"><h2>4</h2>
 <ul id="list">
 <li>
 <div class="bannerhidenumbers"><div id="tableauViz5" class="tableaunumbers"></div></div>
@@ -192,7 +197,8 @@ font-size: x-small !important;
 </div>
 <br><br>
 <div class="row">
-<div class="col-md-4"><h2>3</h2>
+<div class="col-md-4">
+<div class="box"><h2>3</h2>
 <ul id="list">
 <li>
 <div class="bannerhidenumbers"><div id="tableauViz7" class="tableaunumbers"></div></div>
@@ -202,7 +208,9 @@ font-size: x-small !important;
 </li>
 </ul>
 </div>
-<div class="col-md-4"><h2>2</h2>
+</div>
+<div class="col-md-4">
+<div class="box"><h2>2</h2>
 <ul id="list">
 <li>
 <div class="bannerhidenumbers"><div id="tableauViz9" class="tableaunumbers"></div></div>
@@ -212,7 +220,9 @@ font-size: x-small !important;
 </li>
 </ul>
 </div>
-<div class="col-md-4"><h2>1</h2>
+</div>
+<div class="col-md-4">
+<div class="box"><h2>1</h2>
 <ul id="list">
 <li>
 <div class="bannerhidenumbers"><div id="tableauViz11" class="tableaunumbers"></div></div>
@@ -485,7 +495,7 @@ viz11.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz12.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 }
 
-var $divs = $("div.col-md-4");
+var $divs = $("div.box");
 
 $('#numBnt').on('click', function () {
     var numericallyOrderedDivs = $divs.sort(function (a, b) {
