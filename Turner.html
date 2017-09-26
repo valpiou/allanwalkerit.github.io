@@ -67,7 +67,7 @@ list-style-type: none;
 
 </head>
 
-  <body>
+<body onload="tableau1()">
 
 <!-- Navigation Bar -->
 
@@ -148,10 +148,10 @@ list-style-type: none;
 </div>
 <br><br>
 </div>
-</body onload="tableau1()">
+</body>
 
 <script>
-$('#viz').hide();
+
 var a = function tableau1(){
      a = function tableau1(){};
 };
@@ -366,7 +366,6 @@ function tableau12(){
             hideTabs: false,
             onFirstInteractive: function() {
 animate();
-$('#viz').show();
 }
         };
 viz12 = new tableauSoftware.Viz(twelvePh, twelveUrl, twelvevizOptions);
