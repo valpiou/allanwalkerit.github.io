@@ -126,6 +126,11 @@ list-style-type: none;
     transform: rotate(360deg);
   }
 }
+
+p {
+color: #FFFFFF !important;
+font-size: x-small !important;
+}
 </style>
 
 
@@ -139,7 +144,7 @@ list-style-type: none;
 <nav id="nav" class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href=""></a>
+      <p id="load" class="navbar-brand"></p>
     </div>
   </div>
 </nav>
@@ -316,6 +321,7 @@ function tableau2(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+document.getElementById('load').innerHTML = "Loading Current Calls";
 tableau3();
 }
         };
@@ -340,6 +346,7 @@ function tableau4(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+document.getElementById('load').innerHTML = "Loading Escalating Calls";
 tableau5();
 }
         };
@@ -364,10 +371,12 @@ function tableau6(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+document.getElementById('load').innerHTML = "Loading Dropped Calls";
 tableau7();
 }
         };
 viz6 = new tableauSoftware.Viz(sixPh, sixUrl, sixvizOptions);
+
 }
 
 function tableau7(){
@@ -388,6 +397,7 @@ function tableau8(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+document.getElementById('load').innerHTML = "Loading Staff Idle";
 tableau9();
 }
         };
@@ -412,6 +422,7 @@ function tableau10(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+document.getElementById('load').innerHTML = "Loading Staff on Calls";
 tableau11();
 }
         };
@@ -436,6 +447,7 @@ function tableau12(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+document.getElementById('load').innerHTML = "Loading Emergency Calls";
 $('#e').hide();
 $('#viz').show();
 animate();
@@ -457,6 +469,7 @@ i=-1;
 }
 
 function animate1(a) {
+document.getElementById('load').innerHTML = "All Metrics Loaded!";
 viz1.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz2.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz3.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
