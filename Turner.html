@@ -319,7 +319,6 @@ function tableau1(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-sorted();
 tableau2();
 }
         };
@@ -461,6 +460,7 @@ function tableau12(){
             onFirstInteractive: function() {
 $('#e').hide();
 $('#viz').show();
+sorted();
 animate();
 }
         };
@@ -510,6 +510,7 @@ $('#sorter').on('click', function () {
 }else{
 document.getElementById('load').innerHTML = "Desktop User";
 $('#sorter').hide();
+$('p').hide();
 }
 }
 
