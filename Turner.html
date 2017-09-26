@@ -496,14 +496,18 @@ viz12.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 
 var $divs = $("div.box");
 
-if (/Mobi/.test(navigator.userAgent)) {
+if($(window).width() > 500){
 $('#numBnt').on('click', function () {
     var numericallyOrderedDivs = $divs.sort(function (a, b) {
         return $(a).find("h2").text() > $(b).find("h2").text();
     });
     $("#viz").html(numericallyOrderedDivs);
-});
+});   
+}else{
+ $('#numBnt').hide();
 }
+
+
 
 
 </script>
