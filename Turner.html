@@ -145,7 +145,7 @@ font-size: x-small !important;
   <div class="container-fluid">
     <div class="navbar-header">
       <p id="load" class="navbar-brand"></p>
-      <button id="numBnt">Numerical</button>
+      <button id="numBnt">Sort</button>
     </div>
   </div>
 </nav>
@@ -499,8 +499,8 @@ var $divs = $("div.box");
 
 function sorted(){
 if($(window).width() < 500){
-$('#numBnt').on('click', function () {
 document.getElementById('load').innerHTML = "Mobile User";
+$('#numBnt').on('click', function () {
     var numericallyOrderedDivs = $divs.sort(function (a, b) {
         return $(a).find("h2").text() > $(b).find("h2").text();
     });
