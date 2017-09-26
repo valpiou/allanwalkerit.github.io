@@ -149,7 +149,7 @@ display:none;
   <div class="container-fluid">
     <div class="navbar-header">
       <p id="load" class="navbar-brand"></p>
-      <button id="numBnt">Sort</button>
+      <button class="btn" id="Sorter">Sort Metrics by Current Weight</button>
     </div>
   </div>
 </nav>
@@ -474,8 +474,7 @@ i=1;
 
 function animate() {
 if(i<=53) {
-$("#numBnt").click();
-window.setTimeout("animate()","5000");
+window.setTimeout("animate()","2000");
 animate1(i);
 i++;
 }
@@ -505,7 +504,7 @@ var $divs = $("div.box");
 function sorted(){
 if($(window).width() < 500){
 document.getElementById('load').innerHTML = "Mobile User";
-$('#numBnt').on('click', function () {
+$('#sorter').on('click', function () {
     var numericallyOrderedDivs = $divs.sort(function (a, b) {
         return $(a).find("h2").text() > $(b).find("h2").text();
     });
@@ -513,7 +512,7 @@ $('#numBnt').on('click', function () {
 });   
 }else{
 document.getElementById('load').innerHTML = "Desktop User";
- $('#numBnt').hide();
+ $('#sorter').hide();
 }
 }
 
