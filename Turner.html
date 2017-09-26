@@ -60,7 +60,72 @@ padding-left: 0;
 list-style-type: none;
 }
 
+#e {
+  transform: rotate(45deg);
+  margin-top: 35.5%;
+  margin-left: 35.5%;
+  height: 0px;
+}
 
+#aa {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  border-right: 5px solid transparent;
+  border-left: 5px solid #777777;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid #777777;
+  margin-top: -140px;
+  margin-left: 55px;
+  animation-name: aa;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linearinout;
+}
+@keyframes aa {
+  0% {
+    transform: rotate(360deg);
+  }
+}
+#bb {
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  border-right: 5px solid transparent;
+  border-left: 5px solid #ffffff;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid #ffffff;
+  margin-left: 45px;
+  animation-name: bb;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  margin-top: -160px;
+}
+@keyframes bb {
+  0% {
+    transform: rotate(360deg);
+  }
+}
+#cc {
+  width: 160px;
+  height: 160px;
+  border-radius: 100%;
+  border-right: 5px solid transparent;
+  border-left: 5px solid #dd1110;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid #dd1110;
+  margin-left: 35px;
+  animation-name: cc;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes cc {
+  0% {
+    transform: rotate(360deg);
+  }
+}
 </style>
 
 
@@ -78,6 +143,12 @@ list-style-type: none;
     </div>
   </div>
 </nav>
+
+<div id="e">
+<div id="cc"></div>
+<div id="bb"></div>
+<div id="aa"></div>
+</div>
   
 <div id="viz" class="container">
 
@@ -151,7 +222,7 @@ list-style-type: none;
 </body>
 
 <script>
-
+$('#viz').hide();
 var a = function tableau1(){
      a = function tableau1(){};
 };
@@ -365,6 +436,8 @@ function tableau12(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+$('#e').hide();
+$('#viz').show();
 animate();
 }
         };
