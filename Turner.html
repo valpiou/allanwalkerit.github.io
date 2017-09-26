@@ -79,7 +79,7 @@ list-style-type: none;
   </div>
 </nav>
   
-<div class="container">
+<div id="viz" class="container">
 
 <div class="row">
 <div class="col-md-4">
@@ -148,9 +148,60 @@ list-style-type: none;
 </div>
 <br><br>
 </div>
-</body>
+</body onload="tableau1">
 
 <script>
+
+$('#viz').hide();
+
+var a = function tableau1(){
+     a = function tableau1(){};
+};
+
+var b = function tableau2(){
+     b = function tableau2(){};
+};
+
+var c = function tableau3(){
+     c = function tableau3(){};
+};
+
+var d = function tableau4(){
+     d = function tableau4(){};
+};
+
+var e = function tableau5(){
+     e = function tableau5(){};
+};
+
+var f = function tableau6(){
+     f = function tableau6(){};
+};
+
+var g = function tableau7(){
+     g = function tableau7(){};
+};
+
+var h = function tableau8(){
+     h = function tableau8(){};
+};
+
+var i = function tableau9(){
+     i = function tableau9(){};
+};
+
+var j = function tableau10(){
+     j = function tableau10(){};
+};
+
+var k = function tableau11(){
+     k = function tableau11(){};
+};
+
+var l = function tableau12(){
+     l = function tableau12(){};
+};
+
 var viz, one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, workbooka, workbookb, workbookc, workbookd, workbooke, workbookf, workbookg, workbookh, workbooki, workbookj, workbookk, workbookl, activeSheet, Worksheet, worksheet;
 var onePh = document.getElementById("tableauViz1");
 var twoPh = document.getElementById("tableauViz2");
@@ -178,167 +229,163 @@ var tenUrl = "https://public.tableau.com/views/TurnerNight/5b?:showVizHome=no&:d
 var elevenUrl = "https://public.tableau.com/views/TurnerNight/6a?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
 var twelveUrl = "https://public.tableau.com/views/TurnerNight/6b?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
 
-var oneOptions = {
-
-    width: "100%",   
-    height: "100%",
-    hideTabs: false,
-    hideToolbar: true,
-    hideSpinner: true,
-
-     onFirstInteractive: function () {
+function tableau1(){
+	var onevizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
 workbooka = viz1.getWorkbook();
-}	
-};
+tableau2();
+}
+        };
+viz1 = new tableauSoftware.Viz(onePh, oneUrl, onevizOptions);
+}
 
-var twoOptions = {
+function tableau2(){
+	var twovizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+workbookb = viz2.getWorkbook();
+tableau3();
+}
+        };
+viz2 = new tableauSoftware.Viz(twoPh, twoUrl, twovizOptions);
+}
 
-    width: "100%",   
-    height: "100%",
-    hideTabs: false,
-    hideToolbar: true,
+function tableau3(){
+	var threevizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+workbookc = viz3.getWorkbook();
+tableau4();
+}
+        };
+viz3 = new tableauSoftware.Viz(threePh, threeUrl, threevizOptions);
+}
 
-     onFirstInteractive: function () {
-workbookb = viz2.getWorkbook();  
-        }	
-      };
-
-var threeOptions = {
-
-    width: "100%",   
-    height: "100%",
-    hideTabs: false,
-    hideToolbar: true,
-
-     onFirstInteractive: function () {
-workbookc = viz3.getWorkbook();  
-        }	
-      };
-
-var fourOptions = {
-
-    width: "100%",   
-    height: "100%",
-    hideTabs: false,
-    hideToolbar: true,
-
-     onFirstInteractive: function () {
+function tableau4(){
+	var fourvizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
 workbookd = viz4.getWorkbook();
-        }	
-      };
+tableau5();
+}
+        };
+viz3 = new tableauSoftware.Viz(fourPh, fourUrl, fourvizOptions);
+}
 
-var fiveOptions = {
-
-    width: "100%",   
-    height: "100%",
-    hideTabs: false,
-    hideToolbar: true,
-
-     onFirstInteractive: function () {
+function tableau5(){
+	var fivevizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
 workbooke = viz5.getWorkbook();
-        }	
-      };
+tableau6();
+}
+        };
+viz3 = new tableauSoftware.Viz(fivePh, fiveUrl, fivevizOptions);
+}
 
-var sixOptions = {
-
-    width: "100%",   
-    height: "100%",
-    hideTabs: false,
-    hideToolbar: true,
-
-     onFirstInteractive: function () {
+function tableau6(){
+	var sixvizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
 workbookf = viz6.getWorkbook();
-        }	
-      };
+tableau7();
+}
+        };
+viz3 = new tableauSoftware.Viz(sixPh, sixUrl, sixvizOptions);
+}
 
-var sevenOptions = {
+function tableau7(){
+	var sevenvizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+workbookg = viz7.getWorkbook();
+tableau8();
+}
+        };
+viz3 = new tableauSoftware.Viz(sevenPh, sevenUrl, sevenvizOptions);
+}
 
-    width: "100%",   
-    height: "100%",
-    hideTabs: false,
-    hideToolbar: true,
-
-     onFirstInteractive: function () {
-workbookg = viz7.getWorkbook();  
-        }	
-      };
-
-var eightOptions = {
-
-    width: "100%",   
-    height: "100%",
-    hideTabs: false,
-    hideToolbar: true,
-
-     onFirstInteractive: function () {
+function tableau8(){
+	var eightvizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
 workbookh = viz8.getWorkbook();
-        }	
-      };
+tableau9();
+}
+        };
+viz3 = new tableauSoftware.Viz(eightPh, eightUrl, eightvizOptions);
+}
 
-var nineOptions = {
-
-    width: "100%",   
-    height: "100%",
-    hideTabs: false,
-    hideToolbar: true,
-
-     onFirstInteractive: function () {
+function tableau9(){
+	var ninevizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
 workbooki = viz9.getWorkbook();
-        }	
-      };
+tableau10();
+}
+        };
+viz3 = new tableauSoftware.Viz(ninePh, nineUrl, ninevizOptions);
+}
 
-var tenOptions = {
-
-    width: "100%",   
-    height: "100%",
-    hideTabs: false,
-    hideToolbar: true,
-
-     onFirstInteractive: function () {
+function tableau10(){
+	var tenvizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
 workbookj = viz10.getWorkbook();
-        }	
-      };
+tableau11();
+}
+        };
+viz3 = new tableauSoftware.Viz(tenPh, tenUrl, tenvizOptions);
+}
 
-var elevenOptions = {
-
-    width: "100%",   
-    height: "100%",
-    hideTabs: false,
-    hideToolbar: true,
-
-     onFirstInteractive: function () {
+function tableau11(){
+	var elevenvizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
 workbookk = viz11.getWorkbook();
-        }	
-      };
+tableau12();
+}
+        };
+viz3 = new tableauSoftware.Viz(elevenPh, elevenUrl, elevenvizOptions);
+}
 
-var twelveOptions = {
-
-    width: "100%",   
-    height: "100%",
-    hideTabs: false,
-    hideToolbar: true,
-
-     onFirstInteractive: function () {
+function tableau12(){
+	var twelvevizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
 workbookl = viz12.getWorkbook();
 animate();
-        }	
-      };
-
-//initiate visualiztions
-
-viz1 = new tableauSoftware.Viz(onePh, oneUrl, oneOptions);
-viz2 = new tableauSoftware.Viz(twoPh, twoUrl, twoOptions);
-viz3 = new tableauSoftware.Viz(threePh, threeUrl, threeOptions);
-viz4 = new tableauSoftware.Viz(fourPh, fourUrl, fourOptions);
-viz5 = new tableauSoftware.Viz(fivePh, fiveUrl, fiveOptions);
-viz6 = new tableauSoftware.Viz(sixPh, sixUrl, sixOptions);
-viz7 = new tableauSoftware.Viz(sevenPh, sevenUrl, sevenOptions);
-viz8 = new tableauSoftware.Viz(eightPh, eightUrl, eightOptions);
-viz9 = new tableauSoftware.Viz(ninePh, nineUrl, nineOptions);
-viz10 = new tableauSoftware.Viz(tenPh, tenUrl, tenOptions);
-viz11 = new tableauSoftware.Viz(elevenPh, elevenUrl, elevenOptions);
-viz12 = new tableauSoftware.Viz(twelvePh, twelveUrl, twelveOptions);
+$('#viz').show();
+}
+        };
+viz12 = new tableauSoftware.Viz(twelvePh, twelveUrl, twelvevizOptions);
 i=1;
+}
 
 function animate() {
 if(i<=53) {
