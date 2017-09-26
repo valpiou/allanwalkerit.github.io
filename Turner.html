@@ -132,9 +132,7 @@ color: #FFFFFF !important;
 font-size: x-small !important;
 }
 
-h2 {
-display:none;
-}
+
 </style>
 
 
@@ -166,10 +164,10 @@ display:none;
 <div class="col-md-4">
 <ul id="list">
 <li>
-<div class="box"><h2>11</h2><div class="bannerhidenumbers"><div id="tableauViz1" class="tableaunumbers"></div></div></div>
+<div class="box"><p>11</p><div class="bannerhidenumbers"><div id="tableauViz1" class="tableaunumbers"></div></div></div>
 </li>
 <li>
-<div class="box"><h2>12</h2><div class="bannerhidelines"><div id="tableauViz2" class="tableaulines"></div></div></div>
+<div class="box"><p>12</p><div class="bannerhidelines"><div id="tableauViz2" class="tableaulines"></div></div></div>
 </li>
 </ul>
 </div>
@@ -178,10 +176,10 @@ display:none;
 <div class="col-md-4">
 <ul id="list">
 <li>
-<div class="box"><h2>9</h2><div class="bannerhidenumbers"><div id="tableauViz3" class="tableaunumbers"></div></div></div>
+<div class="box"><p>9</p><div class="bannerhidenumbers"><div id="tableauViz3" class="tableaunumbers"></div></div></div>
 </li>
 <li>
-<div class="box"><h2>10</h2><div class="bannerhidelines"><div id="tableauViz4" class="tableaulines"></div></div></div>
+<div class="box"><p>10</p><div class="bannerhidelines"><div id="tableauViz4" class="tableaulines"></div></div></div>
 </li>
 </ul>
 </div>
@@ -190,37 +188,23 @@ display:none;
 <div class="col-md-4">
 <ul id="list">
 <li>
-<div class="box"><h2>7</h2><div class="bannerhidenumbers"><div id="tableauViz5" class="tableaunumbers"></div></div></div>
+<div class="box"><p>7</p><div class="bannerhidenumbers"><div id="tableauViz5" class="tableaunumbers"></div></div></div>
 </li>
 <li>
-<div class="box"><h2>8</h2><div class="bannerhidelines"><div id="tableauViz6" class="tableaulines"></div></div></div>
+<div class="box"><p>8</p><div class="bannerhidelines"><div id="tableauViz6" class="tableaulines"></div></div></div>
 </li>
 </ul>
 </div>
 </div>
-
-<br><br>
 
 <div class="row">
 <div class="col-md-4">
 <ul id="list">
 <li>
-<div class="box"><h2>5</h2><div class="bannerhidenumbers"><div id="tableauViz7" class="tableaunumbers"></div></div></div>
+<div class="box"><p>5</p><div class="bannerhidenumbers"><div id="tableauViz7" class="tableaunumbers"></div></div></div>
 </li>
 <li>
-<div class="box"><h2>6</h2><div class="bannerhidelines"><div id="tableauViz8" class="tableaulines"></div></div></div>
-</li>
-</ul>
-</div>
-
-
-<div class="col-md-4">
-<ul id="list">
-<li>
-<div class="box"><h2>3</h2><div class="bannerhidenumbers"><div id="tableauViz9" class="tableaunumbers"></div></div></div>
-</li>
-<li>
-<div class="box"><h2>4</h2><div class="bannerhidelines"><div id="tableauViz10" class="tableaulines"></div></div></div>
+<div class="box"><p>6</p><div class="bannerhidelines"><div id="tableauViz8" class="tableaulines"></div></div></div>
 </li>
 </ul>
 </div>
@@ -228,10 +212,21 @@ display:none;
 <div class="col-md-4">
 <ul id="list">
 <li>
-<div class="box"><h2>1</h2><div class="bannerhidenumbers"><div id="tableauViz11" class="tableaunumbers"></div></div></div>
+<div class="box"><p>3</p><div class="bannerhidenumbers"><div id="tableauViz9" class="tableaunumbers"></div></div></div>
 </li>
 <li>
-<div class="box"><h2>2</h2><div class="bannerhidelines"><div id="tableauViz12" class="tableaulines"></div></div></div>
+<div class="box"><p>4</p><div class="bannerhidelines"><div id="tableauViz10" class="tableaulines"></div></div></div>
+</li>
+</ul>
+</div>
+
+<div class="col-md-4">
+<ul id="list">
+<li>
+<div class="box"><p>1</p><div class="bannerhidenumbers"><div id="tableauViz11" class="tableaunumbers"></div></div></div>
+</li>
+<li>
+<div class="box"><p>2</p><div class="bannerhidelines"><div id="tableauViz12" class="tableaulines"></div></div></div>
 </li>
 </ul>
 </div>
@@ -242,6 +237,7 @@ display:none;
 
 <script>
 $('#viz').hide();
+$('#sorter').hide();
 var a = function tableau1(){
      a = function tableau1(){};
 };
@@ -504,15 +500,16 @@ var $divs = $("div.box");
 function sorted(){
 if($(window).width() < 500){
 document.getElementById('load').innerHTML = "Mobile User";
+$('#sorter').show();
 $('#sorter').on('click', function () {
     var numericallyOrderedDivs = $divs.sort(function (a, b) {
-        return $(a).find("h2").text() > $(b).find("h2").text();
+        return $(a).find("p").text() > $(b).find("p").text();
     });
     $("#viz").html(numericallyOrderedDivs);
 });   
 }else{
 document.getElementById('load').innerHTML = "Desktop User";
- $('#sorter').hide();
+$('#sorter').hide();
 }
 }
 
