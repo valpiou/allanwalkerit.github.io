@@ -435,6 +435,7 @@ function tableau11(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+document.getElementById('load').innerHTML = "Loading Emergency Calls";
 tableau12();
 }
         };
@@ -447,7 +448,6 @@ function tableau12(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-document.getElementById('load').innerHTML = "Loading Emergency Calls";
 $('#e').hide();
 $('#viz').show();
 animate();
