@@ -319,6 +319,7 @@ function tableau1(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+sorted();
 tableau2();
 }
         };
@@ -460,7 +461,6 @@ function tableau12(){
             onFirstInteractive: function() {
 $('#e').hide();
 $('#viz').show();
-sorted();
 animate();
 }
         };
@@ -498,8 +498,9 @@ viz12.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 var $divs = $("div.box");
 
 function sorted(){
-if($(window).width() > 500){
+if($(window).width() < 500){
 $('#numBnt').on('click', function () {
+document.getElementById('load').innerHTML = "Mobile detected!";
     var numericallyOrderedDivs = $divs.sort(function (a, b) {
         return $(a).find("h2").text() > $(b).find("h2").text();
     });
