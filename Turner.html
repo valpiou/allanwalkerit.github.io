@@ -500,13 +500,14 @@ var $divs = $("div.box");
 function sorted(){
 if($(window).width() < 500){
 $('#numBnt').on('click', function () {
-document.getElementById('load').innerHTML = "Mobile detected!";
+document.getElementById('load').innerHTML = "Mobile User";
     var numericallyOrderedDivs = $divs.sort(function (a, b) {
         return $(a).find("h2").text() > $(b).find("h2").text();
     });
     $("#viz").html(numericallyOrderedDivs);
 });   
 }else{
+document.getElementById('load').innerHTML = "Desktop User";
  $('#numBnt').hide();
 }
 }
