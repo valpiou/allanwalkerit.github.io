@@ -315,19 +315,13 @@ i=-1;
 }
 
 function animate1(a) {
-if (a=1) {
-console.log(a);
-} else {
-if (a=2) {
-console.log(a);
-}
-}
 viz1.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz2.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz3.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz4.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz5.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz6.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
+console.log(a);
 }
 
 var $divs = $("div.box");
