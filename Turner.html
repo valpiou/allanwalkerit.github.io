@@ -128,8 +128,9 @@ font-size: x-small !important;
 <nav id="nav" class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <p id="load" class="navbar-brand"></p>
+      <p id="load">Status</p>
       <button id="sorter" class="btn">Sort Metrics by Current Weight</button>
+      <p id="timer">Timer</p>
     </div>
   </div>
 </nav>
@@ -321,7 +322,7 @@ viz3.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz4.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz5.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz6.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
-console.log(a);
+document.getElementById('timer').innerHTML = a;
 }
 
 var $divs = $("div.box");
