@@ -321,6 +321,7 @@ i=-1;
 }
 
 function animate1(a) {
+document.getElementById('timer').innerHTML = a;
 viz1.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz2.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz3.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
@@ -350,8 +351,7 @@ $('p').hide();
 }
 
 function evaluate(){
-document.getElementById('timer').innerHTML = a;
-var text = $('#timer').text()
+var text = $('#timer').text();
 if (text="1") {
 document.getElementById('load').innerHTML = "1";   
 } 
