@@ -114,6 +114,11 @@ color: #FFFFFF !important;
 font-size: x-small !important;
 }
 
+h5 {
+color: #FFFFFF !important;
+font-size: x-small !important;
+}
+
 
 </style>
 
@@ -130,7 +135,7 @@ font-size: x-small !important;
     <div class="navbar-header">
       <p id="load">Status</p>
       <button id="sorter" class="btn">Sort Metrics by Current Weight</button>
-      <p id="timer">Timer</p>
+      <h5 id="timer">Timer</h5>
     </div>
   </div>
 </nav>
@@ -316,13 +321,13 @@ i=-1;
 }
 
 function animate1(a) {
+document.getElementById('timer').innerHTML = a;
 viz1.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz2.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz3.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz4.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz5.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz6.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
-document.getElementById('timer').innerHTML = a;
 }
 
 var $divs = $("div.box");
