@@ -313,6 +313,7 @@ if(i<=53) {
 window.setTimeout("animate()","2000");
 animate1(i);
 i++;
+evaluate();
 }
 if(i>=53) {
 i=-1;
@@ -328,7 +329,6 @@ viz3.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz4.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz5.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz6.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
-evaluate();
 }
 
 var $divs = $("div.box");
