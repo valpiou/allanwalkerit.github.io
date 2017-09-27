@@ -328,6 +328,7 @@ viz3.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz4.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz5.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz6.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
+var text = $('#timer').text();
 evaluate();
 }
 
@@ -351,7 +352,6 @@ $('p').hide();
 }
 
 function evaluate(){
-var text = $('#timer').text();
 if (text="1") {
 document.getElementById('load').innerHTML = "1";   
 } 
