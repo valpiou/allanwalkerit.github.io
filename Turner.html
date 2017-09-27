@@ -30,34 +30,16 @@ border-radius: 0px;
 background-color: #000000 !important;
 }
 
-.bannerhidenumbers {
-height:180px;
+.bannerhide {
+height:380px;
 overflow:hidden;
 width:90%;
 margin: 0 auto;
 }
-.tableaunumbers {
-height:250px;
+.tableau {
+height:450px;
 width:90%;
 margin: 0 auto;
-}
-
-.bannerhidelines {
-height:85px;
-overflow:hidden;
-width:90%;
-margin: 0 auto;
-}
-.tableaulines {
-height:150px;
-width:90%;
-margin: 0 auto;
-}
-
-ul#list {
-padding-left: 0;
--webkit-padding-start: 0;
-list-style-type: none;
 }
 
 #e {
@@ -162,73 +144,31 @@ font-size: x-small !important;
 
 <div class="row">
 <div class="col-md-4">
-<ul id="list">
-<li>
-<div class="box"><p>6</p><div class="bannerhidenumbers"><div id="tableauViz1" class="tableaunumbers"></div></div></div>
-</li>
-<li>
-<div class="bannerhidelines"><div id="tableauViz2" class="tableaulines"></div></div>
-</li>
-</ul>
+<div class="box"><p>6</p><div class="bannerhide"><div id="tableauViz1" class="tableau"></div></div></div>
 </div>
 
 
 <div class="col-md-4">
-<ul id="list">
-<li>
-<div class="box"><p>5</p><div class="bannerhidenumbers"><div id="tableauViz3" class="tableaunumbers"></div></div></div>
-</li>
-<li>
-<div class="bannerhidelines"><div id="tableauViz4" class="tableaulines"></div></div>
-</li>
-</ul>
+<div class="box"><p>5</p><div class="bannerhide"><div id="tableauViz3" class="tableau"></div></div></div>
 </div>
 
 
 <div class="col-md-4">
-<ul id="list">
-<li>
-<div class="box"><p>4</p><div class="bannerhidenumbers"><div id="tableauViz5" class="tableaunumbers"></div></div></div>
-</li>
-<li>
-<div class="bannerhidelines"><div id="tableauViz6" class="tableaulines"></div></div>
-</li>
-</ul>
+<div class="box"><p>4</p><div class="bannerhide"><div id="tableauViz5" class="tableau"></div></div></div>
 </div>
 </div>
 
 <div class="row">
 <div class="col-md-4">
-<ul id="list">
-<li>
-<div class="box"><p>3</p><div class="bannerhidenumbers"><div id="tableauViz7" class="tableaunumbers"></div></div></div>
-</li>
-<li>
-<div class="bannerhidelines"><div id="tableauViz8" class="tableaulines"></div></div>
-</li>
-</ul>
+<div class="box"><p>3</p><div class="bannerhide"><div id="tableauViz7" class="tableau"></div></div></div>
 </div>
 
 <div class="col-md-4">
-<ul id="list">
-<li>
-<div class="box"><p>2</p><div class="bannerhidenumbers"><div id="tableauViz9" class="tableaunumbers"></div></div></div>
-</li>
-<li>
-<div class="bannerhidelines"><div id="tableauViz10" class="tableaulines"></div></div>
-</li>
-</ul>
+<div class="box"><p>2</p><div class="bannerhide"><div id="tableauViz9" class="tableau"></div></div></div>
 </div>
 
 <div class="col-md-4">
-<ul id="list">
-<li>
-<div class="box"><p>1</p><div class="bannerhidenumbers"><div id="tableauViz11" class="tableaunumbers"></div></div></div>
-</li>
-<li>
-<div class="bannerhidelines"><div id="tableauViz12" class="tableaulines"></div></div>
-</li>
-</ul>
+<div class="box"><p>1</p><div class="bannerhide"><div id="tableauViz11" class="tableau"></div></div></div>
 </div>
 </div>
 <br><br>
@@ -262,56 +202,22 @@ var f = function tableau6(){
      f = function tableau6(){};
 };
 
-var g = function tableau7(){
-     g = function tableau7(){};
-};
 
-var h = function tableau8(){
-     h = function tableau8(){};
-};
 
-var i = function tableau9(){
-     i = function tableau9(){};
-};
-
-var j = function tableau10(){
-     j = function tableau10(){};
-};
-
-var k = function tableau11(){
-     k = function tableau11(){};
-};
-
-var l = function tableau12(){
-     l = function tableau12(){};
-};
-
-var viz, one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, workbooka, workbookb, workbookc, workbookd, workbooke, workbookf, workbookg, workbookh, workbooki, workbookj, workbookk, workbookl, activeSheet, Worksheet, worksheet;
+var viz, one, two, three, four, five, six, workbooka, workbookb, workbookc, workbookd, workbooke, workbookf, activeSheet, Worksheet, worksheet;
 var onePh = document.getElementById("tableauViz1");
 var twoPh = document.getElementById("tableauViz2");
 var threePh = document.getElementById("tableauViz3");
 var fourPh = document.getElementById("tableauViz4");
 var fivePh = document.getElementById("tableauViz5");
 var sixPh = document.getElementById("tableauViz6");
-var sevenPh = document.getElementById("tableauViz7");
-var eightPh = document.getElementById("tableauViz8");
-var ninePh = document.getElementById("tableauViz9");
-var tenPh = document.getElementById("tableauViz10");
-var elevenPh = document.getElementById("tableauViz11");
-var twelvePh = document.getElementById("tableauViz12");
 
-var oneUrl = "https://public.tableau.com/views/TurnerNight/1a?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
-var twoUrl = "https://public.tableau.com/views/TurnerNight/1b?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
-var threeUrl = "https://public.tableau.com/views/TurnerNight/2a?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
-var fourUrl = "https://public.tableau.com/views/TurnerNight/2b?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
-var fiveUrl = "https://public.tableau.com/views/TurnerNight/3a?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
-var sixUrl = "https://public.tableau.com/views/TurnerNight/3b?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
-var sevenUrl = "https://public.tableau.com/views/TurnerNight/4a?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
-var eightUrl = "https://public.tableau.com/views/TurnerNight/4b?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
-var nineUrl = "https://public.tableau.com/views/TurnerNight/5a?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
-var tenUrl = "https://public.tableau.com/views/TurnerNight/5b?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
-var elevenUrl = "https://public.tableau.com/views/TurnerNight/6a?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
-var twelveUrl = "https://public.tableau.com/views/TurnerNight/6b?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
+var oneUrl = "https://public.tableau.com/views/TurnerNight/1?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
+var twoUrl = "https://public.tableau.com/views/TurnerNight/2?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
+var threeUrl = "https://public.tableau.com/views/TurnerNight/3?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
+var fourUrl = "https://public.tableau.com/views/TurnerNight/4?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
+var fiveUrl = "https://public.tableau.com/views/TurnerNight/5?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes"; 
+var sixUrl = "https://public.tableau.com/views/TurnerNight/6?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes";
 
 function tableau1(){
 	var onevizOptions = {
@@ -319,6 +225,7 @@ function tableau1(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+document.getElementById('load').innerHTML = "Loading Current Calls";
 tableau2();
 }
         };
@@ -331,7 +238,7 @@ function tableau2(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-document.getElementById('load').innerHTML = "Loading Current Calls";
+document.getElementById('load').innerHTML = "Loading Escalating Calls";
 tableau3();
 }
         };
@@ -344,6 +251,7 @@ function tableau3(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+document.getElementById('load').innerHTML = "Loading Dropped Calls";
 tableau4();
 }
         };
@@ -356,7 +264,7 @@ function tableau4(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-document.getElementById('load').innerHTML = "Loading Escalating Calls";
+document.getElementById('load').innerHTML = "Loading Staff Idle";
 tableau5();
 }
         };
@@ -369,6 +277,7 @@ function tableau5(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+document.getElementById('load').innerHTML = "Loading Staff on Calls";
 tableau6();
 }
         };
@@ -381,92 +290,17 @@ function tableau6(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-document.getElementById('load').innerHTML = "Loading Dropped Calls";
-tableau7();
-}
-        };
-viz6 = new tableauSoftware.Viz(sixPh, sixUrl, sixvizOptions);
-
-}
-
-function tableau7(){
-	var sevenvizOptions = {
-	width: "100%",
-	height: "100%",
-            hideTabs: false,
-            onFirstInteractive: function() {
-tableau8();
-}
-        };
-viz7 = new tableauSoftware.Viz(sevenPh, sevenUrl, sevenvizOptions);
-}
-
-function tableau8(){
-	var eightvizOptions = {
-	width: "100%",
-	height: "100%",
-            hideTabs: false,
-            onFirstInteractive: function() {
-document.getElementById('load').innerHTML = "Loading Staff Idle";
-tableau9();
-}
-        };
-viz8 = new tableauSoftware.Viz(eightPh, eightUrl, eightvizOptions);
-}
-
-function tableau9(){
-	var ninevizOptions = {
-	width: "100%",
-	height: "100%",
-            hideTabs: false,
-            onFirstInteractive: function() {
-tableau10();
-}
-        };
-viz9 = new tableauSoftware.Viz(ninePh, nineUrl, ninevizOptions);
-}
-
-function tableau10(){
-	var tenvizOptions = {
-	width: "100%",
-	height: "100%",
-            hideTabs: false,
-            onFirstInteractive: function() {
-document.getElementById('load').innerHTML = "Loading Staff on Calls";
-tableau11();
-}
-        };
-viz10 = new tableauSoftware.Viz(tenPh, tenUrl, tenvizOptions);
-}
-
-function tableau11(){
-	var elevenvizOptions = {
-	width: "100%",
-	height: "100%",
-            hideTabs: false,
-            onFirstInteractive: function() {
 document.getElementById('load').innerHTML = "Loading Emergency Calls";
-tableau12();
-}
-        };
-viz11 = new tableauSoftware.Viz(elevenPh, elevenUrl, elevenvizOptions);
-}
-
-function tableau12(){
-	var twelvevizOptions = {
-	width: "100%",
-	height: "100%",
-            hideTabs: false,
-            onFirstInteractive: function() {
 $('#e').hide();
 $('#viz').show();
 sorted();
 animate();
 }
         };
-viz12 = new tableauSoftware.Viz(twelvePh, twelveUrl, twelvevizOptions);
+viz6 = new tableauSoftware.Viz(sixPh, sixUrl, sixvizOptions);
 i=1;
 }
+
 
 function animate() {
 if(i<=53) {
@@ -487,12 +321,6 @@ viz3.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz4.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz5.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz6.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
-viz7.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
-viz8.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
-viz9.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
-viz10.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
-viz11.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
-viz12.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 }
 
 var $divs = $("div.box");
