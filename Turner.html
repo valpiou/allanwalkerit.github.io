@@ -328,35 +328,16 @@ viz3.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz4.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz5.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz6.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
-if (a="1") {
-document.getElementById('load').innerHTML = "1";   
-} 
-if (a="2") {
-document.getElementById('load').innerHTML = "2";    
-} 
-if (a="3") {
-document.getElementById('load').innerHTML = "3";    
-} 
-if (a="4") {
-document.getElementById('load').innerHTML = "4";    
-} 
-if (a="5") {
-document.getElementById('load').innerHTML = "5";    
-} 
-if (a="6") {
-document.getElementById('load').innerHTML = "6";    
-} 
-if (a="7") {
-document.getElementById('load').innerHTML = "7";    
-} 
-if (a="8") {
-document.getElementById('load').innerHTML = "8";    
-} 
-if (a="9") {
-document.getElementById('load').innerHTML = "9";    
-} 
-if (a="10") {
-document.getElementById('load').innerHTML = "10";    
+switch (a)
+{
+   case "1":
+   case "2":
+   case "3": 
+       alert('Hey');
+       break;
+
+   default: 
+       alert('Default case');
 }
 }
 
