@@ -42,7 +42,7 @@ width:90%;
 margin: 0 auto;
 }
 
-#e {
+#ee {
   transform: rotate(45deg);
   margin-top: 35.5%;
   margin-left: 35.5%;
@@ -140,7 +140,7 @@ font-size: x-small !important;
   </div>
 </nav>
 
-<div id="e">
+<div id="ee">
 <div id="cc"></div>
 <div id="bb"></div>
 <div id="aa"></div>
@@ -297,7 +297,7 @@ function tableau6(){
             hideTabs: false,
             onFirstInteractive: function() {
 document.getElementById('load').innerHTML = "Loading Emergency Calls";
-$('#e').hide();
+$('#ee').hide();
 $('#viz').show();
 sorted();
 animate();
@@ -321,7 +321,6 @@ i=-1;
 }
 
 function animate1(a) {
-document.getElementById('timer').innerHTML = a;
 viz1.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz2.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz3.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
