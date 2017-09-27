@@ -328,6 +328,7 @@ viz3.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz4.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz5.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz6.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
+evaluate();
 }
 
 var $divs = $("div.box");
@@ -349,7 +350,10 @@ $('p').hide();
 }
 }
 
-
+function evaluate(){
+console.log("Yippee");
+var x = document.getElementById('timer');
+}
 
 </script>
 </html>
