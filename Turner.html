@@ -150,31 +150,31 @@ font-size: x-small !important;
 
 <div class="row">
 <div class="col-md-4">
-<div class="box"><h5>Rank of Current Weight: </h5><p id="a"></p><div class="bannerhide"><div id="tableauViz1" class="tableau"></div></div></div>
+<div class="box"><h5>Rank: </h5><p id="a"></p><div class="bannerhide"><div id="tableauViz1" class="tableau"></div></div></div>
 </div>
 
 
 <div class="col-md-4">
-<div class="box"><h5>Rank of Current Weight: </h5><p id="b"></p><div class="bannerhide"><div id="tableauViz2" class="tableau"></div></div></div>
+<div class="box"><h5>Rank: </h5><p id="b"></p><div class="bannerhide"><div id="tableauViz2" class="tableau"></div></div></div>
 </div>
 
 
 <div class="col-md-4">
-<div class="box"><h5>Rank of Current Weight: </h5><p id="c"></p><div class="bannerhide"><div id="tableauViz3" class="tableau"></div></div></div>
+<div class="box"><h5>Rank: </h5><p id="c"></p><div class="bannerhide"><div id="tableauViz3" class="tableau"></div></div></div>
 </div>
 </div>
 
 <div class="row">
 <div class="col-md-4">
-<div class="box"><h5>Rank of Current Weight: </h5><p id="d"></p><div class="bannerhide"><div id="tableauViz4" class="tableau"></div></div></div>
+<div class="box"><h5>Rank: </h5><p id="d"></p><div class="bannerhide"><div id="tableauViz4" class="tableau"></div></div></div>
 </div>
 
 <div class="col-md-4">
-<div class="box"><h5>Rank of Current Weight: </h5><p id="e"></p><div class="bannerhide"><div id="tableauViz5" class="tableau"></div></div></div>
+<div class="box"><h5>Rank: </h5><p id="e"></p><div class="bannerhide"><div id="tableauViz5" class="tableau"></div></div></div>
 </div>
 
 <div class="col-md-4">
-<div class="box"><h5>Rank of Current Weight: </h5><p id="f"></p><div class="bannerhide"><div id="tableauViz6" class="tableau"></div></div></div>
+<div class="box"><h5>Rank: </h5><p id="f"></p><div class="bannerhide"><div id="tableauViz6" class="tableau"></div></div></div>
 </div>
 </div>
 <br><br>
@@ -321,6 +321,7 @@ i=-1;
 }
 
 function animate1(a) {
+document.getElementById('timer').innerHTML = a;
 viz1.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz2.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
 viz3.getWorkbook().changeParameterValueAsync("ANIMATE", [a]);
