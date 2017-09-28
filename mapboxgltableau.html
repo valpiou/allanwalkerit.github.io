@@ -80,7 +80,8 @@ var popup = new mapboxgl.Popup()
         .setHTML(country+' GDP:'+'<br><br>'+'<div id="tableauViz1"></div>')
         .addTo(map);
 	tableau();
-	param();
+        var x = country;
+        viz1.changeParameterValueAsync("COUNTRY", [x]);
 });
 
 function tableau() {
@@ -95,11 +96,6 @@ var params="&:showVizHome=no&:display_spinner=n&:jsdebug=n&:embed=y&:display_ove
 }
         };
 viz1 = new tableauSoftware.Viz(onePh, oneUrl + params, vizOptions);
-}
-
-function param() {
-var x = country;
-viz1.changeParameterValueAsync("COUNTRY", [x]);
 }
 
 </script>
