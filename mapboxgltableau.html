@@ -82,7 +82,6 @@ var popup = new mapboxgl.Popup()
         .addTo(map);
 document.getElementById("country").innerHTML = country;
 	tableau();
-        param();
 });
 
 function tableau() {
@@ -94,14 +93,11 @@ var params="&:showVizHome=no&:display_spinner=n&:jsdebug=n&:embed=y&:display_ove
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+var x = document.getElementById("country").innerHTML;
+viz1.getWorkbook().changeParameterValueAsync("COUNTRY", [x]);
 }
         };
 viz1 = new tableauSoftware.Viz(onePh, oneUrl + params, vizOptions);
-}
-
-function param() {
-        var x = document.getElementById("country").innerHTML;
-        viz1.getWorkbook().changeParameterValueAsync("COUNTRY", [x]);
 }
 
 </script>
