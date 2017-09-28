@@ -3,7 +3,7 @@
 <head>
 <meta charset='utf-8' />
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<title>Mapbox GL d3</title>
+<title>Mapbox GL Tableau</title>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -101,7 +101,7 @@ viz1 = new tableauSoftware.Viz(onePh, oneUrl + params, vizOptions);
 
 function param() {
         var x = document.getElementById("country").innerHTML;
-        viz1.changeParameterValueAsync("COUNTRY", [x]);
+        viz1.getWorkbook().changeParameterValueAsync("COUNTRY", [x]);
 }
 
 </script>
