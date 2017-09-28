@@ -79,6 +79,7 @@ var popup = new mapboxgl.Popup()
         .setLngLat(map.unproject(e.point))
         .setHTML(country+' GDP:'+'<br><br>'+'<div id="tableauViz1"></div>')
         .addTo(map);
+	tableau();
 	param();
 });
 
