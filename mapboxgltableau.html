@@ -43,6 +43,7 @@ margin: 0 auto;
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="https://www.mapbox.com/">Mapbox & Tableau</a>
+      <div id="country"></div>
     </div>
   </div>
 </nav>
@@ -79,9 +80,9 @@ var popup = new mapboxgl.Popup()
         .setLngLat(map.unproject(e.point))
         .setHTML(country+' GDP:'+'<br><br>'+'<div id="tableauViz1"></div>')
         .addTo(map);
+document.getElementById("country").innerHTML = country;
 	tableau();
-        var x = country;
-        viz1.changeParameterValueAsync("COUNTRY", [x]);
+        param();
 });
 
 function tableau() {
@@ -96,6 +97,11 @@ var params="&:showVizHome=no&:display_spinner=n&:jsdebug=n&:embed=y&:display_ove
 }
         };
 viz1 = new tableauSoftware.Viz(onePh, oneUrl + params, vizOptions);
+}
+
+function param() {
+        var x = document.getElementById("country").innerHTML;
+        viz1.changeParameterValueAsync("COUNTRY", [x]);
 }
 
 </script>
