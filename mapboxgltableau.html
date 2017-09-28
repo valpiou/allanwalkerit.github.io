@@ -98,7 +98,8 @@ viz1 = new tableauSoftware.Viz(onePh, oneUrl + params, vizOptions);
 }
 
 function param() {
-viz1.changeParameterValueAsync("COUNTRY", [country]);
+var x = country;
+viz1.changeParameterValueAsync("COUNTRY", [x]);
 }
 
 </script>
