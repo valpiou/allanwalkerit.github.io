@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<title>Mapbox GL d3</title>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://public.tableau.com/javascripts/api/tableau-2.0.0.min.js" type="text/javascript"></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<style>
+
+html, body {
+height:100%;
+}
+
+.navbar {
+border-radius: 0px;
+height: 50px;
+min-height: 50px;
+}
+
+#map{
+width:100%;
+height:calc(100% - 100px);
+height:-moz-calc(100% - 100px);
+height:-webkit-calc(100% - 100px);
+}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://www.mapbox.com/">Mapbox & Tableau</a>
+    </div>
+  </div>
+</nav>
+
+<div id='map'></div>
+</body>
+
+<script>
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/allanwalkerit/cj788k1js714b2smvrv3s6dlj?fresh=true',
+    center: [0,18],
+    zoom: 1.5,
+    pitch: 40,
+    bearing: 0
+});
+
+var nav = new mapboxgl.NavigationControl();
+map.addControl(nav, 'top-left');
+map.on('click', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['data-aey09o'] });
+    if (!features.length) {
+        return;
+    }
+var feature = features[0];
+var featuredata = feature.properties.JSON;
+var country = feature.properties.Country;
+var popup = new mapboxgl.Popup()
+        .setLngLat(map.unproject(e.point))
+        .setHTML(country+' GDP:'+'<br><br>'+'<div id="tableauViz1"></div>')
+        .addTo(map);
+
+var viz, one, workbook, activeSheet, Worksheet, worksheet;
+    $(function() {
+        var onePh = document.getElementById("tableauViz1");
+        var oneUrl = "https://public.tableau.com/views/MapboxTableau/Dashboard1?:showVizHome=no&:display_spinner=no&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=yes&:animate_transition=yes";
+
+        var oneOptions = {
+            width: "100%",
+            height: "100%",
+            hideTabs: false,
+            hideToolbar: true,
+            onFirstInteractive: function() {
+}
+        };      
+viz1 = new tableauSoftware.Viz(onePh, oneUrl, oneOptions);
+    });
+});
+;
+</script>
+</html>
