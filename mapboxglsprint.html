@@ -90,7 +90,7 @@ document.getElementById("population").innerHTML = population;
 
 function tableau() {
         var onePh = document.getElementById("tableauViz1");
-        var oneUrl = "https://public.tableau.com/views/MapboxSprintingCountries/Dashboard?";
+        var oneUrl = "https://public.tableau.com/views/MapboxSprint/Dashboard?";
 var params="&:showVizHome=no&:display_spinner=n&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes";
 	var vizOptions = {
 	width: "100%",
@@ -98,7 +98,9 @@ var params="&:showVizHome=no&:display_spinner=n&:jsdebug=n&:embed=y&:display_ove
             hideTabs: false,
             onFirstInteractive: function() {
 var x = document.getElementById("country").innerHTML;
+var y = document.getElementById("population").innerHTML;
 viz1.getWorkbook().changeParameterValueAsync("COUNTRY", [x]);
+viz1.getWorkbook().changeParameterValueAsync("POPULATION", [x]);
 }
         };
 viz1 = new tableauSoftware.Viz(onePh, oneUrl + params, vizOptions);
