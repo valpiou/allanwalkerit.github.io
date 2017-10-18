@@ -100,7 +100,7 @@ var params="&:showVizHome=no&:display_spinner=n&:jsdebug=n&:embed=y&:display_ove
 var x = document.getElementById("country").innerHTML;
 var y = document.getElementById("population").innerHTML;
 viz1.getWorkbook().changeParameterValueAsync("COUNTRY", [x]);
-viz1.getWorkbook().changeParameterValueAsync("POPULATION", [x]);
+viz1.getWorkbook().changeParameterValueAsync("POPULATION", [y]);
 }
         };
 viz1 = new tableauSoftware.Viz(onePh, oneUrl + params, vizOptions);
