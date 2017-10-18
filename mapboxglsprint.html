@@ -77,6 +77,11 @@ transition: margin-left .5s;
     width:100%;
 }
 
+#map {
+height:100%;
+width:100%;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -98,7 +103,9 @@ transition: margin-left .5s;
 <div id='hidden'><p id="country"></p>
 <p id="population"></p></div>
 <span id="hamburger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-<div id='main'></div>
+<div id='main'>
+<div id='map'></div>
+</div>
 </body>
 
 <script>
@@ -109,7 +116,7 @@ var a = function tableau(){
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
-    container: 'main',
+    container: 'map',
     style: 'mapbox://styles/allanwalkersprinting/cj8vvkzltekpe2rs58bxpvrlp?optimize=true',
     center: [0,18],
     zoom: 1.5,
