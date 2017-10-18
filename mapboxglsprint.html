@@ -71,7 +71,7 @@ var map = new mapboxgl.Map({
 var nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'top-left');
 map.on('click', function (e) {
-    var features = map.queryRenderedFeatures(e.point, { layers: ['countries_name'] });
+    var features = map.queryRenderedFeatures(e.point, { layers: ['countries_data'] });
     if (!features.length) {
         return;
     }
