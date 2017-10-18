@@ -75,6 +75,21 @@ width:100%;
   .sidenav a {font-size: 18px;}
 }
 
+ul#list {
+padding-left: 0;
+-webkit-padding-start: 0;
+list-style-type: none;
+}
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
 </style>
 </head>
 <body>
@@ -83,14 +98,14 @@ width:100%;
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <div id ="UIControls" class="row">
 <div class="col-md-6">
-<ul>
+<ul id="list">
 <li>Mapbox Logo</li>
 <li>Add Chart Button</li>
 </ul>
 </div>
 </div>
 
-<hr><hr>
+<hr>
 
 <div id ="UIControls" class="logos1">
 <div class="col-md-4">Tableau</div>
