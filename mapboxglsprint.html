@@ -35,7 +35,7 @@ margin: 0 auto;
 
 p {
 color:#FFFFFF;
-font-size:xx-small;
+font-size:0px;
 }
 
 </style>
@@ -73,6 +73,7 @@ map.on('click', function (e) {
 var feature = features[0];
 console.log(JSON.stringify(feature));
 var country = feature.properties.NAME;
+var population = feature.properties.POP_EST;
 var popup = new mapboxgl.Popup()
         .setLngLat(map.unproject(e.point))
         .setHTML(country+' Population:'+'<br><br>'+'<div id="tableauViz1"></div>')
