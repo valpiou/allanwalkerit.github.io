@@ -24,14 +24,12 @@ min-height: 50px;
 
 #map{
 width:100%;
-height:calc(100% - 100px);
-height:-moz-calc(100% - 100px);
-height:-webkit-calc(100% - 100px);
+height:100%;
 }
 
 #tableauViz1 {
-height:300px;
-width:300px;
+height:250px;
+width:250px;
 margin: 0 auto;
 }
 
@@ -61,7 +59,7 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/allanwalkersprinting/cj8vvkzltekpe2rs58bxpvrlp?fresh=true',
     center: [0,18],
     zoom: 1.5,
-    pitch: 40,
+    pitch: 0,
     bearing: 0
 });
 
