@@ -24,13 +24,17 @@ min-height: 50px;
 
 #map{
 width:100%;
-height:100%;
+height:98%;
 }
 
 #tableauViz1 {
 height:250px;
 width:250px;
 margin: 0 auto;
+}
+
+#hidden {
+display:none;
 }
 
 p {
@@ -43,7 +47,8 @@ font-size:0px;
 <body>
 
 
-<p id="country"></p>
+<div id='hidden'><p id="country"></p>
+<p id="population"></p></div>
 <div id='map'></div>
 </body>
 
@@ -79,6 +84,7 @@ var popup = new mapboxgl.Popup()
         .setHTML(country+' Population:'+'<br><br>'+'<div id="tableauViz1"></div>')
         .addTo(map);
 document.getElementById("country").innerHTML = country;
+document.getElementById("population").innerHTML = population;
 	tableau();
 });
 
