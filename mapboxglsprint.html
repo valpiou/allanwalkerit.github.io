@@ -54,7 +54,7 @@ font-size:0px;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #000000;
     display: block;
     transition: 0.3s;
 }
@@ -88,16 +88,16 @@ transition: margin-left .5s;
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  <a href="#">Mapbox</a>
+  <a href="#">Server Name:</a>
+  <a href="#">Workbook Name:</a>
+  <a href="#">Dashboard Name:</a>
 </div>
 
 
 <div id='hidden'><p id="country"></p>
 <p id="population"></p></div>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<span id="hamburger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 <div id='main'></div>
 </body>
 
@@ -160,11 +160,14 @@ viz1 = new tableauSoftware.Viz(onePh, oneUrl + params, vizOptions);
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
+$('#hamburger').hide();
+
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
+$('#hamburger').show();
 }
 </script>
 </html>
