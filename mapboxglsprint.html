@@ -44,7 +44,7 @@ font-size:0px;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(255,255,255, 0.75);
+    background-color: rgba(255,255,255, 1);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -167,14 +167,11 @@ viz1 = new tableauSoftware.Viz(onePh, oneUrl + params, vizOptions);
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
-$('#hamburger').hide();
-
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
-$('#hamburger').show();
 }
 </script>
 </html>
