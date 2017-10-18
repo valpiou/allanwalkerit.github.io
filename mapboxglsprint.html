@@ -104,10 +104,8 @@ body {
 
 <div id='hidden'><p id="country"></p>
 <p id="population"></p></div>
-<div id='main'>
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-<div id='map'></div>
-</div>
+<div id='main'></div>
 </body>
 
 <script>
@@ -118,7 +116,7 @@ var a = function tableau(){
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
-    container: 'map',
+    container: 'main',
     style: 'mapbox://styles/allanwalkersprinting/cj8vvkzltekpe2rs58bxpvrlp?fresh=true',
     center: [0,18],
     zoom: 1.5,
