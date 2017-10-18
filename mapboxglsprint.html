@@ -24,7 +24,7 @@ min-height: 50px;
 
 #map{
 width:100%;
-height:98%;
+height:100%;
 }
 
 #tableauViz1 {
@@ -81,7 +81,7 @@ var country = feature.properties.NAME;
 var population = feature.properties.POP_EST;
 var popup = new mapboxgl.Popup()
         .setLngLat(map.unproject(e.point))
-        .setHTML(country+' Population:'+'<br><br>'+'<div id="tableauViz1"></div>')
+        .setHTML(country+' Population:'+ population +'<br><br>'+'<div id="tableauViz1"></div>')
         .addTo(map);
 document.getElementById("country").innerHTML = country;
 document.getElementById("population").innerHTML = population;
