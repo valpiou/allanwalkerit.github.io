@@ -81,7 +81,7 @@ map.on('click', function (e) {
     }
 var feature = features[0];
 console.log(JSON.stringify(feature));
-var country = feature.properties.name;
+var country = feature.properties.NAME;
 var popup = new mapboxgl.Popup()
         .setLngLat(map.unproject(e.point))
         .setHTML(country+' GDP:'+'<br><br>'+'<div id="tableauViz1"></div>')
