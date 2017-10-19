@@ -291,7 +291,8 @@ $( "#style" ).change(function() {
 });
 
 function style(propValue){
-alert("change style to this value: "+propValue);
+alert("changing style to this value: "+propValue);
+map.setStyle(propValue);
 };
 </script>
 </html>
