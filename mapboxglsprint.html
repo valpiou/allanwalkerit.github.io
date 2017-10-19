@@ -48,7 +48,7 @@ font-size:0px;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-font-size:xx-small;
+font-size:small;
 margin-left:5px;
 }
 
@@ -141,13 +141,47 @@ hr {
 <hr>
 
 <div id ="Inputs" class="row">
-<div class="col-md-12">
+<div class="col-md-6">
 <ul id="list">
 <li>Server Name: </li>
 <li>Workbook Name: </li>
 <li>Dashboard Name: </li>
 <li>Data Source: </li>
 <li>Filter: </li>
+</ul>
+</div>
+<div class="col-md-6">
+<ul id="list">
+<li>
+<select class="form-control" id="servername">
+        <option>Tableau Public</option>
+        <option>Your Company Server</option>
+      </select>
+</li>
+<li>
+<select class="form-control" id="workbookname">
+        <option>Countries</option>
+        <option>States</option>
+      </select>
+</li>
+<li>
+<select class="form-control" id="dashboardname">
+        <option>Countries</option>
+        <option>States</option>
+      </select>
+</li>
+<li>
+<select class="form-control" id="datasource">
+        <option>Country_Data</option>
+        <option>States_Data</option>
+      </select>
+</li>
+<li>
+<select class="form-control" id="filter">
+        <option>Countries</option>
+        <option>States</option>
+      </select>
+</li>
 </ul>
 </div>
 </div>
