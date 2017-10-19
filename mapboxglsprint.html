@@ -50,6 +50,7 @@ font-size:0px;
     padding-top: 60px;
 font-size:small;
 margin-left:5px;
+margin-right: 5px;
 }
 
 .sidenav .closebtn {
@@ -87,7 +88,7 @@ hr {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     margin-left: auto;
-    margin-right: 5px;
+    margin-right: auto;
     border-style: inset;
     border-width: 1px;
 }
@@ -141,47 +142,37 @@ hr {
 <hr>
 
 <div id ="Inputs" class="row">
-<div class="col-md-6">
+<div class="col-md-12">
 <ul id="list">
 <li>Server Name: </li>
-<li>Workbook Name: </li>
-<li>Dashboard Name: </li>
-<li>Data Source: </li>
-<li>Filter: </li>
-</ul>
-</div>
-<div class="col-md-6">
-<ul id="list">
 <li>
 <select class="form-control" id="servername">
         <option>Tableau Public</option>
         <option>Your Company Server</option>
       </select>
 </li>
+<li>Workbook Name: </li>
 <li>
 <select class="form-control" id="workbookname">
         <option>Countries</option>
         <option>States</option>
       </select>
 </li>
-<li>
+<li>Dashboard Name: </li>
 <select class="form-control" id="dashboardname">
         <option>Countries</option>
         <option>States</option>
       </select>
-</li>
-<li>
+<li>Data Source: </li>
 <select class="form-control" id="datasource">
         <option>Country_Data</option>
         <option>States_Data</option>
       </select>
-</li>
-<li>
+<li>Filter: </li>
 <select class="form-control" id="filter">
         <option>Countries</option>
         <option>States</option>
       </select>
-</li>
 </ul>
 </div>
 </div>
