@@ -285,5 +285,13 @@ $("#Inputs").show();
         });
     };
 }(jQuery));
+
+$( "#style" ).change(function() {
+  style(this.value);
+});
+
+function style(propValue){
+alert("change style to this value: "+propValue);
+};
 </script>
 </html>
