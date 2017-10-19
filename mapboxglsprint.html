@@ -141,25 +141,6 @@ hr {
 <div id ="Inputs" class="row">
 <div class="col-md-12">
 <ul id="list">
-<li>&nbsp;Server Name: </li>
-<li>
-<select class="form-control" id="servername">
-        <option selected>Tableau Public</option>
-        <option disabled>Your Company Server</option>
-      </select>
-</li>
-<li>&nbsp;Workbook Name: </li>
-<li>
-<select class="form-control" id="workbookname">
-        <option selected>Countries</option>
-        <option>States</option>
-      </select>
-</li>
-<li>&nbsp;Dashboard Name: </li>
-<select class="form-control" id="dashboardname">
-        <option selected>Countries</option>
-        <option>States</option>
-      </select>
 <li>&nbsp;Style: </li>
 <select class="form-control" id="style">
         <option value='mapbox://styles/allanwalkersprinting/cj8vvkzltekpe2rs58bxpvrlp?optimize=true' selected>Countries</option>
@@ -169,6 +150,21 @@ hr {
 <select class="form-control" id="layer">
         <option value='countries_data' selected>countries_data</option>
         <option value='states_Data'>states_data</option>
+      </select>
+<li>&nbsp;Server Name: </li>
+<select class="form-control" id="servername">
+        <option selected>Tableau Public</option>
+        <option disabled>Your Company Server</option>
+      </select>
+<li>&nbsp;Workbook Name: </li>
+<select class="form-control" id="workbookname">
+        <option selected>Countries</option>
+        <option>States</option>
+      </select>
+<li>&nbsp;Dashboard Name: </li>
+<select class="form-control" id="dashboardname">
+        <option selected>Countries</option>
+        <option>States</option>
       </select>
 <li>&nbsp;Filter: </li>
 <select class="form-control" id="filter">
@@ -291,7 +287,6 @@ $( "#style" ).change(function() {
 });
 
 function style(propValue){
-alert("changing style to this value: "+propValue);
 map.setStyle(propValue);
 };
 </script>
