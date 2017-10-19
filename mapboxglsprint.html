@@ -140,7 +140,20 @@ hr {
 <br><br>
 <hr>
 
+<div id ="Inputs" class="row">
+<div class="col-md-12">
+<ul id="list">
+<li>Server Name: </li>
+<li>Workbook Name: </li>
+<li>Dashboard Name: </li>
+<li>Data Source: </li>
+<li>Filter: </li>
+</ul>
 </div>
+</div>
+
+</div>
+
 
 
 <div id='hidden'><p id="country"></p>
@@ -168,6 +181,7 @@ var map = new mapboxgl.Map({
 });
 
 var nav = new mapboxgl.NavigationControl();
+$("#Inputs").invisible();
 map.addControl(nav, 'top-left');
 map.on('click', function (e) {
     var features = map.queryRenderedFeatures(e.point, { layers: ['countries_data'] });
@@ -223,6 +237,7 @@ $("#mstr").invisible();
 $("#qlik").invisible();
 $("#plotly").invisible();
 $("#d3").invisible();
+$("#Inputs").visible();
 }
 
 (function($) {
