@@ -165,7 +165,7 @@ hr {
 </body>
 
 <script>
-
+$("#Inputs").hide();
 var a = function tableau(){
      a = function tableau(){};
 };
@@ -181,7 +181,6 @@ var map = new mapboxgl.Map({
 });
 
 var nav = new mapboxgl.NavigationControl();
-$("#Inputs").invisible();
 map.addControl(nav, 'top-left');
 map.on('click', function (e) {
     var features = map.queryRenderedFeatures(e.point, { layers: ['countries_data'] });
@@ -237,7 +236,7 @@ $("#mstr").invisible();
 $("#qlik").invisible();
 $("#plotly").invisible();
 $("#d3").invisible();
-$("#Inputs").visible();
+$("#Inputs").show();
 }
 
 (function($) {
