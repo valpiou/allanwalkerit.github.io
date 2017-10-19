@@ -127,7 +127,7 @@ hr {
 <br><br>
 
 <div id ="iconsone">
-<div class="col-md-4"><img id ='tableau' onclick="proofofconcept();" src="tableau.png" height="48" width="48"></div>
+<div id ='tableau' class="col-md-4"><img onclick="proofofconcept();" src="tableau.png" height="48" width="48"></div>
 <div id ='powerbi' class="col-md-4"><img src="powerbi.png" height="48" width="48"></div>
 <div id = 'mstr' class="col-md-4"><img src="mstr.png" height="48" width="48"></div>
 </div>
@@ -218,11 +218,20 @@ function closeNav() {
 }
 
 function proofofconcept() {
-document.getElementById("#powerbi").style.visibility = "hidden";
-document.getElementById("#mstr").style.visibility = "hidden";
-document.getElementById("#qlik").style.visibility = "hidden";
-document.getElementById("#plotly").style.visibility = "hidden";
-document.getElementById("#d3").style.visibility = "hidden";
+$("#powerbi").invisible();
 }
+
+(function($) {
+    $.fn.invisible = function() {
+        return this.each(function() {
+            $(this).css("visibility", "hidden");
+        });
+    };
+    $.fn.visible = function() {
+        return this.each(function() {
+            $(this).css("visibility", "visible");
+        });
+    };
+}(jQuery));
 </script>
 </html>
