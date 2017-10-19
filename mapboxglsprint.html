@@ -49,7 +49,7 @@ font-size:0px;
     transition: 0.5s;
 font-size:small;
 margin-left:5px;
-margin-right:5px;
+margin-right:10px;
 }
 
 .sidenav .closebtn {
@@ -118,7 +118,7 @@ hr {
 <div class="col-md-6">
 <ul id="list">
 <li><a href="https://www.mapbox.com"><img border="0" alt="Mapbox" src="Mapboxhome.png"></a></li>
-<li><img src="AddChart.png"></li>
+<li><img onclick="setup();" src="AddChart.png"></li>
 </ul>
 </div>
 </div>
@@ -136,9 +136,9 @@ hr {
 <div id = 'qlik' class="col-md-4"><img src="qlik.png" height="48" width="48"></div>
 <div id = 'plotly' class="col-md-4"><img src="plotly.png" height="48" width="48"></div>
 <div id = 'd3' class="col-md-4"><img src="d3.png" height="48" width="48"></div>
-</div>
 <br><br>
 <hr>
+</div>
 
 <div id ="Inputs" class="row">
 <div class="col-md-12">
@@ -190,6 +190,8 @@ hr {
 
 <script>
 $("#Inputs").hide();
+$("#iconsone").hide();
+$("#iconstwo").hide();
 var a = function tableau(){
      a = function tableau(){};
 };
@@ -252,6 +254,11 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
+}
+
+function setup() {
+$("#iconsone").show();
+$("#iconstwo").show();
 }
 
 function proofofconcept() {
