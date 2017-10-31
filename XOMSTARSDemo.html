@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<title>XOM STARS DEMO</title>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.0/mapbox-gl-geocoder.min.js'></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.js"></script>
+
+
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' rel='stylesheet' />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.0/mapbox-gl-geocoder.css' type='text/css' />
+<style>
+
+html, body {
+height:100%;
+background-color: #292824;
+}
+
+.navbar {
+border-radius: 0px;
+height: 50px;
+min-height: 50px;
+}
+
+#tableauViz1 {
+height:250px;
+width:250px;
+margin: 0 auto;
+}
+
+#hidden {
+display:none;
+}
+
+p {
+color:#FFFFFF;
+font-size:0px;
+}
+
+.sidenav {
+
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #292824;
+    overflow-x: hidden;
+    transition: 0.5s;
+    font-size:large;
+    color: #FFFFFF;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #FFFFFF;
+}
+
+#main {
+transition: margin-left .5s;
+    height:90%;
+    width:100%;
+}
+
+#map {
+height:100%;
+width:100%;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+ul#list {
+padding-left: 0;
+-webkit-padding-start: 0;
+list-style-type: none;
+}
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.col-md-6 img {
+   width: 100%;
+   height: 100%;
+}
+
+#hamburger {
+color: #FFFFFF;
+}
+
+#UIControls {
+padding: 8px 8px 8px 8px;
+}
+
+#style {
+width:100%;
+margin: 0 auto;
+}
+
+#port {
+display:none;
+}
+
+#distance {
+display:none;
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<div id ="UIControls" class="row">
+<div class="col-md-6">
+<ul id="list">
+<br><br>
+<br><br>
+<li><span class="glyphicon glyphicon-list-alt"></span>&nbsp;LAYERS<select class="form-control" id="layers">
+        <option value='mapbox://styles/allanwalkersprinting/cj8vvkzltekpe2rs58bxpvrlp?optimize=true' selected>Shipping</option>
+        <option value='mapbox://styles/allanwalkersprinting/cj9esvubx4a8j2sp4v4hk2l4c?optimize=true'>Heatmap</option>
+      </select><br><br></li>
+<li><span class="glyphicon glyphicon-equalizer"></span>&nbsp;FILTERS<select class="form-control" id="filters">
+        <option value=''>Product</option>
+        <option value=''>Ports</option>
+      </select><br><br></li>
+<li><span class="glyphicon glyphicon-export"></span>&nbsp;EXPORT<br><br><br><br></li>
+<li><span class="glyphicon glyphicon-info-sign"></span>&nbsp;INFO</li>
+</ul>
+</div>
+</div>
+<br><br>
+</div>
+
+<div id='port'></div>
+<div id='distance'></div>
+<span id="hamburger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<div id='main'>
+<div id='map'></div>
+</div>
+</body>
+
+<script>
+var a = function tableau(){
+     a = function tableau(){};
+};
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/allanwalkersprinting/cj8vvkzltekpe2rs58bxpvrlp?fresh=true',
+    center: [-97.024760,27.817940],
+    zoom: 9.5,
+    pitch: 0,
+    bearing: 0
+});
+
+var nav = new mapboxgl.NavigationControl();
+map.addControl(nav, 'top-left');
+
+map.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+}));
+
+
+map.on('click', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['ships'] });
+    if (!features.length) {
+        return;
+    }
+var feature = features[0];
+console.log(JSON.stringify(feature));
+var port = feature.properties.NearPort;
+var distance = feature.properties.DistancePort;
+var popup = new mapboxgl.Popup()
+        .setLngLat(map.unproject(e.point))
+        .setHTML('Nearest Port: '+port+'<br><br>'+'Distance in Miles to Port: '+distance+'<br><br>'+ '<div id="tableauViz1"></div>')
+        .addTo(map);
+document.getElementById("port").innerHTML = port;
+document.getElementById("distance").innerHTML = distance;
+	tableau();
+});
+
+function tableau() {
+        var onePh = document.getElementById("tableauViz1");
+        var oneUrl = "https://public.tableau.com/views/XOMSTARS/Dashboard?";
+var params="&:showVizHome=no&:display_spinner=y&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes";
+	var vizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+var x = document.getElementById("port").innerHTML;
+var y = document.getElementById("distance").innerHTML;
+viz1.getWorkbook().changeParameterValueAsync("PORT", [x]);
+viz1.getWorkbook().changeParameterValueAsync("DISTANCE", [y]);
+}
+        };
+viz1 = new tableauSoftware.Viz(onePh, oneUrl + params, vizOptions);
+}
+
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+
+$( "#layers" ).change(function() {
+  layers(this.value);
+});
+
+function layers(propValue){
+map.setStyle(propValue);
+};
+
+</script>
+</html>
