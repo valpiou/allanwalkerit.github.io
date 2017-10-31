@@ -215,6 +215,16 @@ viz1.getWorkbook().changeParameterValueAsync("DISTANCE", [y]);
 }
         };
 viz1 = new tableauSoftware.Viz(onePh, oneUrl + params, vizOptions);
+
+$( "#filters" ).change(function() {
+  filters(this.value);
+});
+
+function filters(propValue){
+viz1.getWorkbook().changeParameterValueAsync("TOOLTIP", propValue);
+alert(propValue);
+};
+
 }
 
 
@@ -236,14 +246,7 @@ function layers(propValue){
 map.setStyle(propValue);
 };
 
-$( "#filters" ).change(function() {
-  filters(this.value);
-});
 
-function filters(propValue){
-viz1.getWorkbook().changeParameterValueAsync("TOOLTIP", propValue);
-alert(propValue);
-};
 
 </script>
 </html>
