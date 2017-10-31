@@ -192,7 +192,7 @@ var port = feature.properties.NearPort;
 var distance = feature.properties.DistancePort;
 var popup = new mapboxgl.Popup()
         .setLngLat(map.unproject(e.point))
-        .setHTML('Nearest Port: '+port+'<br><br>'+'Distance in Miles to Port: '+distance+'<br><br>'+ '<div id="tableauViz1"></div>')
+        .setHTML('Nearest Port: '+port+'<br><br>'+'Ships distance (miles) to Port: '+distance+'<br><br>'+ '<div id="tableauViz1"></div>')
         .addTo(map);
 document.getElementById("port").innerHTML = port;
 document.getElementById("distance").innerHTML = distance;
@@ -222,7 +222,6 @@ $( "#filters" ).change(function() {
 
 function filters(propValue){
 viz1.getWorkbook().changeParameterValueAsync("TOOLTIP", propValue);
-alert(propValue);
 };
 
 }
