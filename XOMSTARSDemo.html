@@ -135,12 +135,12 @@ display:none;
 <br><br>
 <br><br>
 <li><span class="glyphicon glyphicon-list-alt"></span>&nbsp;LAYERS<select class="form-control" id="layers">
-        <option value='mapbox://styles/allanwalkersprinting/cj8vvkzltekpe2rs58bxpvrlp?optimize=true' selected>Shipping</option>
-        <option value='mapbox://styles/allanwalkersprinting/cj9esvubx4a8j2sp4v4hk2l4c?optimize=true'>Heatmap</option>
+        <option value='mapbox://styles/allanwalkersprinting/cj8vvkzltekpe2rs58bxpvrlp?fresh=true' selected>Shipping</option>
+        <option value='mapbox://styles/allanwalkersprinting/cj9esvubx4a8j2sp4v4hk2l4c?fresh=true'>Heatmap</option>
       </select><br><br></li>
 <li><span class="glyphicon glyphicon-equalizer"></span>&nbsp;FILTERS<select class="form-control" id="filters">
-        <option value=''>Product</option>
-        <option value=''>Ports</option>
+        <option value='VESSEL'>Vessels</option>
+        <option value='PORT'>Ports</option>
       </select><br><br></li>
 <li><span class="glyphicon glyphicon-export"></span>&nbsp;EXPORT<br><br><br><br></li>
 <li><span class="glyphicon glyphicon-info-sign"></span>&nbsp;INFO</li>
@@ -234,6 +234,15 @@ $( "#layers" ).change(function() {
 
 function layers(propValue){
 map.setStyle(propValue);
+};
+
+$( "#filters" ).change(function() {
+  filters(this.value);
+});
+
+function filters(propValue){
+viz1.getWorkbook().changeParameterValueAsync("TOOLTIP", propvalue);
+alert("propvalue");
 };
 
 </script>
