@@ -83,6 +83,9 @@ padding-left: 0;
 list-style-type: none;
 }
 
+a {
+color: #FFFFFF;
+}
 
 #hamburger {
 color: #FFFFFF;
@@ -131,8 +134,8 @@ color: #292824;
         <option value='PORT'>Port Details</option>
       </select><br><br></li>
 <li><span class="glyphicon glyphicon-export"></span>&nbsp;EXPORT</li>
-<li>&nbsp;PDF</li>
-<li>&nbsp;CSV<br><br></li>
+<li>&nbsp;<a id="PDF" href="#" onclick="pdf();">PDF</a></li>
+<li>&nbsp;<a id="CSV" href="#" onclick="csv();">CSV</a><br><br></li>
 <li><span class="glyphicon glyphicon-info-sign"></span>&nbsp;INFO</li>
 </ul>
 </div>
@@ -213,6 +216,14 @@ $( "#filters" ).change(function() {
 function filters(propValue){
 viz1.getWorkbook().changeParameterValueAsync("TOOLTIP", propValue);
 };
+
+function pdf(){
+viz1.showExportPDFDialog();
+}
+
+function csv(){
+viz1.showExportCrossTabDialog();
+}
 
 }
 
