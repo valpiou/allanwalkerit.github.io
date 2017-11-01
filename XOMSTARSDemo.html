@@ -235,6 +235,9 @@ $( "#layers" ).change(function() {
 
 function layers(propValue){
 map.setStyle(propValue);
+map.removeControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+}));
 map.addControl(new MapboxGeocoder({
     accessToken: mapboxgl.accessToken
 }));
