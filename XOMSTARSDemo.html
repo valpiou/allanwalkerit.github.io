@@ -138,7 +138,7 @@ color: #292824;
 <br><br>
 <li><span class="glyphicon glyphicon-cog"></span>&nbsp;VIEW<select id="data">
         <option value='Maps'>Maps</option>
-        <option value='Dashboards'>Dashboards</option>
+        <option value='Dashboards'></option>
       </select><br><br></li>
 <li><span class="glyphicon glyphicon-list-alt"></span>&nbsp;LAYERS<select id="layers">
         <option value='mapbox://styles/allanwalkersprinting/cj8vvkzltekpe2rs58bxpvrlp?fresh=true' selected>Shipping</option>
@@ -163,7 +163,7 @@ color: #292824;
 <span id="hamburger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 <div id='main'>
 <div id='map'>
-<div id='dashboard'>DASHES HERE</div></div>
+<div id='dashboard'><div id="tableauViz1"></div></div></div>
 </div>
 </body>
 
@@ -171,6 +171,10 @@ color: #292824;
 $('#dashboard').hide();
 var a = function tableau(){
      a = function tableau(){};
+};
+
+var b = function tableaua(){
+     b = function tableaua(){};
 };
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
@@ -282,6 +286,7 @@ $( "#data" ).change(function() {
 function data(propValue){
 if (propValue == 'Dashboards') {
 $('#dashboard').show();
+tableaua();
 }
 if (propValue != 'Dashboards') {
 $('#dashboard').hide();
