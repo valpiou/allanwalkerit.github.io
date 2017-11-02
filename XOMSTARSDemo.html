@@ -289,7 +289,69 @@ $('#map').hide();
 tableaua();
 }
 if (propValue != 'Dashboards') {
-alert('Do something');
+$('#dashboard').hide();
+$('#map').show();
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/allanwalkersprinting/cj8vvkzltekpe2rs58bxpvrlp?fresh=true',
+    center: [-97.024760,27.817940],
+    zoom: 9.5,
+    pitch: 0,
+    bearing: 0
+});
+
+var nav = new mapboxgl.NavigationControl();
+map.addControl(nav, 'top-left');
+
+map.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+}));
+
+
+map.on('click', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['ships'] });
+    if (!features.length) {
+        return;
+    }
+var feature = features[0];
+console.log(JSON.stringify(feature));
+var port = feature.properties.NearPort;
+var distance = feature.properties.DistancePort;
+var popup = new mapboxgl.Popup()
+        .setLngLat(map.unproject(e.point))
+        .setHTML('<div id="tableauViz1"></div>')
+        .addTo(map);
+document.getElementById("port").innerHTML = port;
+document.getElementById("distance").innerHTML = distance;
+	tableau();
+});
+
+function tableau() {
+        var onePh = document.getElementById("tableauViz1");
+        var oneUrl = "https://public.tableau.com/views/XOMSTARS/Dashboard?";
+        var params="&:showVizHome=no&:display_spinner=y&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes";
+	var vizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+var x = document.getElementById("port").innerHTML;
+var y = document.getElementById("distance").innerHTML;
+viz1.getWorkbook().changeParameterValueAsync("PORT", [x]);
+viz1.getWorkbook().changeParameterValueAsync("DISTANCE", [y]);
+}
+        };
+viz1 = new tableauSoftware.Viz(onePh, oneUrl + params, vizOptions);
+
+$( "#filters" ).change(function() {
+  filters(this.value);
+});
+
+function filters(propValue){
+viz1.getWorkbook().changeParameterValueAsync("TOOLTIP", propValue);
+};
+}
 }
 };
 </script>
