@@ -164,7 +164,7 @@ color: #292824;
 <span id="hamburger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 <div id='main'>
 <div id='map'></div>
-<div id='dashboard'>HERE</div>
+<div id='dashboard'><div id="tableauViz2"></div></div>
 </div>
 </body>
 
@@ -286,8 +286,9 @@ $( "#data" ).change(function() {
 
 function data(propValue){
 if (propValue == 'Dashboards') {
-$('#dashboard').show();
 $('#map').remove();
+$('#dashboard').show();
+tableaua();
 }
 if (propValue != 'Dashboards') {
 $('#dashboard').hide();
