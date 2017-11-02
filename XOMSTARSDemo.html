@@ -75,11 +75,13 @@ transition: margin-left .5s;
 #map {
 height:100%;
 width:100%;
+z-index: -1;
 }
 
 #dashboard {
 height:100%;
 width:100%;
+z-index: 1;
 }
 
 ul#list {
@@ -267,10 +269,8 @@ $( "#data" ).change(function() {
 function data(propValue){
 if (propValue = 'Dashboards') {
 $('#dashboard').show();
-$('#main').hide();
 } else {
 $('#dashboard').hide();
-$('#main').show();
 }
 
 };
