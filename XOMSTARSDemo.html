@@ -80,7 +80,6 @@ width:100%;
 #dashboard {
 height:100%;
 width:100%;
-z-index: 1;
 }
 
 ul#list {
@@ -138,7 +137,7 @@ color: #292824;
 <br><br>
 <li><span class="glyphicon glyphicon-cog"></span>&nbsp;VIEW<select id="data">
         <option value='Maps'>Maps</option>
-        <option value='Dashboards'></option>
+        <option value='Dashboards'>Dashboards</option>
       </select><br><br></li>
 <li><span class="glyphicon glyphicon-list-alt"></span>&nbsp;LAYERS<select id="layers">
         <option value='mapbox://styles/allanwalkersprinting/cj8vvkzltekpe2rs58bxpvrlp?fresh=true' selected>Shipping</option>
@@ -286,10 +285,11 @@ $( "#data" ).change(function() {
 function data(propValue){
 if (propValue == 'Dashboards') {
 $('#dashboard').show();
+$('#map').hide();
 tableaua();
 }
 if (propValue != 'Dashboards') {
-$('#dashboard').hide();
+alert('Do something');
 }
 };
 </script>
