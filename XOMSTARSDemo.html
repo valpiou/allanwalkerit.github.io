@@ -291,7 +291,7 @@ $('#map').remove();
 }
 if (propValue != 'Dashboards') {
 $('#dashboard').hide();
-$("<div/>").attr('id','map').appendTo('main'); 
+$("<div/>").attr('id','map').appendTo('#main'); 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
     container: 'map',
