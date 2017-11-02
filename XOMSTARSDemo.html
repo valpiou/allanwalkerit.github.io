@@ -236,8 +236,8 @@ viz1.getWorkbook().changeParameterValueAsync("TOOLTIP", propValue);
 }
 
 function tableaua() {
-        var onePh = document.getElementById("tableauViz2");
-        var oneUrl = "https://public.tableau.com/views/XOMSTARS/Dashboard?";
+        var twoPh = document.getElementById("tableauViz2");
+        var twoUrl = "https://public.tableau.com/views/XOMSTARS/Products?";
         var params="&:showVizHome=no&:display_spinner=y&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes";
 	var vizOptions = {
 	width: "100%",
@@ -246,7 +246,7 @@ function tableaua() {
             onFirstInteractive: function() {
 }
         };
-viz1 = new tableauSoftware.Viz(onePh, oneUrl + params, vizOptions);
+viz2 = new tableauSoftware.Viz(twoPh, twoUrl + params, vizOptions);
 }
 
 </script>
@@ -280,13 +280,13 @@ $( "#data" ).change(function() {
 });
 
 function data(propValue){
-if (propValue = 'Dashboards') {
+if (propValue == 'Dashboards') {
 $('#dashboard').show();
-tableaua();
-} else {
-$('#dashboard').hide();
 }
-
+if (propValue != 'Dashboards') {
+$('#dashboard').hide();
+}  
+}
 };
 </script>
 </html>
