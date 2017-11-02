@@ -81,6 +81,8 @@ width:100%;
 position: absolute; top: 0px; left: 0px;
 height:100%;
 width:100%;
+color: #FFFFFF;
+z-index: 2;
 }
 
 ul#list {
@@ -163,7 +165,7 @@ color: #292824;
 <span id="hamburger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 <div id='main'>
 <div id='map'></div>
-<div id='dashboard'><div id="tableauViz1"></div></div>
+<div id='dashboard'>HERE</div>
 </div>
 </body>
 
@@ -286,7 +288,6 @@ $( "#data" ).change(function() {
 function data(propValue){
 if (propValue == 'Dashboards') {
 $('#dashboard').show();
-tableaua();
 }
 if (propValue != 'Dashboards') {
 $('#dashboard').hide();
