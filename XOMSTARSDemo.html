@@ -78,6 +78,7 @@ width:100%;
 }
 
 #dashboard {
+position: absolute; top: 0px; left: 0px;
 height:100%;
 width:100%;
 }
@@ -284,13 +285,11 @@ $( "#data" ).change(function() {
 
 function data(propValue){
 if (propValue == 'Dashboards') {
-document.getElementById("map").style.display = "none";
-document.getElementById("dashboard").style.display = "inline";
+$('#dashboard').show();
 tableaua();
 }
 if (propValue != 'Dashboards') {
-document.getElementById("dashboard").style.display = "none";
-document.getElementById("map").style.display = "inline";
+$('#dashboard').hide();
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
     container: 'map',
