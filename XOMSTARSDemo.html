@@ -78,7 +78,6 @@ width:100%;
 }
 
 #dashboard {
-position: absolute; top: 0px; left: 0px;
 height:100%;
 width:100%;
 color: #FFFFFF;
@@ -288,9 +287,11 @@ $( "#data" ).change(function() {
 function data(propValue){
 if (propValue == 'Dashboards') {
 $('#dashboard').show();
+$('#map').remove();
 }
 if (propValue != 'Dashboards') {
 $('#dashboard').hide();
+$("<div/>").attr('id','map').appendTo('main'); 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
     container: 'map',
