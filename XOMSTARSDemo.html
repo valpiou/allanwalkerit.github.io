@@ -284,13 +284,13 @@ $( "#data" ).change(function() {
 
 function data(propValue){
 if (propValue == 'Dashboards') {
-$('#dashboard').show();
-$('#map').hide();
+document.getElementById("map").style.display = "none";
+document.getElementById("dashboard").style.display = "inline";
 tableaua();
 }
 if (propValue != 'Dashboards') {
-$('#dashboard').hide();
-$('#map').show();
+document.getElementById("dashboard").style.display = "none";
+document.getElementById("map").style.display = "inline";
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
     container: 'map',
