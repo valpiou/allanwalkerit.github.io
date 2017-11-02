@@ -33,6 +33,20 @@ width:250px;
 margin: 0 auto;
 }
 
+#tableauViz2 {
+float:left;
+height:500px;
+width:48%px;
+margin: 0 auto;
+}
+
+#tableauViz3 {
+float:left;
+height:500px;
+width:48%px;
+margin: 0 auto;
+}
+
 #hidden {
 display:none;
 }
@@ -164,7 +178,10 @@ color: #292824;
 <span id="hamburger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 <div id='main'>
 <div id='map'></div>
-<div id='dashboard'><div id="tableauViz2"></div></div>
+<div id='dashboard'>
+<div id="tableauViz2"></div>
+<div id="tableauViz3"></div>
+</div>
 </div>
 </body>
 
@@ -242,7 +259,9 @@ viz1.getWorkbook().changeParameterValueAsync("TOOLTIP", propValue);
 
 function tableaua() {
         var twoPh = document.getElementById("tableauViz2");
+        var threePh = document.getElementById("tableauViz3");
         var twoUrl = "https://public.tableau.com/views/XOMSTARS/Products?";
+        var threeUrl = "https://public.tableau.com/views/XOMSTARS/ProductTrend?";
         var params="&:showVizHome=no&:display_spinner=y&:jsdebug=n&:embed=y&:display_overlay=no&:display_static_image=no&:animate_transition=yes";
 	var vizOptions = {
 	width: "100%",
@@ -252,6 +271,7 @@ function tableaua() {
 }
         };
 viz2 = new tableauSoftware.Viz(twoPh, twoUrl + params, vizOptions);
+viz3 = new tableauSoftware.Viz(threePh, threeUrl + params, vizOptions);
 }
 
 </script>
