@@ -81,6 +81,17 @@ color: #FFFFFF !important;
 font-size:medium;
 }
 
+ul#list {
+padding-left: 0;
+-webkit-padding-start: 0;
+list-style-type: none;
+}
+
+
+li#donut {
+display: inline-block;
+}
+
 </style>
 </head>
 <body>
@@ -105,14 +116,12 @@ font-size:medium;
 <h4>&nbsp;&nbsp;Applications by Business Unit</h4>
 <div class="col-md-6">Large Donut</div>
 <div class="col-md-6">
-<ul>
-<li>
-One
-</li>
-<li>
-Two
-</li>
-<ul>
+<ul id="list">
+<li id="donut">1</li>
+<li id="donut">2</li>
+<li id="donut">3</li>
+<li id="donut">4</li>
+</ul>
 </div>
 </div>
 
