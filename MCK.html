@@ -201,4 +201,142 @@ function closeNav() {
     document.getElementById("main").style.marginLeft= "0";
 }
 </script>
+
+<script>
+
+var a = function tableau1(){
+     a = function tableau1(){};
+};
+
+var b = function tableau2(){
+     b = function tableau2(){};
+};
+
+var c = function tableau3(){
+     c = function tableau3(){};
+};
+
+var d = function tableau4(){
+     d = function tableau4(){};
+};
+
+var e = function tableau5(){
+     e = function tableau5(){};
+};
+
+var f = function tableau6(){
+     f = function tableau6(){};
+};
+
+var g = function tableau7(){
+     g = function tableau7(){};
+};
+
+var onePh = document.getElementById("tableauViz1");
+var twoPh = document.getElementById("tableauViz2");
+var threePh = document.getElementById("tableauViz3");
+var fourPh = document.getElementById("tableauViz4");
+var fivePh = document.getElementById("tableauViz5");
+var sixPh = document.getElementById("tableauViz6");
+var sevenPh = document.getElementById("tableauViz7");
+
+var oneUrl = "https://public.tableau.com/views/MCKMOCKUP/Dashboard1?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
+var twoUrl = "https://public.tableau.com/views/MCKMOCKUP/Dashboard2?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
+var threeUrl = "https://public.tableau.com/views/MCKMOCKUP/Dashboard3?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
+var fourUrl = "https://public.tableau.com/views/MCKMOCKUP/Dashboard4?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
+var fiveUrl = "https://public.tableau.com/views/MCKMOCKUP/Dashboard5?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
+var sixUrl = "https://public.tableau.com/views/MCKMOCKUP/Dashboard6?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
+var sevenUrl = "https://public.tableau.com/views/MCKMOCKUP/Dashboard7?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
+
+function tableau1(){
+	var onevizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+tableau2();
+}
+        };
+viz1 = new tableauSoftware.Viz(onePh, oneUrl, onevizOptions);
+}
+
+function tableau2(){
+
+	var twovizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+tableau3();
+}
+        };
+viz2 = new tableauSoftware.Viz(twoPh, twoUrl, twovizOptions);
+}
+
+function tableau3(){
+	var threevizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+tableau4();
+
+}
+        };
+viz3 = new tableauSoftware.Viz(threePh, threeUrl, threevizOptions);
+}
+
+function tableau4(){
+	var fourvizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+tableau5();
+
+}
+        };
+viz4 = new tableauSoftware.Viz(fourPh, fourUrl, fourvizOptions);
+}
+
+function tableau5(){
+	var fivevizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+tableau6();
+
+}
+        };
+viz5 = new tableauSoftware.Viz(fivePh, fiveUrl, fivevizOptions);
+}
+
+function tableau6(){
+	var sixvizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+tableau7();
+
+}
+        };
+viz6 = new tableauSoftware.Viz(sixPh, sixUrl, sixvizOptions);
+}
+
+function tableau7(){
+	var sevenvizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+tableau8();
+
+}
+        };
+viz7 = new tableauSoftware.Viz(sevenPh, sevenUrl, sevenvizOptions);
+}
+
+</script>
 </html>
