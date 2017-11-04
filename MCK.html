@@ -140,16 +140,14 @@ background-color: #f5f5f5;
 <div class="container-fluid">
 <div id ="rowone" class="row">
 <h4>&nbsp;&nbsp;Applications by Business Unit</h4>
-<div class="col-md-6">Large Donut 1</div>
+<div class="col-md-6"><div class="bannerhide"><div id="tableauViz1" class="tableauViz"></div></div></div>
 <div class="col-md-5">
 <ul id="list">
 <li>
-<li id="donut">Mini Donut 1</li>
-<li id="donut">Mini Donut 2</li>
+<li id="donut"><div class="bannerhide"><div id="tableauViz4" class="tableauViz"></div></div></li>
 </li>
 <li>
-<li id="donut">Mini Donut 3</li>
-<li id="donut">Mini Donut 4</li>
+<li id="donut"><div class="bannerhide"><div id="tableauViz5" class="tableauViz"></div></div></li>
 </li>
 </ul>
 </div>
@@ -161,15 +159,14 @@ background-color: #f5f5f5;
 <div class="container-fluid">
 <div id ="rowtwo" class="row">
 <h4>&nbsp;&nbsp;Host Systems by Business Unit</h4>
-<div class="col-md-6">Large Donut 2</div>
+<div class="col-md-6"><div class="bannerhide"><div id="tableauViz2" class="tableauViz"></div></div></div>
 <div class="col-md-5">
 <ul id="list">
 <li>
-<li id="donut">Mini Donut 5</li>
-<li id="donut">Mini Donut 6</li>
+<li id="donut"><div class="bannerhide"><div id="tableauViz6" class="tableauViz"></div></div></li>
 </li>
 <li>
-<li id="donut">Mini Donut 7</li>
+<li id="donut"><div class="bannerhide"><div id="tableauViz7" class="tableauViz"></div></div></li>
 </li>
 </ul>
 </div>
@@ -181,7 +178,7 @@ background-color: #f5f5f5;
 <div class="container-fluid">
 <div id ="rowthree" class="row">
 <h4>&nbsp;&nbsp;Critical IT Infrastructure by Business Unit</h4>
-<div class="col-md-11">Mini Donut 8</div>
+<div class="col-md-11"><div class="bannerhide"><div id="tableauViz3" class="tableauViz"></div></div></div>
 <div class="col-md-1">Section 3 Legend</div>
 <br><br>
 </div>
@@ -280,7 +277,6 @@ function tableau3(){
             hideTabs: false,
             onFirstInteractive: function() {
 tableau4();
-
 }
         };
 viz3 = new tableauSoftware.Viz(threePh, threeUrl, threevizOptions);
@@ -293,7 +289,6 @@ function tableau4(){
             hideTabs: false,
             onFirstInteractive: function() {
 tableau5();
-
 }
         };
 viz4 = new tableauSoftware.Viz(fourPh, fourUrl, fourvizOptions);
@@ -306,7 +301,6 @@ function tableau5(){
             hideTabs: false,
             onFirstInteractive: function() {
 tableau6();
-
 }
         };
 viz5 = new tableauSoftware.Viz(fivePh, fiveUrl, fivevizOptions);
@@ -319,7 +313,6 @@ function tableau6(){
             hideTabs: false,
             onFirstInteractive: function() {
 tableau7();
-
 }
         };
 viz6 = new tableauSoftware.Viz(sixPh, sixUrl, sixvizOptions);
@@ -331,8 +324,6 @@ function tableau7(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-tableau8();
-
 }
         };
 viz7 = new tableauSoftware.Viz(sevenPh, sevenUrl, sevenvizOptions);
