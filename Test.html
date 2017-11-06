@@ -33,7 +33,7 @@ map.on('load', function () {
 
         // save full coordinate list for later
         var coordinates = data.features[0].geometry.coordinates;
-
+console.log(coordinates);
         // start by showing just the first coordinate
         data.features[0].geometry.coordinates = [coordinates[0]];
 
