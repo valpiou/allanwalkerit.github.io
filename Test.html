@@ -34,10 +34,11 @@ $.each(data.features, function (key, val) {
   geometry = val.geometry;
   properties = val.properties;
   points = geometry.coordinates;
-coordinates=[];
-coordinates.push(points);
-console.log(coordinates);  
 });
+
+var coordinates =[];
+coordinates.push(points);
+console.log(coordinates);
 });
 });
 </script>
