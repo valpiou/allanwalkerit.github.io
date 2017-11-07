@@ -21,8 +21,11 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/satellite-v9',
-    zoom: 0
+    style: 'mapbox://styles/allanwalkersprinting/cj8vvkzltekpe2rs58bxpvrlp?fresh=true',
+    center: [-94.750,29.357],
+    zoom: 9.5,
+    pitch: 0,
+    bearing: 0
 });
 
 map.on('load', function () {
@@ -41,12 +44,12 @@ $.each(data.features, function (key, val) {
 
 firstpoint = coordinates[0];
 alert(firstpoint);
-map.jumpTo({ 'center': firstpoint, 'zoom': 14 });
+map.jumpTo({ 'center': firstpoint, 'zoom': 9.5 });
 map.setPitch(30);
 var i = 0;
         var timer = window.setInterval(function() {
             if (i < coordinates.length) {
-                map.panTo(coordinates[i]);
+                map.flyTo(coordinates[i]);
                 i++;
             } else {
                 window.clearInterval(timer);
