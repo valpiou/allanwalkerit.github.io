@@ -37,7 +37,7 @@ var coordinates =[];
 $.each(data.features, function (key, val) {
   geometry = val.geometry;
   properties = val.properties;
-  points = geometry.coordinates.val();
+  points = geometry.coordinates;
   coordinates.push(points);
 });
 
@@ -59,9 +59,8 @@ map.jumpTo({ 'center': firstpoint, 'zoom': 9.5 });
 var i = 0;
         var timer = window.setInterval(function() {
 if (i < coordinates.length) {
-firstpoint.push(coordinates[i]);
+data.push(coordinates[i]);
 map.getSource('trace').setData(data);
-//map.panTo(coordinates[i]);
 i++;
 } else {
 window.clearInterval(timer);
