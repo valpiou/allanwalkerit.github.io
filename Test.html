@@ -44,6 +44,15 @@ console.log(coordinates);
 firstpoint = coordinates[0];
 map.jumpTo({ 'center': firstpoint, 'zoom': 14 });
 map.setPitch(30);
+var i = 0;
+        var timer = window.setInterval(function() {
+            if (i < coordinates.length) {
+                map.panTo(coordinates[i]);
+                i++;
+            } else {
+                window.clearInterval(timer);
+            }
+        }, 10);
 });
 });
 </script>
