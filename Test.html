@@ -41,7 +41,7 @@ $.each(data.features, function (key, val) {
   coordinates.push(points);
 });
 
-data.features[0].geometry.coordinates = coordinates[0];
+firstpoint = coordinates[0];
 
  map.addSource('trace', { type: 'geojson', data: data });
         map.addLayer({
@@ -55,7 +55,7 @@ data.features[0].geometry.coordinates = coordinates[0];
         });
 
 
-map.jumpTo({ 'center': coordinates[0], 'zoom': 9.5 });
+map.jumpTo({ 'center': firstpoint, 'zoom': 9.5 });
 var i = 0;
         var timer = window.setInterval(function() {
 if (i < coordinates.length) {
