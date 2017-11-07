@@ -39,6 +39,11 @@ $.each(data.features, function (key, val) {
   coordinates.push(points);
 });
 console.log(coordinates);
+
+//get first coordinate
+firstpoint = coordinates[0];
+map.jumpTo({ 'center': firstpoint, 'zoom': 14 });
+map.setPitch(30);
 });
 });
 </script>
