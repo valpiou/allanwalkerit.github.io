@@ -34,8 +34,9 @@ $.each(data.features, function (key, val) {
   geometry = val.geometry;
   properties = val.properties;
   points = geometry.coordinates;
-
-map.jumpTo({ 'center': points, 'zoom': 8 });  
+coordinates=[];
+coordinates.push(points);
+console.log(coordinates);  
 });
 });
 });
