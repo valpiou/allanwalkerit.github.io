@@ -59,8 +59,9 @@ map.jumpTo({ 'center': firstpoint, 'zoom': 9.5 });
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
-coordinates[0].push(coordinates[i]);
-map.getSource('trace').setData(data);
+firstpoint.push(coordinates[i]);
+alert(data);
+//map.getSource('trace').setData(data);
 i++;
 } else {
 window.clearInterval(timer);
