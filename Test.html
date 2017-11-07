@@ -28,7 +28,7 @@ map.on('load', function () {
     // We use D3 to fetch the JSON here so that we can parse and use it separately
     // from GL JS's use in the added source. You can use any request method (library
     // or otherwise) that you want.
-    d3.json('ships.geojson', function(err, data) {
+    d3.json('test.geojson', function(err, data) {
         if (err) throw err;
 
         // save full coordinate list for later
@@ -41,12 +41,11 @@ console.log(coordinates);
         map.addSource('trace', { type: 'geojson', data: data });
         map.addLayer({
             "id": "trace",
-            "type": "line",
+            "type": "circle",
             "source": "trace",
             "paint": {
-                "line-color": "magenta",
-                "line-opacity": 0.75,
-                "line-width": 5
+                "circle-color": "magenta",
+                "circle-radius": 5
             }
         });
 
