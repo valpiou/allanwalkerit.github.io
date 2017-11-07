@@ -37,11 +37,12 @@ map.on('load', function () {
 $.each(data.features, function (key, val) {
   geometry = val.geometry;
   properties = val.properties;
-  alert (geometry.coordinates);  
+  coordinates = geometry.coordinates;
+  console.log (coordinates);  
 });
 
         // start by showing just the first coordinate
-        data[0].features.geometry.coordinates = [coordinates[0]];
+        coordinates = [coordinates[0]];
 
         // add it to the map
         map.addSource('trace', { type: 'geojson', data: data });
