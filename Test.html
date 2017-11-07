@@ -29,7 +29,6 @@ var map = new mapboxgl.Map({
 });
 
 map.on('load', function () {
-//ajax this!
 d3.json('test.geojson', function(err, data) {
         if (err) throw err;
 
@@ -44,16 +43,14 @@ $.each(data.features, function (key, val) {
 
 firstpoint = coordinates[0];
 map.jumpTo({ 'center': firstpoint, 'zoom': 9.5 });
-map.setPitch(30);
 var i = 0;
         var timer = window.setInterval(function() {
-            if (i < coordinates.length) {
-                map.flyTo(coordinates[i]);
-                i++;
-            } else {
-                window.clearInterval(timer);
-            }
-        }, 100);
+if (i < coordinates.length) {
+map.panTo(coordinates[i]);
+i++;
+} else {
+window.clearInterval(timer);
+}}, 100);
 });
 });
 </script>
