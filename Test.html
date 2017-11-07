@@ -37,7 +37,7 @@ var coordinates =[];
 $.each(data.features, function (key, val) {
   geometry = val.geometry;
   properties = val.properties;
-  points = geometry.coordinates;
+  points = geometry.coordinates.val();
   coordinates.push(points);
 });
 
