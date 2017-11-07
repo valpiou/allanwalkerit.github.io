@@ -60,7 +60,7 @@ var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
 firstpoint.push(coordinates[i]);
-alert(data);
+alert(JSON.stringify(data));
 //map.getSource('trace').setData(data);
 i++;
 } else {
