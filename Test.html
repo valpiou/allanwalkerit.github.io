@@ -30,14 +30,14 @@ map.on('load', function () {
 d3.json('test.geojson', function(err, data) {
         if (err) throw err;
 
+var coordinates =[];
+
 $.each(data.features, function (key, val) {
   geometry = val.geometry;
   properties = val.properties;
   points = geometry.coordinates;
+  coordinates.push(points);
 });
-
-var coordinates =[];
-coordinates.push(points);
 console.log(coordinates);
 });
 });
