@@ -32,10 +32,10 @@ map.on('load', function () {
         if (err) throw err;
 
         // save full coordinate list for later
-        var coordinates = data.features.geometry.coordinates;
+        var coordinates = data[0].features.geometry.coordinates;
 console.log(coordinates);
         // start by showing just the first coordinate
-        data.features[0].geometry.coordinates = [coordinates[0]];
+        data[0].features.geometry.coordinates = [coordinates[0]];
 
         // add it to the map
         map.addSource('trace', { type: 'geojson', data: data });
