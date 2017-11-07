@@ -38,10 +38,9 @@ $.each(data.features, function (key, val) {
   points = geometry.coordinates;
   coordinates.push(points);
 });
-console.log(coordinates);
 
-//get first coordinate
 firstpoint = coordinates[0];
+alert(firstpoint);
 map.jumpTo({ 'center': firstpoint, 'zoom': 14 });
 map.setPitch(30);
 var i = 0;
@@ -52,7 +51,7 @@ var i = 0;
             } else {
                 window.clearInterval(timer);
             }
-        }, 10);
+        }, 100);
 });
 });
 </script>
