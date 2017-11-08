@@ -21,15 +21,15 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/allanwalkersprinting/cj9ofd5bm0jra2so68n3czsng?fresh=true',
-    center: [-97.432933,27.82155],
-    zoom: 9.5,
+    style: 'mapbox://styles/allanwalkersprinting/cj9r9wihd0xgk2sojmh86y9ed?fresh=true',
+    center: [0,18],
+    zoom: 1,
     pitch: 30,
     bearing: 0
 });
 
 map.on('load', function () {
-d3.json('test.geojson', function(err, data) {
+d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
 
 var coordinates =[];
@@ -59,8 +59,7 @@ map.jumpTo({ 'center': firstpoint, 'zoom': 9.5 });
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
-firstpoint.push(coordinates[i]);
-alert(JSON.stringify(data));
+console.log(coordinates[i]);
 //map.getSource('trace').setData(data);
 i++;
 } else {
