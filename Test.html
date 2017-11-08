@@ -23,7 +23,7 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/allanwalkersprinting/cj9r9wihd0xgk2sojmh86y9ed?fresh=true',
     center: [0,18],
-    zoom: 1,
+    zoom: 2,
     pitch: 30,
     bearing: 0
 });
@@ -35,6 +35,7 @@ d3.json('ships.geojson', function(err, data) {
 var coordinates =[];
 
 $.each(data.features, function (key, val) {
+geometry = val.geometry;
 points = geometry.coordinates;
 coordinates.push(points);
 });
