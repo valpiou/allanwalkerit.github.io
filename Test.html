@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Update a feature in realtime</title>
+    <title>Animated Ships</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' rel='stylesheet' />
@@ -42,38 +42,11 @@ coordinates.push(points);
 
 firstpoint = coordinates[0];
 
-function pointOnCircle() {
-    return {
-        "type": "Point",
-        "coordinates": [
-      coordinates      
-        ]
-    };
-}
-
-map.on('load', function () {
-    map.addSource('point', {
-        "type": "geojson",
-        "data": pointOnCircle()
-    });
-
-    map.addLayer({
-        "id": "point",
-        "source": "point",
-        "type": "circle",
-        "paint": {
-            "circle-radius": 10,
-            "circle-color": "#007cbf"
-        }
-    });
-
-
 map.jumpTo({ 'center': firstpoint, 'zoom': 9.5 });
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
 console.log(coordinates[i]);
-map.getSource('point').setData(point);
 i++;
 } else {
 window.clearInterval(timer);
