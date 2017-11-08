@@ -44,6 +44,22 @@ coordinates.push(points);
 
 firstpoint = coordinates[0];
 
+map.on('load', function () {
+    map.addSource('point', {
+        "type": "geojson",
+        "data": firstpoint
+    });
+
+    map.addLayer({
+        "id": "point",
+        "source": "point",
+        "type": "circle",
+        "paint": {
+            "circle-radius": 10,
+            "circle-color": "#007cbf"
+        }
+    });
+
 map.jumpTo({ 'center': firstpoint, 'zoom': 9.5 });
 var i = 0;
 var timer = window.setInterval(function() {
