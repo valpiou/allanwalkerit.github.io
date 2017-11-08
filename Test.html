@@ -42,16 +42,30 @@ coordinates.push(points);
 
 firstpoint = coordinates[0];
 
- map.addSource('trace', { type: 'geojson', data: data });
-        map.addLayer({
-            "id": "trace",
-            "type": "circle",
-            "source": "trace",
-            "paint": {
-            "circle-radius": 1,
-            "circle-color": "#FFFFFF"
+function pointOnCircle() {
+    return {
+        "type": "Point",
+        "coordinates": [
+      coordinates      
+        ]
+    };
+}
+
+map.on('load', function () {
+    map.addSource('point', {
+        "type": "geojson",
+        "data": pointOnCircle()
+    });
+
+    map.addLayer({
+        "id": "point",
+        "source": "point",
+        "type": "circle",
+        "paint": {
+            "circle-radius": 10,
+            "circle-color": "#007cbf"
         }
-        });
+    });
 
 
 map.jumpTo({ 'center': firstpoint, 'zoom': 9.5 });
@@ -59,7 +73,7 @@ var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
 console.log(coordinates[i]);
-map.getSource('trace').setData(data);
+map.getSource('point').setData(point);
 i++;
 } else {
 window.clearInterval(timer);
