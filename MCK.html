@@ -192,10 +192,6 @@ color:#000000;
 color:#FFFFFF;
 }
 
-select {
-  -webkit-appearance: none;
-}
-
 </style>
 </head>
 <body onload="tableau1()">
@@ -448,6 +444,18 @@ function tableau7(){
         };
 viz7 = new tableauSoftware.Viz(sevenPh, sevenUrl, sevenvizOptions);
 }
+
+$( "#businessunits" ).change(function() {
+  businessunits(this.value);
+});
+
+function businessunits(propValue){
+viz1.getWorkbook().changeParameterValueAsync("BUSINESSUNITS", propValue);
+viz4.getWorkbook().changeParameterValueAsync("BUSINESSUNITS", propValue);
+viz5.getWorkbook().changeParameterValueAsync("BUSINESSUNITS", propValue);
+};
+}
+
 
 </script>
 </html>
