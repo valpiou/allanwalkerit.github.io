@@ -60,7 +60,7 @@ map.addLayer({
             "circle-color": "#007cbf"
         }
     });
-});
+
 
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
@@ -68,11 +68,11 @@ $.each(data.features, function (key, val) {
 geometry = val.geometry;
 points = geometry.coordinates;
 coordinates.push(points);
+console.log(coordinates);
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
 coordinates.push(coordinates[i]);
-console.log(coordinates[i]);
 map.getSource('source').setData(geojsonFeature);
 i++;
 } 
@@ -81,7 +81,7 @@ window.clearInterval(timer);
 }}, 100);
 });
 });
-;
+});
 
 
 
