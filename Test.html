@@ -48,11 +48,11 @@ firstpoint = coordinates[0];
 var geojsonFeature = {
     "type": "Feature",
     "properties": {
-        "name": "Coors Field",
+        "name": "First Point",
     },
     "geometry": {
         "type": "Point",
-        "coordinates": firstpoint
+        "coordinates": [0,18]
     }
 };
 
@@ -73,7 +73,7 @@ map.on('load', function () {
     });
 });
 
-map.jumpTo({ 'center': firstpoint, 'zoom': 9.5 });
+map.jumpTo({ 'center': [0,18], 'zoom': 9.5 });
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
