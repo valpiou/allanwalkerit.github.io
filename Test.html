@@ -44,10 +44,16 @@ coordinates.push(points);
 
 firstpoint = coordinates[0];
 
+
+var geojson = "type": "Point",
+        "coordinates": [
+            firstpoint
+        ];
+
 map.on('load', function () {
     map.addSource('point', {
         "type": "geojson",
-        "data": firstpoint
+        "data": geojson
     });
 
     map.addLayer({
