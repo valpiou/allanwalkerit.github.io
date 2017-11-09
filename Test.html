@@ -45,19 +45,21 @@ coordinates.push(points);
 firstpoint = coordinates[0];
 
 
-function pointOnCircle(coordinates) {
-    return {
+var geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "Coors Field",
+    },
+    "geometry": {
         "type": "Point",
-        "coordinates": [
-            firstpoint
-        ]
-    };
-}
+        "coordinates": [firstpoint]
+    }
+};
 
 map.on('load', function () {
     map.addSource('point', {
         "type": "geojson",
-        "data": pointOnCircle(0)
+        "data": geojsonFeature
     });
 
     map.addLayer({
