@@ -61,14 +61,14 @@ var geojsonFeature = {
 };
 
 function addlayerandcircle(i){
-map.addSource(i, {
+map.addSource([i], {
         "type": "geojson",
         "data": geojsonFeature
     });
 
     map.addLayer({
-        "id": i,
-        "source": i,
+        "id": [i],
+        "source": [i],
         "type": "circle",
         "paint": {
             "circle-radius": 10,
