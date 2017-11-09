@@ -69,24 +69,6 @@ var map = new mapboxgl.Map({
     pitch: 30,
     bearing: 0
 });
-
-map.on('load', function () {
-    map.addSource('point', {
-        "type": "geojson",
-        "data": geojsonFeature
-    });
-
-    map.addLayer({
-        "id": "point",
-        "source": "point",
-        "type": "circle",
-        "paint": {
-            "circle-radius": 100,
-            "circle-color": "black"
-        }
-    });
-    });
-
 });
 });
 
