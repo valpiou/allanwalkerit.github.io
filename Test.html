@@ -33,13 +33,28 @@ var map = new mapboxgl.Map({
     zoom: 0
 });
 
+map.addSource("source", {
+        "type": "geojson",
+        "data": geojsonFeature
+    });
+
+map.addLayer({
+        "id": "circle",
+        "source": "source",
+        "type": "circle",
+        "paint": {
+            "circle-radius": 10,
+            "circle-color": "#007cbf"
+        }
+    });
+
 function dostuff(){
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
 $.each(data.features, function (key, val) {
 geometry = val.geometry;
 points = geometry.coordinates;
-firstpoint = coordinates[0];
+var firstpoint = [0,0];
 coordinates.push(points);
 
 var i = 0;
@@ -64,22 +79,6 @@ var geojsonFeature = {
     }
 };
 });
-
-map.addSource("source", {
-        "type": "geojson",
-        "data": geojsonFeature
-    });
-
-map.addLayer({
-        "id": "circle",
-        "source": "source",
-        "type": "circle",
-        "paint": {
-            "circle-radius": 10,
-            "circle-color": "#007cbf"
-        }
-    });
-
 });
 };
 
