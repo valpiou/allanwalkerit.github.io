@@ -18,7 +18,7 @@ body {
 </style>
 </head>
 
-<body>
+<body onload='dostuff()'>
 
 <div id='map'></div>
 </body>
@@ -33,11 +33,12 @@ var map = new mapboxgl.Map({
     zoom: 0
 });
 
-map.on('load', function () {
-    d3.json('ships.geojson', function(err, data) {
+function dostuff(){
+d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
 });
-});
+};
+
 
 
 
