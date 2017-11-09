@@ -27,6 +27,11 @@ body {
 var coordinates =[];
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/satellite-v9',
+    zoom: 0
+});
 
 function dostuff(){
 d3.json('ships.geojson', function(err, data) {
@@ -36,10 +41,10 @@ geometry = val.geometry;
 points = geometry.coordinates;
 firstpoint = coordinates[0];
 coordinates.push(points);
-
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
+addlayerandcircle();
 i++;
 } else {
 window.clearInterval(timer);
@@ -55,11 +60,23 @@ var geojsonFeature = {
     }
 };
 
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/satellite-v9',
-    zoom: 0
-});
+function addlayerandcircle(){
+map.addSource(i, {
+        "type": "geojson",
+        "data": geojsonFeature
+    });
+
+    map.addLayer({
+        "id": i,
+        "source": i,
+        "type": "circle",
+        "paint": {
+            "circle-radius": 10,
+            "circle-color": "#007cbf"
+        }
+    });
+    };
+
 });
 });
 };
