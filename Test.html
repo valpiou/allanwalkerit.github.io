@@ -14,8 +14,8 @@ margin:0;
 padding:0; 
 }
 #coords {
-display:none;
 }
+
 #map { 
 position:absolute;
 top:0; 
@@ -59,16 +59,6 @@ var geojsonFeature = {
         "coordinates": coordinates[i]
     }
 };
-
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/allanwalkersprinting/cj9r9wihd0xgk2sojmh86y9ed?fresh=true',
-    center: firstpoint,
-    zoom: 2,
-    pitch: 30,
-    bearing: 0
-});
 });
 });
 
