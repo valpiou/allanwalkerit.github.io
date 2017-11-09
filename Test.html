@@ -20,7 +20,7 @@
 <script src='https://d3js.org/d3.v3.min.js' charset='utf-8'></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
-dostuff();
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
     container: 'map',
@@ -46,6 +46,7 @@ var geojsonFeature = {
 };
 
 map.on('load', function () {
+dostuff();
     map.addSource('point', {
         "type": "geojson",
         "data": geojsonFeature
