@@ -21,18 +21,24 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/allanwalkersprinting/cj9r9wihd0xgk2sojmh86y9ed?fresh=true',
-    center: [0,0],
-    zoom: 2,
-    pitch: 30,
-    bearing: 0
-
-});
-
 var coordinates =[];
+
+d3.json('ships.geojson', function(err, data) {
+        if (err) throw err;
+
+$.each(data.features, function (key, val) {
+geometry = val.geometry;
+points = geometry.coordinates;
+firstpoint = coordinates[0];
+coordinates.push(points);
+var i = 0;
+var timer = window.setInterval(function() {
+if (i < coordinates.length) {
+document.getElementById("coords").innerHTML = coordinates[i];
+i++;
+} else {
+window.clearInterval(timer);
+}}, 100);
 
 var geojsonFeature = {
     "type": "Feature",
@@ -41,12 +47,25 @@ var geojsonFeature = {
     },
     "geometry": {
         "type": "Point",
-        "coordinates": firstpoint
+        "coordinates": coordinates[i]
     }
 };
+console.log(geojsonFeature);
+});
+});
+
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/allanwalkersprinting/cj9r9wihd0xgk2sojmh86y9ed?fresh=true',
+    center: [0,0],
+    zoom: 2,
+    pitch: 30,
+    bearing: 0
+});
 
 map.on('load', function () {
-dostuff();
     map.addSource('point', {
         "type": "geojson",
         "data": geojsonFeature
@@ -61,30 +80,11 @@ dostuff();
             "circle-color": "black"
         }
     });
+    });
 
-function dostuff(){
-d3.json('ships.geojson', function(err, data) {
-        if (err) throw err;
 
-$.each(data.features, function (key, val) {
-geometry = val.geometry;
-points = geometry.coordinates;
-firstpoint = coordinates[0];
-coordinates.push(points);
-});
-map.jumpTo({ 'center': firstpoint, 'zoom': 9.5 });
-var i = 0;
-var timer = window.setInterval(function() {
-if (i < coordinates.length) {
-firstpoint.push(coordinates[i]);
-document.getElementById("coords").innerHTML = coordinates[i];
-i++;
-} else {
-window.clearInterval(timer);
-}}, 100);
-});
-};
-});;;
+
+
 
 
 
