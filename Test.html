@@ -34,7 +34,7 @@ var map = new mapboxgl.Map({
 });
 
 map.on('load', function () {
-    d3.json('/mapbox-gl-js/assets/hike.geojson', function(err, data) {
+    d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
 });
 });
