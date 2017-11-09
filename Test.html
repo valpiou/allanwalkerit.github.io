@@ -26,6 +26,17 @@ body {
 
 var coordinates =[];
 
+var geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "First Point",
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": firstpoint
+    }
+};
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
     container: 'map',
@@ -44,39 +55,13 @@ coordinates.push(points);
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
-addlayerandcircle(i);
+firstpoint.push(coordinates[i]);
+console.log(geojsonFeature);
 i++;
-} else {
+} 
+else {
 window.clearInterval(timer);
 }}, 100);
-var geojsonFeature = {
-    "type": "Feature",
-    "properties": {
-        "name": "First Point",
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": coordinates[i]
-    }
-};
-
-function addlayerandcircle(i){
-map.addSource([i], {
-        "type": "geojson",
-        "data": geojsonFeature
-    });
-
-    map.addLayer({
-        "id": [i],
-        "source": [i],
-        "type": "circle",
-        "paint": {
-            "circle-radius": 10,
-            "circle-color": "#007cbf"
-        }
-    });
-    };
-
 });
 });
 };
