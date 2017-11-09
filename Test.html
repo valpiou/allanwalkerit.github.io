@@ -76,7 +76,8 @@ coordinatearray.push(points);
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinatearray.length) {
-coordinates = coordinatearray[i];
+var coordinates = [];
+coordinates.push(coordinatearray[i]);
 alert(JSON.stringify(geojsonFeature));
 map.getSource('source').setData(geojsonFeature);
 i++;
