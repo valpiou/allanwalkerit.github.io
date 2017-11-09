@@ -24,7 +24,7 @@ body {
 </body>
 <script>
 
-var coordinates[i] =[0,0];
+var coordinates = [];
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
@@ -40,11 +40,12 @@ var geojsonFeature = {
     },
     "geometry": {
         "type": "Point",
-        "coordinates": coordinates[i]
+        "coordinates": coordinates
     }
 };
 
 map.on('load', function () {
+coordinates.push(0,0);
 map.addSource("source", {
         "type": "geojson",
         "data": geojsonFeature
@@ -70,6 +71,7 @@ coordinates.push(points);
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
+coordinates.push(coordinates[i]);
 console.log(coordinates[i]);
 map.getSource('source').setData(geojsonFeature);
 i++;
