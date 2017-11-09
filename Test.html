@@ -63,15 +63,16 @@ var geojsonFeature = {
         "coordinates": firstpoint
     }
 };
+});
 
-map.addSource("point", {
+map.addSource("source", {
         "type": "geojson",
         "data": geojsonFeature
     });
 
-    map.addLayer({
+map.addLayer({
         "id": "circle",
-        "source": "point",
+        "source": "source",
         "type": "circle",
         "paint": {
             "circle-radius": 10,
@@ -79,7 +80,6 @@ map.addSource("point", {
         }
     });
 
-});
 });
 };
 
