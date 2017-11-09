@@ -26,17 +26,6 @@ body {
 
 var coordinates =[];
 
-var geojsonFeature = {
-    "type": "Feature",
-    "properties": {
-        "name": "First Point",
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": firstpoint
-    }
-};
-
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
     container: 'map',
@@ -62,6 +51,18 @@ i++;
 else {
 window.clearInterval(timer);
 }}, 100);
+
+var geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "First Point",
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": firstpoint
+    }
+};
+
 });
 });
 };
