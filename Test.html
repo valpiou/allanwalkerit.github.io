@@ -9,14 +9,11 @@
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' rel='stylesheet' />
 <style>
 body {
-margin:0;
-padding:0; 
 }
 #coords {
 }
 
 #map { 
-display:none;
 }
 /style>
 </head>
@@ -27,6 +24,7 @@ display:none;
 
 <script src='https://d3js.org/d3.v3.min.js' charset='utf-8'></script>
 <script>
+
 var coordinates =[];
 
 d3.json('ships.geojson', function(err, data) {
@@ -37,10 +35,20 @@ geometry = val.geometry;
 points = geometry.coordinates;
 firstpoint = coordinates[0];
 coordinates.push(points);
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/allanwalkersprinting/cj9r9wihd0xgk2sojmh86y9ed?fresh=true',
+    center: firstpoint,
+    zoom: 2,
+    pitch: 30,
+    bearing: 0
+});
+
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
-document.getElementById("coords").innerHTML = coordinates[i];
 i++;
 } else {
 window.clearInterval(timer);
