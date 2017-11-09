@@ -76,6 +76,7 @@ var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
 firstpoint.push(coordinates[i]);
+map.getSource('circle').setData(geojsonFeature);
 i++;
 } 
 else {
