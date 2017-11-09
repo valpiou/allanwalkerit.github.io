@@ -64,6 +64,7 @@ map.addLayer({
 });
 
 function dostuff(){
+var coordinates = [];
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
 
