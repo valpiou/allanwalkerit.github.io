@@ -25,6 +25,16 @@ body {
 <script src='https://d3js.org/d3.v3.min.js' charset='utf-8'></script>
 <script>
 
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/allanwalkersprinting/cj9r9wihd0xgk2sojmh86y9ed?fresh=true',
+    center: [0,18],
+    zoom: 2,
+    pitch: 30,
+    bearing: 0
+});
+
 var coordinates =[];
 
 d3.json('ships.geojson', function(err, data) {
@@ -35,16 +45,6 @@ geometry = val.geometry;
 points = geometry.coordinates;
 firstpoint = coordinates[0];
 coordinates.push(points);
-
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/allanwalkersprinting/cj9r9wihd0xgk2sojmh86y9ed?fresh=true',
-    center: firstpoint,
-    zoom: 2,
-    pitch: 30,
-    bearing: 0
-});
 
 var i = 0;
 var timer = window.setInterval(function() {
