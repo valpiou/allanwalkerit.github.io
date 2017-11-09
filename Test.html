@@ -70,13 +70,11 @@ $.each(data.features, function (key, val) {
 geometry = val.geometry;
 points = geometry.coordinates;
 coordinates.push(points);
-
 var i = 0;
-
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
 firstpoint.push(coordinates[i]);
-map.getSource('circle').setData(geojsonFeature);
+map.getSource('source').setData(geojsonFeature);
 i++;
 } 
 else {
