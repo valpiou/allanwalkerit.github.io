@@ -78,7 +78,7 @@ var timer = window.setInterval(function() {
 if (i < coordinatearray.length) {
 coordinates.shift();
 coordinates=coordinatearray[i];
-console.log(coordinates);
+alert(JSON.stringify(geojsonFeature));
 map.getSource('source').setData(geojsonFeature);
 i++;
 } 
