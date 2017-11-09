@@ -41,11 +41,12 @@ geometry = val.geometry;
 points = geometry.coordinates;
 firstpoint = coordinates[0];
 coordinates.push(points);
+
 var i = 0;
+
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
 firstpoint.push(coordinates[i]);
-console.log(geojsonFeature);
 i++;
 } 
 else {
@@ -62,6 +63,21 @@ var geojsonFeature = {
         "coordinates": firstpoint
     }
 };
+
+map.addSource("point", {
+        "type": "geojson",
+        "data": geojsonFeature
+    });
+
+    map.addLayer({
+        "id": "point",
+        "source": "point",
+        "type": "circle",
+        "paint": {
+            "circle-radius": 10,
+            "circle-color": "#007cbf"
+        }
+    });
 
 });
 });
