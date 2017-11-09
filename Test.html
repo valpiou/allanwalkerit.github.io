@@ -64,7 +64,6 @@ map.addLayer({
 });
 
 function dostuff(){
-var coordinates = [];
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
 
@@ -77,7 +76,7 @@ coordinatearray.push(points);
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinatearray.length) {
-coordinates.push(coordinatearray[i]);
+coordinates = coordinatearray[i];
 alert(JSON.stringify(geojsonFeature));
 map.getSource('source').setData(geojsonFeature);
 i++;
