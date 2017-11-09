@@ -7,9 +7,19 @@
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' rel='stylesheet' />
     <style>
-        body { margin:0; padding:0; }
-	#coords { position:fixed; top:0; bottom:0; width:100%; display:none;}
-        #map { position:absolute; top:0; bottom:0; width:100%; }
+body {
+margin:0;
+padding:0; 
+}
+#coords {
+display:none;
+}
+#map { 
+position:absolute;
+top:0; 
+bottom:0; 
+width:100%; 
+}
     </style>
 </head>
 <body>
@@ -50,10 +60,6 @@ var geojsonFeature = {
         "coordinates": coordinates[i]
     }
 };
-console.log(geojsonFeature);
-});
-});
-
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
@@ -64,23 +70,10 @@ var map = new mapboxgl.Map({
     pitch: 30,
     bearing: 0
 });
+});
+});
 
-map.on('load', function () {
-    map.addSource('point', {
-        "type": "geojson",
-        "data": geojsonFeature
-    });
 
-    map.addLayer({
-        "id": "point",
-        "source": "point",
-        "type": "circle",
-        "paint": {
-            "circle-radius": 100,
-            "circle-color": "black"
-        }
-    });
-    });
 
 
 
