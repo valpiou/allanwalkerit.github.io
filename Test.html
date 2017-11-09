@@ -45,6 +45,7 @@ var geojsonFeature = {
 };
 
 map.on('load', function () {
+dostuff();
 coordinates.push(0,0);
 map.addSource("source", {
         "type": "geojson",
@@ -59,9 +60,9 @@ map.addLayer({
             "circle-radius": 10,
             "circle-color": "#007cbf"
         }
-    });
+});
 
-
+function dostuff(){
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
 $.each(data.features, function (key, val) {
@@ -81,9 +82,8 @@ window.clearInterval(timer);
 }}, 100);
 });
 });
+};
 });
-
-
 
 </script>
 </html>
