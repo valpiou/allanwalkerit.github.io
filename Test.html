@@ -3,10 +3,10 @@
 <head>
     <meta charset='utf-8' />
     <title>Animated Ships</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
-<script src='https://d3js.org/d3.v3.min.js' charset='utf-8'></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src='https://d3js.org/d3.v3.min.js' charset='utf-8'></script>
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' rel='stylesheet' />
 <style>
 body {
@@ -17,18 +17,16 @@ padding:0;
 }
 
 #map { 
-position:absolute;
-top:0; 
-bottom:0; 
-width:100%; 
+display:none;
 }
 /style>
 </head>
-<body>
 
+<body>
 <div id='coords'></div>
 <div id='map'></div>
 </body>
+
 <script>
 var coordinates =[];
 
