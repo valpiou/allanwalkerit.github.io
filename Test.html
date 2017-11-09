@@ -18,25 +18,17 @@ body {
 /style>
 </head>
 
-<body>
+<body onload="dostuff()">
 <div id='coords'></div>
 <div id='map'></div>
 
 <script src='https://d3js.org/d3.v3.min.js' charset='utf-8'></script>
 <script>
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/allanwalkersprinting/cj9r9wihd0xgk2sojmh86y9ed?fresh=true',
-    center: [0,18],
-    zoom: 2,
-    pitch: 30,
-    bearing: 0
-});
 
 var coordinates =[];
 
+function dostuff(){
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
 
@@ -67,6 +59,7 @@ var geojsonFeature = {
 console.log(geojsonFeature);
 });
 });
+}
 </body>
 </script>
 </html>
