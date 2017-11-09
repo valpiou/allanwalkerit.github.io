@@ -26,14 +26,6 @@ body {
 
 var coordinates = [];
 var coordinatearray = [];
-
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/satellite-v9',
-    zoom: 0
-});
-
 var geojsonFeature = {
     "type": "Feature",
     "properties": {
@@ -44,6 +36,13 @@ var geojsonFeature = {
         "coordinates": coordinates
     }
 };
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/satellite-v9',
+    zoom: 0
+});
 
 map.on('load', function () {
 coordinates.push(0,0);
@@ -79,8 +78,6 @@ if (i < coordinatearray.length) {
 coordinates.shift();
 coordinates=coordinatearray[i];
 console.log(coordinates);
-geojsonFeature.push(coordinates);
-alert(JSON.stringify(geojsonFeature));
 map.getSource('source').setData(geojsonFeature);
 i++;
 } 
