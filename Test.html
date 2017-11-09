@@ -63,17 +63,17 @@ map.addLayer({
 });
 
 function dostuff(){
+coordinates = [];
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
 $.each(data.features, function (key, val) {
 geometry = val.geometry;
 points = geometry.coordinates;
-coordinates = [];
 coordinates.push(points);
-console.log(coordinates);
 });
 });
 };
+console.log(coordinates);
 });
 
 </script>
