@@ -66,24 +66,26 @@ function dostuff(){
 coordinates = [];
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
+
 $.each(data.features, function (key, val) {
 geometry = val.geometry;
 points = geometry.coordinates;
 coordinates.push(points);
 });
-});
-};
+
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
-coordinates[0].push(coordinates[i]);
-console.log(coordinates[0]);
+coordinates.push(coordinates[i]);
+console.log(coordinates);
 map.getSource('source').setData(geojsonFeature);
 i++;
 } 
 else {
 window.clearInterval(timer);
 }}, 100);
+});
+};
 });
 
 </script>
