@@ -45,15 +45,19 @@ coordinates.push(points);
 firstpoint = coordinates[0];
 
 
-var geojson = "type": "Point",
+function pointOnCircle(coordinates) {
+    return {
+        "type": "Point",
         "coordinates": [
             firstpoint
-        ];
+        ]
+    };
+}
 
 map.on('load', function () {
     map.addSource('point', {
         "type": "geojson",
-        "data": geojson
+        "data": pointOnCircle(0)
     });
 
     map.addLayer({
