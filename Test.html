@@ -20,6 +20,7 @@
 <script src='https://d3js.org/d3.v3.min.js' charset='utf-8'></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
+dostuff();
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
     container: 'map',
@@ -59,7 +60,7 @@ map.on('load', function () {
             "circle-color": "black"
         }
     });
-dostuff();
+
 function dostuff(){
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
