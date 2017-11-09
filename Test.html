@@ -46,6 +46,7 @@ var geojsonFeature = {
     }
 };
 
+map.on('load', function () {
 map.addSource("source", {
         "type": "geojson",
         "data": geojsonFeature
@@ -60,6 +61,7 @@ map.addLayer({
             "circle-color": "#007cbf"
         }
     });
+});
 
 function dostuff(){
 d3.json('ships.geojson', function(err, data) {
