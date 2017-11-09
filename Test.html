@@ -40,7 +40,7 @@ var geojsonFeature = {
     },
     "geometry": {
         "type": "Point",
-        "coordinates": firstpoint
+        "coordinates": coordinates[0]
     }
 };
 
@@ -60,8 +60,6 @@ map.on('load', function () {
         }
     });
 dostuff();
-});;;
-
 function dostuff(){
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
@@ -83,6 +81,9 @@ window.clearInterval(timer);
 }}, 100);
 });
 };
+});;;
+
+
 
 </script>
 
