@@ -63,20 +63,19 @@ map.addLayer({
 });
 
 function dostuff(){
-coordinates = [];
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
 
 $.each(data.features, function (key, val) {
 geometry = val.geometry;
 points = geometry.coordinates;
-coordinates.push(points);
+coordinatearray.push(points);
 });
 
 var i = 0;
 var timer = window.setInterval(function() {
-if (i < coordinates.length) {
-console.log(coordinates[i]);
+if (i < coordinatearray.length) {
+console.log(coordinatearray[i]);
 //map.getSource('source').setData(geojsonFeature);
 i++;
 } 
