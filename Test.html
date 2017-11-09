@@ -72,16 +72,6 @@ map.on('load', function () {
         }
     });
 });
-
-map.jumpTo({ 'center': [0,18], 'zoom': 9.5 });
-var i = 0;
-var timer = window.setInterval(function() {
-if (i < coordinates.length) {
-document.getElementById("coords").innerHTML = coordinates[i];
-i++;
-} else {
-window.clearInterval(timer);
-}}, 100);
 });
 });
 
