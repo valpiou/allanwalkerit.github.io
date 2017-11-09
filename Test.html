@@ -40,7 +40,7 @@ var geojsonFeature = {
     },
     "geometry": {
         "type": "Point",
-        "coordinates": [0,0]
+        "coordinates": firstpoint
     }
 };
 
@@ -59,11 +59,30 @@ map.on('load', function () {
             "circle-color": "black"
         }
     });
+dostuff();
+});;;
+
+function dostuff(){
+d3.json('ships.geojson', function(err, data) {
+        if (err) throw err;
+
+$.each(data.features, function (key, val) {
+geometry = val.geometry;
+points = geometry.coordinates;
+firstpoint = coordinates[0];
+coordinates.push(points);
 });
-;
-;
-
-
+map.jumpTo({ 'center': firstpoint, 'zoom': 9.5 });
+var i = 0;
+var timer = window.setInterval(function() {
+if (i < coordinates.length) {
+document.getElementById("coords").innerHTML = coordinates[i];
+i++;
+} else {
+window.clearInterval(timer);
+}}, 100);
+});
+};
 
 </script>
 
