@@ -36,6 +36,31 @@ var map = new mapboxgl.Map({
 function dostuff(){
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
+$.each(data.features, function (key, val) {
+geometry = val.geometry;
+points = geometry.coordinates;
+firstpoint = coordinates[0];
+coordinates.push(points);
+var i = 0;
+var timer = window.setInterval(function() {
+if (i < coordinates.length) {
+console.log(geojsonFeature);
+i++;
+} else {
+window.clearInterval(timer);
+}}, 100);
+
+var geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "First Point",
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": coordinates[i]
+    }
+};
+});
 });
 };
 
