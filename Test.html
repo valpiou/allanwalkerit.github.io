@@ -18,7 +18,7 @@ body {
 </style>
 </head>
 
-<body onload='dostuff()'>
+<body>
 
 <div id='map'></div>
 </body>
@@ -63,7 +63,6 @@ map.addLayer({
     });
 });
 
-function dostuff(){
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
 $.each(data.features, function (key, val) {
@@ -74,6 +73,7 @@ var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
 firstpoint.push(coordinates[i]);
+console.log(firstpoint);
 map.getSource('source').setData(geojsonFeature);
 i++;
 } 
@@ -82,7 +82,7 @@ window.clearInterval(timer);
 }}, 100);
 });
 });
-};
+;
 
 
 
