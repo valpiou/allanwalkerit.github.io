@@ -44,7 +44,7 @@ coordinates.push(points);
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
-addlayerandcircle();
+addlayerandcircle(i);
 i++;
 } else {
 window.clearInterval(timer);
@@ -60,7 +60,7 @@ var geojsonFeature = {
     }
 };
 
-function addlayerandcircle(){
+function addlayerandcircle(i){
 map.addSource(i, {
         "type": "geojson",
         "data": geojsonFeature
