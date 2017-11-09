@@ -40,7 +40,7 @@ var geojsonFeature = {
     },
     "geometry": {
         "type": "Point",
-        "coordinates": coordinates
+        "coordinates": coordinates[0]
     }
 };
 
@@ -73,7 +73,17 @@ coordinates.push(points);
 });
 });
 };
-console.log(coordinates);
+var i = 0;
+var timer = window.setInterval(function() {
+if (i < coordinates.length) {
+coordinates[0].push(coordinates[i]);
+console.log(coordinates[0]);
+map.getSource('source').setData(geojsonFeature);
+i++;
+} 
+else {
+window.clearInterval(timer);
+}}, 100);
 });
 
 </script>
