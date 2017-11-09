@@ -44,6 +44,21 @@ coordinates.push(points);
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinates.length) {
+    map.addSource(i, {
+        "type": "geojson",
+        "data": geojsonFeature
+    });
+
+    map.addLayer({
+        "id": i,
+        "source": i,
+        "type": "circle",
+        "paint": {
+            "circle-radius": 10,
+            "circle-color": "#007cbf"
+        }
+    });
+    ;
 i++;
 } else {
 window.clearInterval(timer);
@@ -61,24 +76,6 @@ var geojsonFeature = {
 });
 });
 };
-
-map.on('load', function () {
-    map.addSource('point', {
-        "type": "geojson",
-        "data": geojsonFeature
-    });
-
-    map.addLayer({
-        "id": "point",
-        "source": "point",
-        "type": "circle",
-        "paint": {
-            "circle-radius": 10,
-            "circle-color": "#007cbf"
-        }
-    });
-    });
-
 
 </script>
 </html>
