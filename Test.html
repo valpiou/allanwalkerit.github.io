@@ -111,7 +111,7 @@ geojsonFeature = {
 };
 map.getSource('source').setData(geojsonFeature);
 console.log(ships);
-document.getElementById("info").innerHTML = ships+' '+times+' '+ports+' '+distance;
+document.getElementById("info").innerHTML = 'Shipname: '+ships+<br><br>+'Date Time: 'times+<br><br>+'Nearest Port: '+ports+<br><br>+'Distance to Port (Miles): '+distance;
 i++;
 } 
 else {
