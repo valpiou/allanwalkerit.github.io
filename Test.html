@@ -74,9 +74,10 @@ d3.json('shipping.geojson', function(err, data) {
         if (err) throw err;
 
 $.each(data.features, function (key, val) {
+property = val.properties;
 geometry = val.geometry;
-ship = val.Name;
-time = val.DateTime;
+ship = property.Name;
+time = property.DateTime;
 points = geometry.coordinates;
 coordinatearray.push(points);
 shiparray.push(name);
