@@ -44,7 +44,7 @@ var nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'top-right');
 
 map.on('load', function () {
-coordinates.push(0,0);
+coordinates.push(-80.108587,26.11082);
 
 var geojsonFeature = {
     "type": "Feature",
@@ -111,7 +111,7 @@ geojsonFeature = {
 };
 map.getSource('source').setData(geojsonFeature);
 console.log(ships);
-document.getElementById("info").innerHTML = ships+' '+times;
+document.getElementById("info").innerHTML = ships+' '+times+' '+ports+' '+distance;
 i++;
 } 
 else {
