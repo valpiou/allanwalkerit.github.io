@@ -62,8 +62,8 @@ map.addLayer({
         "source": "source",
         "type": "circle",
         "paint": {
-            "circle-radius": 3,
-            "circle-color": "#FFFFFF"
+            "circle-radius": 5,
+            "circle-color": "#FF00FF"
         }
 });
 
@@ -91,13 +91,12 @@ geojsonFeature = {
         "coordinates": coordinates
     }
 };
-alert(JSON.stringify(geojsonFeature));
 map.getSource('source').setData(geojsonFeature);
 i++;
 } 
 else {
 window.clearInterval(timer);
-}}, 100);
+}}, 1);
 });
 });
 ;
