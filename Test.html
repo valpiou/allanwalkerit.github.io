@@ -26,16 +26,6 @@ body {
 
 var coordinates = [];
 var coordinatearray = [];
-var geojsonFeature = {
-    "type": "Feature",
-    "properties": {
-        "name": "",
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": coordinates
-    }
-};
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
@@ -47,6 +37,18 @@ var map = new mapboxgl.Map({
 map.on('load', function () {
 coordinates.push(0,0);
 dostuff();
+
+var geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "",
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": coordinates
+    }
+};
+
 map.addSource("source", {
         "type": "geojson",
         "data": geojsonFeature
@@ -76,7 +78,7 @@ var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinatearray.length) {
 coordinates.shift();
-var coordinates=coordinatearray[i];
+coordinates=coordinatearray[i];
 console.log(coordinates);
 alert(JSON.stringify(geojsonFeature));
 map.getSource('source').setData(geojsonFeature);
