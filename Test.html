@@ -24,6 +24,8 @@ body { margin:0; padding:0; }
 
 var coordinates = [];
 var coordinatearray = [];
+var shiparray =[];
+var timearray=[];
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
@@ -73,9 +75,12 @@ d3.json('shipping.geojson', function(err, data) {
 
 $.each(data.features, function (key, val) {
 geometry = val.geometry;
-ship= val.name;
+ship = val.Name;
+time = val.DateTime;
 points = geometry.coordinates;
 coordinatearray.push(points);
+shiparray.push(name);
+timearray.push(time);
 });
 
 var i = 0;
@@ -83,10 +88,12 @@ var timer = window.setInterval(function() {
 if (i < coordinatearray.length) {
 coordinates.shift();
 coordinates=coordinatearray[i];
+ships=shiparray[i];
+times=timearray[i];
 geojsonFeature = {
     "type": "Feature",
     "properties": {
-        "name": "",
+        "name": ships,
     },
     "geometry": {
         "type": "Point",
@@ -94,6 +101,8 @@ geojsonFeature = {
     }
 };
 map.getSource('source').setData(geojsonFeature);
+console.log(ships);
+console.log(times);
 i++;
 } 
 else {
