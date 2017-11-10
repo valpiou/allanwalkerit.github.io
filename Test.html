@@ -96,7 +96,7 @@ map.addLayer({
         }
 });
 
-d3.json('shiptracks.geojson', function(err, data) {
+d3.json('FinalShips.geojson', function(err, data) {
         if (err) throw err;
 
 $.each(data.features, function (key, val) {
