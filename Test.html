@@ -30,8 +30,12 @@ var coordinatearray = [];
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/satellite-v9',
-    zoom: 0
+    style: 'mapbox://styles/allanwalkersprinting/cj9r9wihd0xgk2sojmh86y9ed',
+    center: [-80.846495
+,24.955851],
+    zoom: 7.0,
+    pitch: 60,
+    bearing: 0
 });
 
 map.on('load', function () {
@@ -58,8 +62,8 @@ map.addLayer({
         "source": "source",
         "type": "circle",
         "paint": {
-            "circle-radius": 10,
-            "circle-color": "#007cbf"
+            "circle-radius": 3,
+            "circle-color": "#FFFFFF"
         }
 });
 
