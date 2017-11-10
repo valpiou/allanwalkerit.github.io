@@ -140,6 +140,9 @@ map.flyTo({
 ;
 document.getElementById("info").innerHTML = 'Shipname: '+ships+'<br><br>'+'Date Time: '+times+'<br><br>'+'Nearest Port: '+ports+'<br><br>'+'Distance to Port (Miles): '+distance;
 i++;
+}
+if (i >= coordinatearray.length) {
+i=1;
 } 
 else {
 window.clearInterval(timer);
