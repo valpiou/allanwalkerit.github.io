@@ -38,6 +38,17 @@ map.on('load', function () {
 coordinates.push(0,0);
 dostuff();
 
+var geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "",
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": coordinates
+    }
+};
+
 map.addSource("source", {
         "type": "geojson",
         "data": geojsonFeature
@@ -54,18 +65,6 @@ map.addLayer({
 });
 
 function dostuff(){
-
-var geojsonFeature = {
-    "type": "Feature",
-    "properties": {
-        "name": "",
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": coordinates
-    }
-};
-
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
 
