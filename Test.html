@@ -77,7 +77,16 @@ var timer = window.setInterval(function() {
 if (i < coordinatearray.length) {
 coordinates.shift();
 coordinates=coordinatearray[i];
-console.log(coordinates);
+geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "",
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": coordinates
+    }
+};
 alert(JSON.stringify(geojsonFeature));
 map.getSource('source').setData(geojsonFeature);
 i++;
