@@ -80,7 +80,7 @@ ship = property.Name;
 time = property.DateTime;
 points = geometry.coordinates;
 coordinatearray.push(points);
-shiparray.push(name);
+shiparray.push(ship);
 timearray.push(time);
 });
 
@@ -103,7 +103,7 @@ geojsonFeature = {
 };
 map.getSource('source').setData(geojsonFeature);
 console.log(ships);
-document.getElementById("info").innerHTML = times;
+document.getElementById("info").innerHTML = ships+' '+times;
 i++;
 } 
 else {
