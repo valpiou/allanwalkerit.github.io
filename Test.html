@@ -41,7 +41,7 @@ border-radius: 5px 5px 5px 5px;
 
 <body>
 
-<div id='info'>Information</div>
+<div id='info'>Loading data...</div>
 <div id='map'></div>
 </body>
 <script>
@@ -134,7 +134,10 @@ geojsonFeature = {
     }
 };
 map.getSource('source').setData(geojsonFeature);
-console.log(ships);
+map.flyTo({
+        center: coordinates
+    });
+;
 document.getElementById("info").innerHTML = 'Shipname: '+ships+'<br><br>'+'Date Time: '+times+'<br><br>'+'Nearest Port: '+ports+'<br><br>'+'Distance to Port (Miles): '+distance;
 i++;
 } 
