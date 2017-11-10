@@ -81,8 +81,8 @@ coordinatearray.push(points);
 var i = 0;
 var timer = window.setInterval(function() {
 if (i < coordinatearray.length) {
-coordinates.shift();
-coordinates=coordinatearray[i];
+//coordinates.shift();
+coordinates.push(coordinatearray[i]);
 geojsonFeature = {
     "type": "Feature",
     "properties": {
