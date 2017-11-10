@@ -36,7 +36,6 @@ var map = new mapboxgl.Map({
 
 map.on('load', function () {
 coordinates.push(0,0);
-dostuff();
 
 var geojsonFeature = {
     "type": "Feature",
@@ -64,7 +63,6 @@ map.addLayer({
         }
 });
 
-function dostuff(){
 d3.json('ships.geojson', function(err, data) {
         if (err) throw err;
 
@@ -88,8 +86,10 @@ else {
 window.clearInterval(timer);
 }}, 100);
 });
-};
 });
+;
+;
+
 
 </script>
 </html>
