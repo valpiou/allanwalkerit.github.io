@@ -36,6 +36,9 @@ var map = new mapboxgl.Map({
     bearing: 0
 });
 
+var nav = new mapboxgl.NavigationControl();
+map.addControl(nav, 'top-right');
+
 map.on('load', function () {
 coordinates.push(0,0);
 
@@ -70,6 +73,7 @@ d3.json('shipping.geojson', function(err, data) {
 
 $.each(data.features, function (key, val) {
 geometry = val.geometry;
+ship= val.name;
 points = geometry.coordinates;
 coordinatearray.push(points);
 });
