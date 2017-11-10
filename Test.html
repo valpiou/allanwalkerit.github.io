@@ -26,6 +26,8 @@ var coordinates = [];
 var coordinatearray = [];
 var shiparray =[];
 var timearray=[];
+var portarray=[];
+var distancearray=[];
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
@@ -78,10 +80,14 @@ property = val.properties;
 geometry = val.geometry;
 ship = property.Name;
 time = property.DateTime;
+port = property.PortName;
+distance = property.DistanceMiles;
 points = geometry.coordinates;
 coordinatearray.push(points);
 shiparray.push(ship);
 timearray.push(time);
+portarray.push(port);
+distancearray.push(distance);
 });
 
 var i = 0;
@@ -91,6 +97,8 @@ coordinates.shift();
 coordinates=coordinatearray[i];
 ships=shiparray[i];
 times=timearray[i];
+ports=portarray[i];
+distances=distancearray[i];
 geojsonFeature = {
     "type": "Feature",
     "properties": {
