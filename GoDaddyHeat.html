@@ -47,7 +47,7 @@ map.on('load', function() {
         "maxzoom": 9,
         "paint": {
             "heatmap-weight": {
-                "property": "mag",
+                "property": "Heat",
                 "type": "exponential",
                 "stops": [
                     [0, 0],
@@ -98,7 +98,7 @@ map.on('load', function() {
         "minzoom": 7,
         "paint": {
             "circle-radius": {
-                "property": "mag",
+                "property": "Heat",
                 "type": "exponential",
                 "stops": [
                     [{ zoom: 7, value: 1 }, 1],
@@ -109,7 +109,7 @@ map.on('load', function() {
             },
             
             "circle-color": {
-                "property": "mag",
+                "property": "Heat",
                 "type": "exponential",
                 "stops": [
                     [1, "rgba(33,102,172,0)"],
