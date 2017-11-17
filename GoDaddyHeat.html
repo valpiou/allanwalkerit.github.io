@@ -136,14 +136,14 @@ map.on('load', function() {
         closeOnClick: false
     });
 
-    map.on('mouseenter', 'places', function(e) {
+    map.on('mouseenter', 'GoDaddy', function(e) {
         map.getCanvas().style.cursor = 'pointer';
         popup.setLngLat(e.features[0].geometry.coordinates)
             .setHTML(e.features[0].properties.Org)
             .addTo(map);
     });
 
-    map.on('mouseleave', 'places', function() {
+    map.on('mouseleave', 'GoDaddy', function() {
         map.getCanvas().style.cursor = '';
         popup.remove();
     });
