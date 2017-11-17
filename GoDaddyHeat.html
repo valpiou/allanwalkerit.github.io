@@ -37,7 +37,7 @@ map.addControl(new MapboxGeocoder({
 map.on('load', function() {
     map.addSource('GoDaddy', {
         "type": "geojson",
-        "data": "GoDaddy.geojson"
+        "data": "GoDaddyHeat.geojson"
     });
 
     map.addLayer({
@@ -71,7 +71,7 @@ map.on('load', function() {
                 0.4, "rgb(10,154,232)",
                 0.6, "rgb(2,30,255)",
                 0.8, "rgb(108,10,232)",
-                1, "rgb(255,0,255)"
+                1, "rgba(255,0,255,0.75)"
             ],
 
             "heatmap-radius": {
@@ -117,7 +117,7 @@ map.on('load', function() {
                     [3, "rgb(10,154,232)"],
                     [4, "rgb(2,30,255)"],
                     [5, "rgb(108,10,232)"],
-                    [6, "rgb(255,0,255)"]
+                    [6, "rgba(255,0,255,0.75)"]
                 ]
             },
             "circle-stroke-color": "white",
