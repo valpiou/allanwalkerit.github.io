@@ -131,21 +131,20 @@ map.on('load', function() {
         }
     }, 'waterway-label');
 
-    var popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false
-    });
-
-    map.on('mouseenter', 'GoDaddy', function(e) {
-        map.getCanvas().style.cursor = 'pointer';
-        popup.setLngLat(e.features[0].geometry.coordinates)
+    map.on('click', 'GoDaddy', function (e) {
+        new mapboxgl.Popup()
+            .setLngLat(e.features[0].geometry.coordinates)
             .setHTML(e.features[0].properties.Org)
             .addTo(map);
     });
 
-    map.on('mouseleave', 'GoDaddy', function() {
+
+    map.on('mouseenter', 'GoDaddy', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'GoDaddy', function () {
         map.getCanvas().style.cursor = '';
-        popup.remove();
     });
 });;
 </script>
