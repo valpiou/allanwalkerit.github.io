@@ -41,7 +41,7 @@ map.on('load', function() {
     });
 
     map.addLayer({
-        "id": "GoDaddy",
+        "id": "GoDaddy-heat",
         "type": "heatmap",
         "source": "GoDaddy",
         "maxzoom": 9,
@@ -131,7 +131,7 @@ map.on('load', function() {
         }
     }, 'waterway-label');
 
-    map.on('click', 'GoDaddy', function (e) {
+    map.on('click', 'GoDaddy-heat', function (e) {
         new mapboxgl.Popup()
             .setLngLat(e.features[0].geometry.coordinates)
             .setHTML(e.features[0].properties.Org)
@@ -139,11 +139,11 @@ map.on('load', function() {
     });
 
 
-    map.on('mouseenter', 'GoDaddy', function () {
+    map.on('mouseenter', 'GoDaddy-heat', function () {
         map.getCanvas().style.cursor = 'pointer';
     });
 
-    map.on('mouseleave', 'GoDaddy', function () {
+    map.on('mouseleave', 'GoDaddy-heat', function () {
         map.getCanvas().style.cursor = '';
     });
 });;
