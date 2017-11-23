@@ -131,7 +131,7 @@ map.on('load', function() {
         }
     }, 'waterway-label');
 
-    map.on('click', 'GoDaddy-heat', function (e) {
+    map.on('click', 'GoDaddy-point', function (e) {
         new mapboxgl.Popup()
             .setLngLat(e.features[0].geometry.coordinates)
             .setHTML('Organization: '+e.features[0].properties.Org)
@@ -139,11 +139,11 @@ map.on('load', function() {
     });
 
 
-    map.on('mouseenter', 'GoDaddy-heat', function () {
+    map.on('mouseenter', 'GoDaddy-point', function () {
         map.getCanvas().style.cursor = 'pointer';
     });
 
-    map.on('mouseleave', 'GoDaddy-heat', function () {
+    map.on('mouseleave', 'GoDaddy-point', function () {
         map.getCanvas().style.cursor = '';
     });
 });;
