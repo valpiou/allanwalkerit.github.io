@@ -23,7 +23,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3b
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/allanwalkersprinting/cja48k3c22eov2sqmoypu3o4z?fresh=true',
-    center: [-112.134, 33.606],
+    center: [0, 18],
     zoom: 9
 });
 
@@ -130,6 +130,11 @@ map.on('load', function() {
             }
         }
     }, 'waterway-label');
+
+map.flyTo({
+        center: [-112.134, 33.606],
+        zoom: 9,
+    });
 
     map.on('click', 'GoDaddy-point', function (e) {
         new mapboxgl.Popup()
