@@ -143,6 +143,9 @@ curve: 1,
             .setLngLat(e.features[0].geometry.coordinates)
             .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range)
             .addTo(map);
+var country = e.features[0].properties.Country;
+var state = e.features[0].properties.State;
+console.log(country+' '+state);
     });
 
 
