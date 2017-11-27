@@ -28,6 +28,12 @@ border-right: 0px;
 border-radius:0;
 }
 
+.hamburger {
+float: left;
+font-size: 30px;
+cursor: pointer;
+}
+
 .navbar-brand {
   padding: 0px;
 }
@@ -83,7 +89,8 @@ width: 100%;
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-    <a class="navbar-brand" href="https://www.godaddy.com/"><span id="hamburger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span><span><img src="godaddy-logo.png" alt="GoDaddy"></span></a>
+    <span class="hamburger" onclick="openNav()">&#9776;</span>
+    <a class="navbar-brand" href="https://www.godaddy.com/"><img src="godaddy-logo.png" alt="GoDaddy"></a>
     </div>
   </div>
 </nav>
