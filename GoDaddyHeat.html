@@ -64,7 +64,7 @@ width: 100%;
 }
     </style>
 </head>
-<body>
+<body onload="mapbox()">
 
 <div id="sidenav" class="sidemenu">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -82,8 +82,10 @@ width: 100%;
 
 <div id='map'></div>
 </div>
+</body>
 
 <script>
+function mapbox(){
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
     container: 'map',
@@ -222,6 +224,7 @@ console.log(country+' '+state);
         map.getCanvas().style.cursor = '';
     });
 });;
+}
 </script>
 <script>
 function openNav() {
@@ -234,5 +237,4 @@ function closeNav() {
     document.getElementById("main").style.marginLeft= "0";
 }
 </script>
-</body>
 </html>
