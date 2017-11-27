@@ -216,13 +216,6 @@ map.on('load', function() {
         }
     }, 'waterway-label');
 
-map.flyTo({
-        center: [-112.134, 33.606],
-        zoom: 9,
-speed: 0.2,
-curve: 1,
-    });
-
     map.on('click', 'GoDaddy-point', function (e) {
         new mapboxgl.Popup()
             .setLngLat(e.features[0].geometry.coordinates)
