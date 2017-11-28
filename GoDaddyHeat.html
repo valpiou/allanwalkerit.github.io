@@ -128,9 +128,9 @@ border-bottom: 1px solid #ffffff;
 <div class="col-lg-9"><div id='map'></div></div>
 <div class="col-lg-3">
 <ul>
-<li id="continent"><div class="bannerhide"><div id="tableauViz1" class="tableaua"></div></div></li>
-<li id="country"><div class="bannerhide"><div id="tableauViz2" class="tableaub"></div></div></li>
-<li id="state"><div class="bannerhide"><div id="tableauViz3" class="tableauc"></div></div></li>
+<li id="continent"><div class="bannerhide"><div id="tableauViz1" class="tableau"></div></div></li>
+<li id="country"><div class="bannerhide"><div id="tableauViz2" class="tableau"></div></div></li>
+<li id="state"><div class="bannerhide"><div id="tableauViz3" class="tableau"></div></div></li>
 </ul>
 </div>
 </div>
@@ -148,7 +148,7 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/allanwalkersprinting/cjaix8uxlabvs2rmotieo9vqn?fresh=true',
     center: [0, 18],
-    zoom: 1
+    zoom: 0.9
 });
 
 var nav = new mapboxgl.NavigationControl();
@@ -159,6 +159,7 @@ map.addControl(new MapboxGeocoder({
 }));
 
 map.on('load', function() {
+tableau1();
     map.addSource('GoDaddy', {
         "type": "geojson",
         "data": "GoDaddyHeat.geojson"
@@ -294,6 +295,65 @@ console.log(country+' '+state);
     map.on('mouseleave', 'GoDaddy-point', function () {
         map.getCanvas().style.cursor = '';
     });
+
+var a = function tableau1(){
+     a = function tableau1(){};
+};
+
+var b = function tableau2(){
+     b = function tableau2(){};
+};
+
+var c = function tableau3(){
+     c = function tableau3(){};
+};
+
+var onePh = document.getElementById("tableauViz1");
+var twoPh = document.getElementById("tableauViz2");
+var threePh = document.getElementById("tableauViz3");
+
+// Setting up the URLs
+
+var oneUrl = "https://public.tableau.com/views/TAXIPOC/CONVERSIONBAN?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
+var twoUrl = "https://public.tableau.com/views/TAXIPOC/CONVERSIONDONUT?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
+var threeUrl = "https://public.tableau.com/views/TAXIPOC/CONVERSIONTREND?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
+
+function tableau1(){
+	var onevizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+tableau2();
+}
+        };
+viz1 = new tableauSoftware.Viz(onePh, oneUrl, onevizOptions);
+}
+
+function tableau2(){
+
+	var twovizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+tableau3();
+}
+        };
+viz2 = new tableauSoftware.Viz(twoPh, twoUrl, twovizOptions);
+}
+
+function tableau3(){
+	var threevizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+}
+        };
+viz3 = new tableauSoftware.Viz(threePh, threeUrl, threevizOptions);
+}
+
 });;
 }
 </script>
