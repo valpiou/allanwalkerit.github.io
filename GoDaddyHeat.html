@@ -142,6 +142,8 @@ border-bottom: 1px solid #ffffff;
 function mapbox(){
 $("#country").hide();
 $("#state").hide();
+tableau1();
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
     container: 'map',
@@ -259,9 +261,11 @@ var zoom = map.getZoom()
 
 if (zoom>3) {
 $("#country").show();
+tableau2();
 }
 if (zoom>6) {
     $("#state").show();
+tableau3();
 }
 if (zoom<3) {
     $("#country").hide();
@@ -317,7 +321,6 @@ function tableau1(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-tableau2();
 }
         };
 viz1 = new tableauSoftware.Viz(onePh, oneUrl, onevizOptions);
@@ -330,7 +333,6 @@ function tableau2(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-tableau3();
 }
         };
 viz2 = new tableauSoftware.Viz(twoPh, twoUrl, twovizOptions);
