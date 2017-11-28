@@ -260,18 +260,18 @@ var zoom = map.getZoom()
 console.log(zoom);
 if (zoom>0) {
 $("#continent").show();
-} else { 
-$("#country").hide();
-$("#state").hide();
-}
+} 
 if (zoom>3) {
 $("#country").show();
 }
-else { 
-$("#state").hide();
-}
 if (zoom>6) {
     $("#state").show();
+}
+if (zoom<3) {
+    $("#country").hide();
+}
+if (zoom<6) {
+    $("#state").hide();
 }
 });
 
