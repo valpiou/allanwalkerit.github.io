@@ -128,9 +128,9 @@ border-bottom: 1px solid #ffffff;
 <div class="col-lg-9"><div id='map'></div></div>
 <div class="col-lg-3">
 <ul>
-<li><div class="bannerhide"><div id="tableauViz1" class="tableaua"></div></div></li>
-<li><div class="bannerhide"><div id="tableauViz2" class="tableaub"></div></div></li>
-<li><div class="bannerhide"><div id="tableauViz3" class="tableauc"></div></div></li>
+<li id="continent"><div class="bannerhide"><div id="tableauViz1" class="tableaua"></div></div></li>
+<li id="country"><div class="bannerhide"><div id="tableauViz2" class="tableaub"></div></div></li>
+<li id="state"><div class="bannerhide"><div id="tableauViz3" class="tableauc"></div></div></li>
 </ul>
 </div>
 </div>
@@ -141,6 +141,8 @@ border-bottom: 1px solid #ffffff;
 
 <script>
 function mapbox(){
+$("#country").hide();
+$("#state").hide();
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
     container: 'map',
@@ -256,6 +258,21 @@ map.on('load', function() {
 map.on('zoom', function() {
 var zoom = map.getZoom()
 console.log(zoom);
+if (zoom>0) {
+$("#continent").show();
+} else { 
+$("#country").hide();
+$("#state").hide();
+}
+if (zoom>3) {
+$("#country").show();
+}
+else { 
+$("#state").hide();
+}
+if (zoom>6) {
+    $("#state").show();
+}
 });
 
 map.on('click', 'GoDaddy-point', function (e) {
