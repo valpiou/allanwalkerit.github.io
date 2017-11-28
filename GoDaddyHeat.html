@@ -111,6 +111,7 @@ var map = new mapboxgl.Map({
     zoom: 1.5
 });
 
+var zoom = mapbox.getZoom();
 var nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'top-left');
 
