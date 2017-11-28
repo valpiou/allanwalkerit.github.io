@@ -188,10 +188,10 @@ tableau1();
 map.on('zoom', function() {
 var zoom = map.getZoom()
 
-if (zoom>2) {
+if (zoom>=1.99) {
 $("#country").show();
 }
-if (zoom>3) {
+if (zoom>=2.99) {
     $("#state").show();
 }
 if (zoom<2) {
