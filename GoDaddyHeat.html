@@ -218,6 +218,10 @@ viz2.getWorkbook().changeParameterValueAsync("COUNTRY", country);
 viz3.getWorkbook().changeParameterValueAsync("STATE", state);
     });
 
+map.on('click', 'continents', function (e) {
+var continent = e.features[0].properties.CONTINENT;
+viz1.getWorkbook().changeParameterValueAsync("CONTINENT", continent);
+    });
 
 map.on('mouseenter', 'godaddy', function () {
 map.getCanvas().style.cursor = 'pointer';
