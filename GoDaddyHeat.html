@@ -130,9 +130,9 @@ border-bottom: 1px solid #ffffff;
 <div class="col-lg-9"><div id='map'></div></div>
 <div class="col-lg-3">
 <ul>
-<li id="continent"><div class="bannerhide"><div id="tableauViz1" class="tableau"></div></div></li>
-<li id="country"><div class="bannerhide"><div id="tableauViz2" class="tableau"></div></div></li>
-<li id="state"><div class="bannerhide"><div id="tableauViz3" class="tableau"></div></div></li>
+<li id="continent"><div id="tableauViz1" class="tableau"></div></div></li>
+<li id="country"><div id="tableauViz2" class="tableau"></div></div></li>
+<li id="state"><div id="tableauViz3" class="tableau"></div></div></li>
 </ul>
 </div>
 </div>
@@ -161,7 +161,6 @@ map.addControl(new MapboxGeocoder({
 }));
 
 map.on('load', function() {
-tableau1();
     map.addSource('GoDaddy', {
         "type": "geojson",
         "data": "GoDaddyHeat.geojson"
@@ -260,10 +259,7 @@ tableau1();
 
 map.on('zoom', function() {
 var zoom = map.getZoom()
-console.log(zoom);
-if (zoom>0) {
-$("#continent").show();
-} 
+
 if (zoom>3) {
 $("#country").show();
 }
@@ -313,8 +309,6 @@ var c = function tableau3(){
 var onePh = document.getElementById("tableauViz1");
 var twoPh = document.getElementById("tableauViz2");
 var threePh = document.getElementById("tableauViz3");
-
-https://public.tableau.com/views/GoDaddy/CONTINENT?:embed=y&:display_count=yes&publish=yes
 
 var oneUrl = "https://public.tableau.com/views/GoDaddy/CONTINENT?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
 var twoUrl = "https://public.tableau.com/views/GoDaddy/COUNTRY?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
