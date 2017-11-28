@@ -14,7 +14,7 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.0/mapbox-gl-geocoder.css' type='text/css' />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+<style>
 
 body {
 }
@@ -75,16 +75,29 @@ width:100%;
 }
 
 #map {
-height: 500px;
+height: 600px;
 width: 100%;
 }
 
 #tableauViz1 {
-height: 500px;
+height: 200px;
+width: 100%;
+background-color:red;
+}
+
+#tableauViz2 {
+height: 200px;
 width: 100%;
 background-color:blue;
 }
-    </style>
+
+#tableauViz3 {
+height: 200px;
+width: 100%;
+background-color:green;
+}
+
+</style>
 </head>
 <body onload="mapbox()">
 
@@ -105,7 +118,13 @@ background-color:blue;
 <div id="chart" class="container-fluid">
 <div id ="DashboardsTop" class="row">
 <div class="col-lg-9"><div id='map'></div></div>
-<div class="col-lg-3"><div class="bannerhide"><div id="tableauViz1" class="tableau"></div></div></div>
+<div class="col-lg-3">
+<ul>
+<li><div class="bannerhide"><div id="tableauViz1" class="tableaua"></div></div></li>
+<li><div class="bannerhide"><div id="tableauViz2" class="tableaub"></div></div></li>
+<li><div class="bannerhide"><div id="tableauViz3" class="tableauc"></div></div></li>
+</ul>
+</div>
 </div>
 
 </div>
