@@ -172,7 +172,7 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/allanwalkersprinting/cjaix8uxlabvs2rmotieo9vqn?fresh=true',
     center: [0, 18],
-    zoom: 0.9
+    zoom: 0.95
 });
 
 var nav = new mapboxgl.NavigationControl();
@@ -202,7 +202,7 @@ if (zoom<3) {
 }
 });
 
-map.on('click', 'GoDaddy-point', function (e) {
+map.on('click', 'godaddy', function (e) {
         new mapboxgl.Popup()
             .setLngLat(e.features[0].geometry.coordinates)
             .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range)
@@ -214,11 +214,11 @@ console.log(continent+' '+country+' '+state);
     });
 
 
-    map.on('mouseenter', 'GoDaddy-point', function () {
+    map.on('mouseenter', 'godaddy', function () {
         map.getCanvas().style.cursor = 'pointer';
     });
 
-    map.on('mouseleave', 'GoDaddy-point', function () {
+    map.on('mouseleave', 'godaddy', function () {
         map.getCanvas().style.cursor = '';
     });
 
