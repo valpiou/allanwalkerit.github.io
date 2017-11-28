@@ -286,16 +286,16 @@ tableau1();
 map.on('zoom', function() {
 var zoom = map.getZoom()
 
-if (zoom>3) {
+if (zoom>2) {
 $("#country").show();
 }
-if (zoom>5) {
+if (zoom>3) {
     $("#state").show();
 }
-if (zoom<3) {
+if (zoom<2) {
     $("#country").hide();
 }
-if (zoom<5) {
+if (zoom<3) {
     $("#state").hide();
 }
 });
