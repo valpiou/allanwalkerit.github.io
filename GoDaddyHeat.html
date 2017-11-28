@@ -88,6 +88,12 @@ margin:0;
 padding:0; 
 }
 
+.bannerhide {
+height: 183px;
+width: 100%;
+overflow:hidden;
+}
+
 .tableau {
 height: 193px;
 width: 100%;
@@ -121,9 +127,9 @@ border-bottom: 1px solid #ffffff;
 
 <div class="col-lg-3">
 <ul>
-<li id="continent"><div id="tableauViz1" class="tableau"></div></li>
-<li id="country"><div id="tableauViz2" class="tableau"></div></li>
-<li id="state"><div id="tableauViz3" class="tableau"></div></li>
+<li id="continent"><div class="bannerhide"><div id="tableauViz1" class="tableau"></div></div></li>
+<li id="country"><div class="bannerhide"><div id="tableauViz2" class="tableau"></div></div></li>
+<li id="state"><div class="bannerhide"><div id="tableauViz3" class="tableau"></div></div></li>
 </ul>
 </div>
 </div>
