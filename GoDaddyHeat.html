@@ -142,7 +142,6 @@ border-bottom: 1px solid #ffffff;
 function mapbox(){
 $("#country").hide();
 $("#state").hide();
-tableau1();
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
@@ -160,6 +159,7 @@ map.addControl(new MapboxGeocoder({
 }));
 
 map.on('load', function() {
+tableau1();
     map.addSource('GoDaddy', {
         "type": "geojson",
         "data": "GoDaddyHeat.geojson"
