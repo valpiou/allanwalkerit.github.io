@@ -182,6 +182,12 @@ map.addControl(new MapboxGeocoder({
 
 map.on('load', function() {
 tableau1();
+
+   map.addSource('Continents', {
+        "type": "geojson",
+        "data": "continents.geojson"
+    });
+
     map.addSource('GoDaddy', {
         "type": "geojson",
         "data": "GoDaddyHeat.geojson"
