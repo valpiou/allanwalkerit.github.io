@@ -196,9 +196,11 @@ if (zoom>=2.99) {
 }
 if (zoom<2) {
     $("#country").hide();
+viz2.getWorkbook().changeParameterValueAsync("COUNTRY", "ALL");
 }
 if (zoom<3) {
     $("#state").hide();
+viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
 }
 });
 
@@ -216,12 +218,15 @@ viz3.getWorkbook().changeParameterValueAsync("STATE", state);
     });
 
 
-    map.on('mouseenter', 'godaddy', function () {
-        map.getCanvas().style.cursor = 'pointer';
+map.on('mouseenter', 'godaddy', function () {
+map.getCanvas().style.cursor = 'pointer';
     });
 
-    map.on('mouseleave', 'godaddy', function () {
-        map.getCanvas().style.cursor = '';
+map.on('mouseleave', 'godaddy', function () {
+viz2.getWorkbook().changeParameterValueAsync("CONTINENT", "ALL");
+viz2.getWorkbook().changeParameterValueAsync("COUNTRY", "ALL");
+viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
+map.getCanvas().style.cursor = '';
     });
 
 function tableau1(){
