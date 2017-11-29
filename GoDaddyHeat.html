@@ -278,13 +278,8 @@ viz2.getWorkbook().changeParameterValueAsync("COUNTRY", "ALL");
 viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
 $("#country").hide();
 $("#state").hide();
-map.flyTo({
-        center: [0, 18],
-        zoom: 1,
-	bearing: 0,
-	pitch: 0
-});
-};
+mapbox();
+}
 
 function openNav() {
     document.getElementById("sidenav").style.width = "250px";
