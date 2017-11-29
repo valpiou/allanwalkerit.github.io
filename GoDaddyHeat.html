@@ -270,6 +270,7 @@ function tableau3(){
 viz3 = new tableauSoftware.Viz(threePh, threeUrl, threevizOptions);
 }
 });;
+}
 
 function resetall() {
 viz1.getWorkbook().changeParameterValueAsync("CONTINENT", "ALL");
@@ -285,9 +286,6 @@ map.flyTo({
 });
 };
 
-}
-</script>
-<script>
 function openNav() {
     document.getElementById("sidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
@@ -297,6 +295,5 @@ function closeNav() {
     document.getElementById("sidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
 }
-
 </script>
 </html>
