@@ -162,13 +162,19 @@ var c = function tableau3(){
      c = function tableau3(){};
 };
 
+var d = function tableau4(){
+     d = function tableau4(){};
+};
+
 var onePh = document.getElementById("tableauViz1");
 var twoPh = document.getElementById("tableauViz2");
 var threePh = document.getElementById("tableauViz3");
+var fourPh = document.getElementById("tableauViz4");
 
 var oneUrl = "https://public.tableau.com/views/GoDaddy/CONTINENT?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
 var twoUrl = "https://public.tableau.com/views/GoDaddy/COUNTRY?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
 var threeUrl = "https://public.tableau.com/views/GoDaddy/STATE?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
+var fourUrl = "https://public.tableau.com/views/GoDaddy/CITY?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
@@ -211,7 +217,7 @@ viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
 map.on('click', 'godaddy', function (e) {
         new mapboxgl.Popup()
             .setLngLat(e.features[0].geometry.coordinates)
-            .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range+'<br><br>'+'Nearest City: '+e.features[0].properties.City)
+            .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range+'<br><br>'+'Nearest City: '+e.features[0].properties.City+'<br><br>'+'<div class="bannerhidetooltip"><div id="tableauViz1" class="tableautooltip"></div></div>')
             .addTo(map);
 var continent = e.features[0].properties.CONTINENT;
 var country = e.features[0].properties.Country;
@@ -220,6 +226,7 @@ var city = e.features[0].properties.City;
 viz1.getWorkbook().changeParameterValueAsync("CONTINENT", continent);
 viz2.getWorkbook().changeParameterValueAsync("COUNTRY", country);
 viz3.getWorkbook().changeParameterValueAsync("STATE", state);
+viz4.getWorkbook().changeParameterValueAsync("CITY", city);
     });
 
 map.on('click', 'continents', function (e) {
@@ -266,9 +273,21 @@ function tableau3(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+tableau4();
 }
         };
 viz3 = new tableauSoftware.Viz(threePh, threeUrl, threevizOptions);
+}
+
+function tableau4(){
+	var fourvizOptions = {
+	width: "100%",
+	height: "100%",
+            hideTabs: false,
+            onFirstInteractive: function() {
+}
+        };
+viz4 = new tableauSoftware.Viz(fourPh, fourUrl, fourvizOptions);
 }
 });;
 }
@@ -277,6 +296,7 @@ function resetall() {
 viz1.dispose();
 viz2.dispose();
 viz3.dispose();
+viz4.dispose();
 $("#country").hide();
 $("#state").hide();
 mapbox();
