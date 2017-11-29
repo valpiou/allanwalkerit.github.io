@@ -273,11 +273,9 @@ viz3 = new tableauSoftware.Viz(threePh, threeUrl, threevizOptions);
 }
 
 function resetall() {
-viz1.getWorkbook().changeParameterValueAsync("CONTINENT", "ALL");
-viz2.getWorkbook().changeParameterValueAsync("COUNTRY", "ALL");
-viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
-$("#country").hide();
-$("#state").hide();
+viz1.dispose();
+viz2.dispose();
+viz3.dispose();
 mapbox();
 }
 
