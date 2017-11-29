@@ -211,11 +211,12 @@ viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
 map.on('click', 'godaddy', function (e) {
         new mapboxgl.Popup()
             .setLngLat(e.features[0].geometry.coordinates)
-            .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range)
+            .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range+'<br><br>'+'Nearest City: '+e.features[0].properties.City)
             .addTo(map);
 var continent = e.features[0].properties.CONTINENT;
 var country = e.features[0].properties.Country;
 var state = e.features[0].properties.State;
+var city = e.features[0].properties.City;
 viz1.getWorkbook().changeParameterValueAsync("CONTINENT", continent);
 viz2.getWorkbook().changeParameterValueAsync("COUNTRY", country);
 viz3.getWorkbook().changeParameterValueAsync("STATE", state);
