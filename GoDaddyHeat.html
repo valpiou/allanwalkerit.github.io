@@ -226,19 +226,18 @@ viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
 });
 
 map.on('click', 'godaddy', function (e) {
-tableau4();
         new mapboxgl.Popup()
             .setLngLat(e.features[0].geometry.coordinates)
-            .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range+'<br><br>'+'Nearest City: '+e.features[0].properties.City+'<br><br>'+'<div class="bannerhidetooltip"><div id="tableauViz4" class="tableautooltip"></div></div>')
+            .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range+'<br><br>'+'Nearest City: '+e.features[0].properties.City+'<br><br>'+'<div id="tableauViz4"></div>')
             .addTo(map);
 var continent = e.features[0].properties.CONTINENT;
 var country = e.features[0].properties.Country;
 var state = e.features[0].properties.State;
 var city = e.features[0].properties.City;
+tableau4();
 viz1.getWorkbook().changeParameterValueAsync("CONTINENT", continent);
 viz2.getWorkbook().changeParameterValueAsync("COUNTRY", country);
 viz3.getWorkbook().changeParameterValueAsync("STATE", state);
-viz4.getWorkbook().changeParameterValueAsync("CITY", city);
     });
 
 map.on('click', 'continents', function (e) {
@@ -296,6 +295,7 @@ function tableau4(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+viz4.getWorkbook().changeParameterValueAsync("CITY", city);
 }
         };
 viz4 = new tableauSoftware.Viz(fourPh, fourUrl, fourvizOptions);
