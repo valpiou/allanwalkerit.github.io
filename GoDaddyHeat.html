@@ -99,6 +99,17 @@ height: 200px;
 width: 100%;
 }
 
+.bannerhidetooltip {
+height: 150px;
+width: 200px;
+overflow:hidden;
+}
+
+.tableautooltip {
+height: 180px;
+width: 200px;
+}
+
 p.sansserif {
 font-size:9px;
 font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -217,7 +228,7 @@ viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
 map.on('click', 'godaddy', function (e) {
         new mapboxgl.Popup()
             .setLngLat(e.features[0].geometry.coordinates)
-            .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range+'<br><br>'+'Nearest City: '+e.features[0].properties.City+'<br><br>'+'<div class="bannerhidetooltip"><div id="tableauViz1" class="tableautooltip"></div></div>')
+            .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range+'<br><br>'+'Nearest City: '+e.features[0].properties.City+'<br><br>'+'<div class="bannerhidetooltip"><div id="tableauViz4" class="tableautooltip"></div></div>')
             .addTo(map);
 var continent = e.features[0].properties.CONTINENT;
 var country = e.features[0].properties.Country;
