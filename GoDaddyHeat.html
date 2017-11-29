@@ -270,6 +270,20 @@ function tableau3(){
 viz3 = new tableauSoftware.Viz(threePh, threeUrl, threevizOptions);
 }
 
+function resetall() {
+map.flyTo({
+        center: [0, 18],
+        zoom: 1,
+	bearing: 0,
+	pitch: 0
+});
+viz1.getWorkbook().changeParameterValueAsync("CONTINENT", "ALL");
+viz2.getWorkbook().changeParameterValueAsync("COUNTRY", "ALL");
+viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
+$("#country").hide();
+$("#state").hide();
+};
+
 });;
 }
 </script>
@@ -284,18 +298,5 @@ function closeNav() {
     document.getElementById("main").style.marginLeft= "0";
 }
 
-function resetall() {
-map.flyTo({
-        center: [0, 18],
-        zoom: 1,
-	bearing: 0,
-	pitch: 0
-});
-viz1.getWorkbook().changeParameterValueAsync("CONTINENT", "ALL");
-viz2.getWorkbook().changeParameterValueAsync("COUNTRY", "ALL");
-viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
-$("#country").hide();
-$("#state").hide();
-};
 </script>
 </html>
