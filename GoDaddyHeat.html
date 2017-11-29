@@ -226,6 +226,7 @@ viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
 });
 
 map.on('click', 'godaddy', function (e) {
+tableau4();
         new mapboxgl.Popup()
             .setLngLat(e.features[0].geometry.coordinates)
             .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range+'<br><br>'+'Nearest City: '+e.features[0].properties.City+'<br><br>'+'<div class="bannerhidetooltip"><div id="tableauViz4" class="tableautooltip"></div></div>')
@@ -284,7 +285,6 @@ function tableau3(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-tableau4();
 }
         };
 viz3 = new tableauSoftware.Viz(threePh, threeUrl, threevizOptions);
