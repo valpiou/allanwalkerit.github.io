@@ -118,10 +118,10 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     <div class="navbar-header">
     <span class="hamburger" onclick="openNav()">&#9776;</span>
     <a class="navbar-brand"><img src="godaddy-logo.png" alt="GoDaddy"></a>
-<ul class="nav navbar-nav navbar-right">
-      <li><a href="javascript:void(0)" onclick="reset()"><span class="glyphicon glyphicon-repeat"></span>Reset</a></li>
-    </ul>
     </div>
+<ul class="nav navbar-nav navbar-right">
+<li><a href="javascript:void(0)" onclick="resetall()"><span class="glyphicon glyphicon-repeat"></span> Reset</a></li>
+    </ul>   
   </div>
 </nav>
 
@@ -270,7 +270,7 @@ function tableau3(){
 viz3 = new tableauSoftware.Viz(threePh, threeUrl, threevizOptions);
 }
 
-function reset(){
+function resetall(){
 alert("reset");
 }
 
