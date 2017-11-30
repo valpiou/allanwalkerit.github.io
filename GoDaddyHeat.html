@@ -58,7 +58,7 @@ background-color: #02C54C;
 overflow-x: hidden;
 transition: 0.5s;
 font-size:large;
-color: #000000;
+color: #ffffff;
 }
 
 .sidemenu .closebtn {
@@ -122,7 +122,7 @@ padding-left: 8px;
 #data {
 width:90%;
 background-color: #FFFFFF;
-color: #292824;
+color: #000000;
 }
 
 ul#list {
@@ -132,7 +132,7 @@ list-style-type: none;
 }
 
 .glyphicon glyphicon-zoom-in {
-color:
+color:#7A0087;
 }
 
 </style>
@@ -346,13 +346,31 @@ $( "#data" ).change(function() {
 
 function data(propValue){
 if (propValue == 'Arizona') {
-alert("Arizona");
+map.flyTo({
+        center: [33.6119,-111.8906],
+        zoom: 9,
+        bearing: 0,
+        speed: 0.2, 
+        curve: 1, 
+    });
 }
 if (propValue == 'Netherlands') {
-alert("Netherlands");
+map.flyTo({
+        center: [52.3824,4.8995],
+        zoom: 9,
+        bearing: 0,
+        speed: 0.2, 
+        curve: 1, 
+    });
 }
 if (propValue == 'Singapore') {
-alert("Singapore");
+map.flyTo({
+        center: [1.2855,103.8565],
+        zoom: 9,
+        bearing: 0,
+        speed: 0.2, 
+        curve: 1, 
+    });
 }
 };
 
