@@ -121,6 +121,7 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
 <div id="sidenav" class="sidemenu">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<div id="city"></div>
 </div>
 
 <div id="main">
@@ -159,6 +160,7 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 <script>
 $("#country").hide();
 $("#state").hide();
+$("#city").hide();
 function mapbox(){
 
 var a = function tableau1(){
@@ -235,10 +237,11 @@ var continent = e.features[0].properties.CONTINENT;
 var country = e.features[0].properties.Country;
 var state = e.features[0].properties.State;
 var city = e.features[0].properties.City;
+document.getElementById("city").innerHTML = city;
+tableau4();
 viz1.getWorkbook().changeParameterValueAsync("CONTINENT", continent);
 viz2.getWorkbook().changeParameterValueAsync("COUNTRY", country);
 viz3.getWorkbook().changeParameterValueAsync("STATE", state);
-viz4.getWorkbook().changeParameterValueAsync("CITY", city);
     });
 
 map.on('click', 'continents', function (e) {
@@ -285,7 +288,6 @@ function tableau3(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-tableau4();
 }
         };
 viz3 = new tableauSoftware.Viz(threePh, threeUrl, threevizOptions);
@@ -299,6 +301,8 @@ var fourUrl = "https://public.tableau.com/views/GoDaddy/CITY?:showVizHome=no&:di
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+var x = document.getElementById("city").innerHTML;
+viz4.getWorkbook().changeParameterValueAsync("CITY", [x]);
 }
         };
 viz4 = new tableauSoftware.Viz(fourPh, fourUrl, fourvizOptions);
