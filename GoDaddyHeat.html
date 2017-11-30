@@ -228,7 +228,7 @@ viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
 map.on('click', 'godaddy', function (e) {
         new mapboxgl.Popup()
             .setLngLat(e.features[0].geometry.coordinates)
-            .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range+'<br><br>'+'Nearest City: '+e.features[0].properties.City+'<br><br>'+'<div id="tableauViz4"></div>')
+            .setHTML('<div id="tableauViz4"></div>')
             .addTo(map);
 var continent = e.features[0].properties.CONTINENT;
 var country = e.features[0].properties.Country;
