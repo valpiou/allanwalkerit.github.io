@@ -145,7 +145,7 @@ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
 <div class="col-lg-3">
 <ul>
-<li id="continent"><p class="sansserif">Continents<p><div class="bannerhide"><div id="tableauViz1" class="tableau"></div></div></li>
+<li id="continent"><p class="sansserif">Continents<p><div class="bannerhide"><div id="tableauViz4" class="tableau"></div></div></li>
 <li id="country"><p class="sansserif">Countries<p><div class="bannerhide"><div id="tableauViz2" class="tableau"></div></div></li>
 <li id="state"><p class="sansserif">States<p><div class="bannerhide"><div id="tableauViz3" class="tableau"></div></div></li>
 </ul>
@@ -177,15 +177,15 @@ var d = function tableau4(){
      d = function tableau4(){};
 };
 
-var onePh = document.getElementById("tableauViz1");
+
+var onePh = document.getElementById("tableauViz4");
 var twoPh = document.getElementById("tableauViz2");
 var threePh = document.getElementById("tableauViz3");
-var fourPh = document.getElementById("tableauViz4");
 
 var oneUrl = "https://public.tableau.com/views/GoDaddy/CONTINENT?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
 var twoUrl = "https://public.tableau.com/views/GoDaddy/COUNTRY?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
 var threeUrl = "https://public.tableau.com/views/GoDaddy/STATE?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
-var fourUrl = "https://public.tableau.com/views/GoDaddy/CITY?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
+
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
 var map = new mapboxgl.Map({
@@ -228,7 +228,7 @@ viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
 map.on('click', 'godaddy', function (e) {
         new mapboxgl.Popup()
             .setLngLat(e.features[0].geometry.coordinates)
-            .setHTML('<div id="tableauViz4"></div>')
+            .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range+'<br><br>'+'Nearest City: '+e.features[0].properties.City+'<br><br>'+'<div id="tableauViz1"></div>')
             .addTo(map);
 var continent = e.features[0].properties.CONTINENT;
 var country = e.features[0].properties.Country;
@@ -290,6 +290,8 @@ viz3 = new tableauSoftware.Viz(threePh, threeUrl, threevizOptions);
 }
 
 function tableau4(){
+var fourPh = document.getElementById("tableauViz1");
+var fourUrl = "https://public.tableau.com/views/GoDaddy/CITY?:showVizHome=no&:display_spinner=yes&:jsdebug=n&:embed=y&:display_overlay=yes&:display_static_image=no&:animate_transition=yes";
 	var fourvizOptions = {
 	width: "100%",
 	height: "100%",
