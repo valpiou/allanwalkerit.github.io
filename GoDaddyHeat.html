@@ -295,7 +295,7 @@ viz3.getWorkbook().changeParameterValueAsync("STATE", state);
 map.on('click', 'godaddypin', function (e) {
         new mapboxgl.Popup()
             .setLngLat(e.features[0].geometry.coordinates)
-            .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range+'<br><br>'+'Nearest City: '+e.features[0].properties.City')
+            .setHTML('Organization: '+e.features[0].properties.Org+'<br><br>'+'IP Range: '+e.features[0].properties.IP_Range+'<br><br>'+'Nearest City: '+e.features[0].properties.City)
             .addTo(map);
 var continent = e.features[0].properties.CONTINENT;
 var country = e.features[0].properties.Country;
