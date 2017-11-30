@@ -340,7 +340,7 @@ viz4.getWorkbook().changeParameterValueAsync("CITY", [x]);
 viz4 = new tableauSoftware.Viz(fourPh, fourUrl, fourvizOptions);
 }
 
-$( "#data" ).change(function() {
+$( "#data" ).click(function() {
   data(this.value);
 });
 
@@ -350,8 +350,6 @@ map.flyTo({
         center: [33.6119,-111.8906],
         zoom: 9,
         bearing: 0,
-        speed: 0.2, 
-        curve: 1, 
     });
 }
 if (propValue == 'Netherlands') {
@@ -359,17 +357,13 @@ map.flyTo({
         center: [52.3824,4.8995],
         zoom: 9,
         bearing: 0,
-        speed: 0.2, 
-        curve: 1, 
     });
 }
 if (propValue == 'Singapore') {
 map.flyTo({
-        center: [1.2855,103.8565],
+        center: [103.8565,1.2855],
         zoom: 9,
         bearing: 0,
-        speed: 0.2, 
-        curve: 1, 
     });
 }
 };
