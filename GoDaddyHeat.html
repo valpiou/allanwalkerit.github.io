@@ -347,16 +347,18 @@ $( "#data" ).click(function() {
 function data(propValue){
 if (propValue == 'Arizona') {
 map.flyTo({
-        center: [33.6119,-111.8906],
+        center: [-111.8906,33.6119],
         zoom: 9,
         bearing: 0,
+	pitch:60,
     });
 }
 if (propValue == 'Netherlands') {
 map.flyTo({
-        center: [52.3824,4.8995],
+        center: [4.8995,52.3824],
         zoom: 9,
         bearing: 0,
+        pitch:60,
     });
 }
 if (propValue == 'Singapore') {
@@ -364,6 +366,7 @@ map.flyTo({
         center: [103.8565,1.2855],
         zoom: 9,
         bearing: 0,
+        pitch:60,
     });
 }
 };
