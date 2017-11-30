@@ -235,7 +235,6 @@ var continent = e.features[0].properties.CONTINENT;
 var country = e.features[0].properties.Country;
 var state = e.features[0].properties.State;
 var city = e.features[0].properties.City;
-tableau4();
 viz1.getWorkbook().changeParameterValueAsync("CONTINENT", continent);
 viz2.getWorkbook().changeParameterValueAsync("COUNTRY", country);
 viz3.getWorkbook().changeParameterValueAsync("STATE", state);
@@ -286,6 +285,7 @@ function tableau3(){
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
+tableau4();
 }
         };
 viz3 = new tableauSoftware.Viz(threePh, threeUrl, threevizOptions);
