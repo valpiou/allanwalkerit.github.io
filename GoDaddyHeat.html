@@ -222,6 +222,7 @@ viz2.getWorkbook().changeParameterValueAsync("COUNTRY", "ALL");
 if (zoom<3) {
     $("#state").hide();
 viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
+viz4.getWorkbook().changeParameterValueAsync("CITY", "ALL");
 }
 });
 
@@ -238,6 +239,7 @@ tableau4();
 viz1.getWorkbook().changeParameterValueAsync("CONTINENT", continent);
 viz2.getWorkbook().changeParameterValueAsync("COUNTRY", country);
 viz3.getWorkbook().changeParameterValueAsync("STATE", state);
+viz4.getWorkbook().changeParameterValueAsync("CITY", city);
     });
 
 map.on('click', 'continents', function (e) {
@@ -297,7 +299,6 @@ var fourUrl = "https://public.tableau.com/views/GoDaddy/CITY?:showVizHome=no&:di
 	height: "100%",
             hideTabs: false,
             onFirstInteractive: function() {
-viz4.getWorkbook().changeParameterValueAsync("CITY", city);
 }
         };
 viz4 = new tableauSoftware.Viz(fourPh, fourUrl, fourvizOptions);
