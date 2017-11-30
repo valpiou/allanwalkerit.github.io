@@ -335,6 +335,23 @@ viz4.getWorkbook().changeParameterValueAsync("CITY", [x]);
         };
 viz4 = new tableauSoftware.Viz(fourPh, fourUrl, fourvizOptions);
 }
+
+$( "#data" ).change(function() {
+  data(this.value);
+});
+
+function data(propValue){
+if (propValue == 'Arizona') {
+alert("Arizona");
+}
+if (propValue == 'Netherlands') {
+alert("Netherlands");
+}
+if (propValue == 'Singapore') {
+alert("Singapore");
+}
+};
+
 });;
 }
 
