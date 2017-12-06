@@ -184,7 +184,7 @@ font-family: 'TMUSSmall', Fallback, sans-serif !important;
 
 #map { 
 width:100%;
-height: 465px;
+height: 90vh;
 margin: 0 auto;
 }
 
@@ -405,11 +405,15 @@ color: #F3F3F5 !important;
 </div>
 </div>
 
+<div id="BIGMAP" class="row">
+<div class="col-md-12">
+<div id='map'></div>
+</div>
+
+
 </body>
 
 <script>
-
-$('#hamburgerhell').hide();
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -420,8 +424,7 @@ function closeNav() {
 }
 
 function openthemap() {
-$('#landing').hide();
-$('#market').show();
+
 $('#hamburgerhell').show();
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJpdCIsImEiOiJZT3NlYnRFIn0.8-oyZEa83PvOolKOStdCbg';
