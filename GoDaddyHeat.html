@@ -325,11 +325,11 @@ return Object.keys(tempContinents);
 console.log(deDupContinents);
 
 viz1.getWorkbook().activateSheetAsync("Continent").then(function (sheet) {
-  worksheeta = sheet;
+worksheeta = sheet;
 })
 .then(function () {
   return worksheeta.applyFilterAsync("CONTINENT", "",
-    tableau.FilterUpdateType.ALL);
+    tableauSoftware.FilterUpdateType.ALL);
 })
         }
     );
