@@ -309,12 +309,18 @@ map.getCanvas().style.cursor = '';
 map.on('moveend', function() {
 
 var continentfeatures = map.queryRenderedFeatures({layers:['continents']});
-console.log(continentfeatures);
 var continentsarray = [];
 for (var i = 0; i < continentfeatures.length - 1; i++) {
 continentsarray.push(continentfeatures[i].properties.CONTINENT);
 }
-console.log(continentsarray);
+var deDupcontinents = deDuplicatecontinents();
+function deDuplicatecontinents() {
+var tempcontinents = {};
+for (var i = 0; i < continentsarray.length; i++)
+tempcontinents[continentsarray[i]] = true;
+return Object.keys(tempcontinents);
+console.log(deDupcontinents);
+}
         }
     );
 
