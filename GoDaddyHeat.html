@@ -329,7 +329,7 @@ viz1.getWorkbook().activateSheetAsync("Continent")
 .then(function(sheet){
 worksheeta = sheet;
 console.log(worksheeta);
-return worksheeta.clearFilterAsync(Filtername);
+return worksheeta.applyFilterAsync(Filtername, deDupContinents, tableauSoftware.FilterUpdateType.REPLACE);
 });
 });
 
