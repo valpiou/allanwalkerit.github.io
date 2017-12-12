@@ -184,7 +184,8 @@ color:#7A0087;
 <li id="state"><p class="sansserif">Count of ASNs - States<p><div class="bannerhide"><div id="tableauViz3" class="tableau"></div></div></li>
 </ul>
 </div>
-</div>
+</div>
+
 </div>
 </div>
 
@@ -303,6 +304,13 @@ map.getCanvas().style.cursor = 'pointer';
 
 map.on('mouseleave', 'godaddy', function () {
 map.getCanvas().style.cursor = '';
+    });
+
+map.on('moveend', function() {
+var continent =[];
+        var continentfeatures = map.queryRenderedFeatures({layers:['continent']});
+console.log(continentfeatures);
+        }
     });
 
 function tableau1(){
