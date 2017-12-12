@@ -325,9 +325,9 @@ viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersA
 Filtername = filters[0].getFieldName();
 console.log(Filtername);
 });
-viz1.getWorkbook().getActiveSheet().getWorksheets()
+viz1.getWorkbook().activateSheetAsync("Continent")
 .then(function(sheet){
-worksheeta = sheet[0].get("Continent");
+worksheeta = sheet;
 console.log(worksheeta);
 });
 
