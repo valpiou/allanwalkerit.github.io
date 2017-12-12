@@ -326,6 +326,8 @@ return Object.keys(tempContinents);
 viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync().then(function (filters) {
 Filtername = filters[0].getFieldName();
 console.log(Filtername);
+worksheeta = viz1.getWorkbook().getActiveSheet();
+console.log(worksheeta);
 //worksheeta.applyFilterAsync(Filtername,"Africa",tableau.FilterUpdateType.REPLACE);
 } 
 )
