@@ -309,7 +309,8 @@ map.getCanvas().style.cursor = '';
 map.on('moveend', function() {
 //array to push to here
 var continentfeatures = map.queryRenderedFeatures({layers:['continents']});
-console.log(continentfeatures);
+var continentproperties = continentfeatures.properties["CONTINENT"];
+console.log(continentproperties);
         }
     );
 
