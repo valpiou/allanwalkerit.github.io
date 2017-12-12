@@ -321,13 +321,12 @@ tempContinents[continentsarray[i]] = true;
 return Object.keys(tempContinents);
 }
 console.log(deDupContinents);
-//tableau filters
-var worksheeta;
+var worksheet;
 viz1.getWorkbook().activateSheetAsync("Continent").then(function (sheet) {
-  worksheeta = sheet;
+  worksheet = sheet;
 })
 .then(function () {
-  return worksheeta.clearFilterAsync("CONTINENT");
+  return worksheet.clearFilterAsync("CONTINENT");
 })
         }
     );
