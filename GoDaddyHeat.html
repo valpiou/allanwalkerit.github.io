@@ -322,10 +322,11 @@ for (var i = 0; i < continentsarray.length; i++)
 tempContinents[continentsarray[i]] = true;
 return Object.keys(tempContinents);
 }
-console.log(deDupContinents);
+
 viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync().then(function (filters) {
 Filtername = filters[0].getFieldName();
-worksheeta.applyFilterAsync(Filtername,deDupContinents,tableau.FilterUpdateType.REPLACE);
+console.log(Filtername);
+worksheeta.applyFilterAsync(Filtername,"Africa",tableau.FilterUpdateType.REPLACE);
 } 
 )
         }
