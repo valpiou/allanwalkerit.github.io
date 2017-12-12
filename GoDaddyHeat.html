@@ -323,16 +323,11 @@ tempContinents[continentsarray[i]] = true;
 return Object.keys(tempContinents);
 }
 
-viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync().then(function (filters) {
+viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync();
 Filtername = filters[0].getFieldName();
-console.log(Filtername);
-worksheeta = viz1.getWorkbook().getActiveSheet();
-console.log(worksheeta);
-worksheeta.applyFilterAsync(Filtername,deDupContinents,tableau.FilterUpdateType.REPLACE);
-} 
-)
-        }
-    );
+worksheeta = viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent");
+worksheeta.clearFilterAsync(Filtername);
+});
 
 function tableau1(){
 	var onevizOptions = {
