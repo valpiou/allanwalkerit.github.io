@@ -71,6 +71,7 @@ var popup = new mapboxgl.Popup()
         .setHTML(country+' GDP:'+'<br><br>'+'<svg width="200" height="200"></svg>')
         .addTo(map);
 var input = JSON.parse(featuredata);
+console.log(featuredata);
 
 var margin = {top: 10, right: 10, bottom: 20, left: 30},
     width = 200 - margin.left - margin.right,
