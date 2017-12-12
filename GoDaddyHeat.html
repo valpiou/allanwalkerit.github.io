@@ -328,7 +328,7 @@ Filtername = filters[0].getFieldName();
 console.log(Filtername);
 worksheeta = viz1.getWorkbook().getActiveSheet();
 console.log(worksheeta);
-//worksheeta.applyFilterAsync(Filtername,"Africa",tableau.FilterUpdateType.REPLACE);
+worksheeta.applyFilterAsync(Filtername,deDupContinents,tableau.FilterUpdateType.REPLACE);
 } 
 )
         }
