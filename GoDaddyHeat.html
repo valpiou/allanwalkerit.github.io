@@ -324,7 +324,7 @@ return Object.keys(tempContinents);
 }
 
 viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync();
-Filtername = filters[0].getFieldName();
+Filtername = viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync().getFieldName();
 worksheeta = viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent");
 worksheeta.clearFilterAsync(Filtername);
 });
