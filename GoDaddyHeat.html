@@ -327,6 +327,10 @@ viz1.getWorkbook().activateSheetAsync("Continent").then(function (sheet) {
   worksheeta = sheet;
 })
 .then(function () {
+  return worksheeta.applyFilterAsync("CONTINENT", "",
+    tableau.FilterUpdateType.ALL);
+})
+.then(function () {
   return worksheeta.applyFilterAsync("CONTINENT", "Africa",tableau.FilterUpdateType.REMOVE);
 })
         }
