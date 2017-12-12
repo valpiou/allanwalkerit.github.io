@@ -328,8 +328,8 @@ viz1.getWorkbook().activateSheetAsync("Continent").then(function (sheet) {
 })
 .then(function () {
   return worksheeta.applyFilterAsync(
-    "CONTINENT", ["Africa","Europe"],
-    tableau.FilterUpdateType.ADD);
+    "CONTINENT", [tempContinents],
+    tableau.FilterUpdateType.REPLACE);
 })
         }
     );
