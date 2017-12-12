@@ -323,11 +323,9 @@ tempContinents[continentsarray[i]] = true;
 return Object.keys(tempContinents);
 }
 console.log(deDupContinents);
-viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync().then(function (sheet) {
-worksheeta = sheet;
-})
-.then(function () {
-  return worksheeta.applyFilterAsync("CONTINENTS", "",tableauSoftware.FilterUpdateType.ALL);
+viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync().then(function (filters) {
+FilterForContinents = filters[0].getAppliedValues();
+console.log(FilterForContinents);
 })
         }
     );
