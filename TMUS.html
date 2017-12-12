@@ -172,6 +172,14 @@ color: #F3F3F5 !important;
   .sidenav a {font-size: 18px;}
 }
 
+.mapboxgl-popup-content {
+background-color: #E20074 !important;
+}
+
+.mapbox-popup-close-button {
+color: #FFFFFF !important;
+}
+
 </style>
 </head>
 
@@ -295,12 +303,12 @@ d3.tsv("data.tsv", function(d) {
       .attr("y", 6)
       .attr("dy", "0.71em")
       .attr("text-anchor", "end")
-      .text("Price ($)");
+      .text("Performance");
 
   g.append("path")
       .datum(data)
       .attr("fill", "none")
-      .attr("stroke", "steelblue")
+      .attr("stroke", "white")
       .attr("stroke-linejoin", "round")
       .attr("stroke-linecap", "round")
       .attr("stroke-width", 1.5)
