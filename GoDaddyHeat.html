@@ -213,7 +213,9 @@ var d = function tableau4(){
      d = function tableau4(){};
 };
 
-
+var worksheeta;
+var worksheetb;
+var worksheetc;
 var onePh = document.getElementById("tableauViz4");
 var twoPh = document.getElementById("tableauViz2");
 var threePh = document.getElementById("tableauViz3");
@@ -321,12 +323,12 @@ tempContinents[continentsarray[i]] = true;
 return Object.keys(tempContinents);
 }
 console.log(deDupContinents);
-var worksheeta;
+
 viz1.getWorkbook().activateSheetAsync("Continent").then(function (sheet) {
   worksheeta = sheet;
 })
 .then(function () {
-  return worksheet.applyFilterAsync("CONTINENT", "",
+  return worksheeta.applyFilterAsync("CONTINENT", "",
     tableau.FilterUpdateType.ALL);
 })
         }
