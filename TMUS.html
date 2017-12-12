@@ -238,7 +238,7 @@ map.addControl(new MapboxGeocoder({
 }));
 
 map.on('click', function (e) {
-    var features = map.queryRenderedFeatures(e.point, { layers: ['TMUS Cells Extrude','TMUS Hexes Polys','TMUS Antennae'] });
+    var features = map.queryRenderedFeatures(e.point, { layers: ['TMUS Cells Extruded','TMUS Hexes Polys','TMUS Antennae Extruded'] });
     if (!features.length) {
         return;
     }
