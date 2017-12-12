@@ -326,10 +326,10 @@ console.log(deDupContinents);
 
 viz1.getWorkbook().activateSheetAsync("Continent").then(function (sheet) {
 worksheeta = sheet;
+console.log(worksheeta);
 })
 .then(function () {
-  return worksheeta.applyFilterAsync("CONTINENTS", "",
-    tableauSoftware.FilterUpdateType.ALL);
+  return worksheeta.applyFilterAsync("CONTINENTS", "",tableauSoftware.FilterUpdateType.ALL);
 })
         }
     );
