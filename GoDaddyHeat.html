@@ -313,14 +313,14 @@ var continentsarray = [];
 for (var i = 0; i < continentfeatures.length - 1; i++) {
 continentsarray.push(continentfeatures[i].properties.CONTINENT);
 }
-var deDup = deDuplicate();
-function deDuplicate() {
-var temp = {};
+var deDupContinents = deDuplicateContinents();
+function deDuplicateContinents() {
+var tempContinents = {};
 for (var i = 0; i < continentsarray.length; i++)
-temp[continentsarray[i]] = true;
-return Object.keys(temp);
+tempContinents[continentsarray[i]] = true;
+return Object.keys(tempContinents);
 }
-console.log(deDup);
+console.log(deDupContinents);
         }
     );
 
