@@ -251,7 +251,6 @@ if (zoom>=2.99) {
 }
 if (zoom<2) {
     $("#country").hide();
-//viz1.getWorkbook().changeParameterValueAsync("CONTINENT", "ALL");
 viz2.getWorkbook().changeParameterValueAsync("COUNTRY", "ALL");
 }
 if (zoom<3) {
@@ -329,7 +328,7 @@ viz1.getWorkbook().activateSheetAsync("Continent")
 .then(function(sheet){
 worksheeta = sheet;
 console.log(worksheeta);
-return worksheeta.applyFilterAsync(Filtername, deDupContinents, tableauSoftware.FilterUpdateType.REPLACE);
+viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").applyFilterAsync('CONTINENTS', deDupContinents,tableau.FilterUpdateType.REPLACE);
 });
 });
 
