@@ -321,6 +321,15 @@ tempContinents[continentsarray[i]] = true;
 return Object.keys(tempContinents);
 }
 console.log(deDupContinents);
+//tableau filters
+viz1.getWorkbook().activateSheetAsync("CONTINENT").then(function (sheet) {
+  worksheet = sheet;
+})
+.then(function () {
+  return worksheet.applyFilterAsync(
+    "CONTINENT", ["Africa", "Europe"],
+    tableau.FilterUpdateType.REPLACE);
+})
         }
     );
 
