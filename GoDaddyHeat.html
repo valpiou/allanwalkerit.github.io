@@ -324,8 +324,13 @@ return Object.keys(tempContinents);
 }
 console.log(deDupContinents);
 viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync().then(function (filters) {
-FilterForContinents = filters[0].getAppliedValues();
-console.log(FilterForContinents);
+ContinentsFilter = filters[0];
+console.log(ContinentsFilter);
+filters[0].applyFilterAsync(
+    "CONTINENTS",
+    "AFRICA",
+    tableauSoftware.FilterUpdateType.REPLACE);
+} 
 })
         }
     );
