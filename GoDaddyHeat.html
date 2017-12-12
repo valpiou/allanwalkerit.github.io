@@ -325,8 +325,7 @@ return Object.keys(tempContinents);
 console.log(deDupContinents);
 viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync().then(function (filters) {
 ContinentsFilter = filters[0];
-console.log(ContinentsFilter);
-worksheeta.applyFilterAsync(ContinentsFilter,"AFRICA",tableauSoftware.FilterUpdateType.REPLACE);
+worksheeta.applyFilterAsync(ContinentsFilter,"AFRICA",tableau.FilterUpdateType.REPLACE);
 } 
 )
         }
