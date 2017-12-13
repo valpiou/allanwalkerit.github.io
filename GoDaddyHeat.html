@@ -418,7 +418,7 @@ viz4.getWorkbook().changeParameterValueAsync("CITY", [x]);
 viz4 = new tableauSoftware.Viz(fourPh, fourUrl, fourvizOptions);
 }
 
-$( "#data" ).click(function() {
+$( "#data" ).change(function() {
   data(this.value);
 });
 
