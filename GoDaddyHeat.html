@@ -77,7 +77,7 @@ width:100%;
 }
 
 #map {
-height: 582px;
+height: 85vh;
 width: 100%;
 }
 
@@ -283,14 +283,6 @@ document.getElementById("city").innerHTML = city;
 tableau4();
     });
 
-map.on('mouseenter', 'godaddy', function () {
-map.getCanvas().style.cursor = 'pointer';
-    });
-
-map.on('mouseleave', 'godaddy', function () {
-map.getCanvas().style.cursor = '';
-    });
-
 map.on('moveend', function() {
 
 var continentfeatures = map.queryRenderedFeatures({layers:['continents']});
@@ -336,32 +328,29 @@ return Object.keys(tempStates);
 }
 
 viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync()
-.then(function(filters){
-ContinentFiltername = filters[0].getFieldName();
+.then(function(continentfilters){
+ContinentFiltername = continentfilters[0].getFieldName();
 });
 viz1.getWorkbook().activateSheetAsync("Continent")
-.then(function(sheet){
-worksheeta = sheet;
+.then(function(continentsheet){
 return viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").applyFilterAsync(ContinentFiltername, deDupContinents,tableau.FilterUpdateType.REPLACE);
 });
 
 viz2.getWorkbook().getActiveSheet().getWorksheets().get("Country").getFiltersAsync()
-.then(function(filters){
-CountryFiltername = filters[0].getFieldName();
+.then(function(countryfilters){
+CountryFiltername = countryfilters[0].getFieldName();
 });
 viz2.getWorkbook().activateSheetAsync("Country")
-.then(function(sheet){
-worksheetb = sheet;
+.then(function(countrysheet){
 return viz2.getWorkbook().getActiveSheet().getWorksheets().get("Country").applyFilterAsync(CountryFiltername, deDupCountries,tableau.FilterUpdateType.REPLACE);
 });
 
 viz3.getWorkbook().getActiveSheet().getWorksheets().get("State").getFiltersAsync()
-.then(function(filters){
-StateFiltername = filters[0].getFieldName();
+.then(function(statefilters){
+StateFiltername = statefilters[0].getFieldName();
 });
 viz3.getWorkbook().activateSheetAsync("State")
-.then(function(sheet){
-worksheetc = sheet;
+.then(function(statesheet){
 return viz3.getWorkbook().getActiveSheet().getWorksheets().get("State").applyFilterAsync(StateFiltername, deDupStates,tableau.FilterUpdateType.REPLACE);
 });
 
