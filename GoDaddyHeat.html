@@ -299,18 +299,16 @@ for (var i = 0; i < continentfeatures.length - 1; i++) {
 continentsarray.push(continentfeatures[i].properties.CONTINENT);
 }
 
-var countryfeatures = map.queryRenderedFeatures({layers:['counties']});
+var countryfeatures = map.queryRenderedFeatures({layers:['countries']});
 var countryarray = [];
 for (var i = 0; i < countryfeatures.length - 1; i++) {
 countryarray.push(countryfeatures[i].properties.Country);
-console.log(countryarray);
 }
 
 var statefeatures = map.queryRenderedFeatures({layers:['states']});
 var statearray = [];
 for (var i = 0; i < statefeatures.length - 1; i++) {
 statearray.push(statefeatures[i].properties.State);
-console.log(statearray);
 }
 
 var deDupContinents = deDuplicateContinents();
@@ -321,15 +319,52 @@ tempContinents[continentsarray[i]] = true;
 return Object.keys(tempContinents);
 }
 
+var deDupCountries= deDuplicateCountries();
+function deDuplicateCountries() {
+var tempCountries = {};
+for (var i = 0; i < countriesarray.length; i++)
+tempCountries[countriesarray[i]] = true;
+return Object.keys(tempCountries);
+}
+
+var deDupStates= deDuplicateStates();
+function deDuplicateStates() {
+var tempStates = {};
+for (var i = 0; i < statesarray.length; i++)
+tempStates[statesarray[i]] = true;
+return Object.keys(tempStates);
+}
+
 viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync()
 .then(function(filters){
-Filtername = filters[0].getFieldName();
+ContinentFiltername = filters[0].getFieldName();
 });
 viz1.getWorkbook().activateSheetAsync("Continent")
 .then(function(sheet){
 worksheeta = sheet;
-return viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").applyFilterAsync(Filtername, deDupContinents,tableau.FilterUpdateType.REPLACE);
+return viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").applyFilterAsync(ContinentFiltername, deDupContinents,tableau.FilterUpdateType.REPLACE);
 });
+
+viz2.getWorkbook().getActiveSheet().getWorksheets().get("Country").getFiltersAsync()
+.then(function(filters){
+CountryFiltername = filters[0].getFieldName();
+});
+viz2.getWorkbook().activateSheetAsync("Country")
+.then(function(sheet){
+worksheetb = sheet;
+return viz2.getWorkbook().getActiveSheet().getWorksheets().get("Country").applyFilterAsync(CountryFiltername, deDupCountries,tableau.FilterUpdateType.REPLACE);
+});
+
+viz3.getWorkbook().getActiveSheet().getWorksheets().get("State").getFiltersAsync()
+.then(function(filters){
+StateFiltername = filters[0].getFieldName();
+});
+viz3.getWorkbook().activateSheetAsync("State")
+.then(function(sheet){
+worksheetc = sheet;
+return viz3.getWorkbook().getActiveSheet().getWorksheets().get("State").applyFilterAsync(StateFiltername, deDupStates,tableau.FilterUpdateType.REPLACE);
+});
+
 });
 
 function tableau1(){
