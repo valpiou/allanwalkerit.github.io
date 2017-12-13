@@ -322,16 +322,16 @@ return Object.keys(tempContinents);
 var deDupCountries= deDuplicateCountries();
 function deDuplicateCountries() {
 var tempCountries = {};
-for (var i = 0; i < countriesarray.length; i++)
-tempCountries[countriesarray[i]] = true;
+for (var i = 0; i < countryarray.length; i++)
+tempCountries[countryarray[i]] = true;
 return Object.keys(tempCountries);
 }
 
 var deDupStates= deDuplicateStates();
 function deDuplicateStates() {
 var tempStates = {};
-for (var i = 0; i < statesarray.length; i++)
-tempStates[statesarray[i]] = true;
+for (var i = 0; i < statearray.length; i++)
+tempStates[statearray[i]] = true;
 return Object.keys(tempStates);
 }
 
