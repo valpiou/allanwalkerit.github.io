@@ -301,39 +301,43 @@ continentsarray.push(continentfeatures[i].properties.CONTINENT);
 
 var countryfeatures = map.queryRenderedFeatures({layers:['countries']});
 var countryarray = [];
-for (var i = 0; i < countryfeatures.length - 1; i++) {
-countryarray.push(countryfeatures[i].properties.Country);
+for (var l = 0; l < countryfeatures.length - 1; l++) {
+countryarray.push(countryfeatures[l].properties.Country);
 }
 
 var statefeatures = map.queryRenderedFeatures({layers:['states']});
 var statearray = [];
-for (var i = 0; i < statefeatures.length - 1; i++) {
-statearray.push(statefeatures[i].properties.State);
+for (var m = 0; m < statefeatures.length - 1; m++) {
+statearray.push(statefeatures[m].properties.State);
 }
 
 var deDupContinents = deDuplicateContinents();
 function deDuplicateContinents() {
 var tempContinents = {};
-for (var i = 0; i < continentsarray.length; i++)
-tempContinents[continentsarray[i]] = true;
+for (var n = 0; n < continentsarray.length; n++)
+tempContinents[continentsarray[n]] = true;
 return Object.keys(tempContinents);
 }
 
 var deDupCountries= deDuplicateCountries();
 function deDuplicateCountries() {
 var tempCountries = {};
-for (var i = 0; i < countryarray.length; i++)
-tempCountries[countryarray[i]] = true;
+for (var j = 0; j < countryarray.length; j++)
+tempCountries[countryarray[j]] = true;
 return Object.keys(tempCountries);
 }
 
 var deDupStates= deDuplicateStates();
 function deDuplicateStates() {
 var tempStates = {};
-for (var i = 0; i < statearray.length; i++)
-tempStates[statearray[i]] = true;
+for (var k = 0; k < statearray.length; k++)
+tempStates[statearray[k]] = true;
 return Object.keys(tempStates);
 }
+
+console.log(deDupContinents);
+console.log(deDupCountries);
+console.log(deDupStates);
 
 viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync()
 .then(function(filters){
