@@ -8,12 +8,12 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.0/mapbox-gl-geocoder.min.js'></script>
 
     <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.js"></script>
     
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.css' rel='stylesheet' />
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.0/mapbox-gl-geocoder.css' type='text/css' />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <style>
@@ -326,7 +326,7 @@ Filtername = filters[0].getFieldName();
 viz1.getWorkbook().activateSheetAsync("Continent")
 .then(function(sheet){
 worksheeta = sheet;
-viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").applyFilterAsync(Filtername, deDupContinents,tableau.FilterUpdateType.REPLACE);
+return viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").applyFilterAsync(Filtername, deDupContinents,tableau.FilterUpdateType.REPLACE);
 });
 });
 
