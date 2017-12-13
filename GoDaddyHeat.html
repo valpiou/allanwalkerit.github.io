@@ -335,10 +335,6 @@ tempStates[statearray[k]] = true;
 return Object.keys(tempStates);
 }
 
-console.log(deDupContinents);
-console.log(deDupCountries);
-console.log(deDupStates);
-
 viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync()
 .then(function(filters){
 ContinentFiltername = filters[0].getFieldName();
