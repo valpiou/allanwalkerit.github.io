@@ -311,6 +311,21 @@ var continentsarray = [];
 for (var i = 0; i < continentfeatures.length - 1; i++) {
 continentsarray.push(continentfeatures[i].properties.CONTINENT);
 }
+
+var countryfeatures = map.queryRenderedFeatures({layers:['counties']});
+var countryarray = [];
+for (var i = 0; i < countryfeatures.length - 1; i++) {
+countryarray.push(countryfeatures[i].properties.Country);
+console.log(countryarray);
+}
+
+var statefeatures = map.queryRenderedFeatures({layers:['states']});
+var statearray = [];
+for (var i = 0; i < statefeatures.length - 1; i++) {
+statearray.push(statefeatures[i].properties.State);
+console.log(statearray);
+}
+
 var deDupContinents = deDuplicateContinents();
 function deDuplicateContinents() {
 var tempContinents = {};
