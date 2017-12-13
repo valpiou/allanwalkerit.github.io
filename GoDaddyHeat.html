@@ -251,11 +251,9 @@ if (zoom>=2.99) {
 }
 if (zoom<2) {
     $("#country").hide();
-viz2.getWorkbook().changeParameterValueAsync("COUNTRY", "ALL");
 }
 if (zoom<3) {
     $("#state").hide();
-viz3.getWorkbook().changeParameterValueAsync("STATE", "ALL");
 }
 });
 
@@ -270,9 +268,6 @@ var state = e.features[0].properties.State;
 var city = e.features[0].properties.City;
 document.getElementById("city").innerHTML = city;
 tableau4();
-viz1.getWorkbook().changeParameterValueAsync("CONTINENT", continent);
-viz2.getWorkbook().changeParameterValueAsync("COUNTRY", country);
-viz3.getWorkbook().changeParameterValueAsync("STATE", state);
     });
 
 map.on('click', 'godaddylocations', function (e) {
@@ -286,14 +281,6 @@ var state = e.features[0].properties.State;
 var city = e.features[0].properties.City;
 document.getElementById("city").innerHTML = city;
 tableau4();
-viz1.getWorkbook().changeParameterValueAsync("CONTINENT", continent);
-viz2.getWorkbook().changeParameterValueAsync("COUNTRY", country);
-viz3.getWorkbook().changeParameterValueAsync("STATE", state);
-    });
-
-map.on('click', 'continents', function (e) {
-var continent = e.features[0].properties.CONTINENT;
-viz1.getWorkbook().changeParameterValueAsync("CONTINENT", continent);
     });
 
 map.on('mouseenter', 'godaddy', function () {
