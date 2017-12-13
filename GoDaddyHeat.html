@@ -322,13 +322,11 @@ return Object.keys(tempContinents);
 viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").getFiltersAsync()
 .then(function(filters){
 Filtername = filters[0].getFieldName();
-console.log(Filtername);
 });
 viz1.getWorkbook().activateSheetAsync("Continent")
 .then(function(sheet){
 worksheeta = sheet;
-console.log(worksheeta);
-viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").applyFilterAsync('CONTINENTS', deDupContinents,tableau.FilterUpdateType.REPLACE);
+viz1.getWorkbook().getActiveSheet().getWorksheets().get("Continent").applyFilterAsync(Filtername, deDupContinents,tableau.FilterUpdateType.REPLACE);
 });
 });
 
