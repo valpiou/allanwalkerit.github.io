@@ -302,13 +302,13 @@ continentsarray.push(continentfeatures[i].properties.CONTINENT);
 var countryfeatures = map.queryRenderedFeatures({layers:['countries']});
 var countryarray = [];
 for (var l = 0; l < countryfeatures.length - 1; l++) {
-countryarray.push(countryfeatures[l].properties.Country);
+countryarray.push(countryfeatures[l].properties.NAME);
 }
 
 var statefeatures = map.queryRenderedFeatures({layers:['states']});
 var statearray = [];
 for (var m = 0; m < statefeatures.length - 1; m++) {
-statearray.push(statefeatures[m].properties.State);
+statearray.push(statefeatures[m].properties.name);
 }
 
 var deDupContinents = deDuplicateContinents();
