@@ -19,8 +19,8 @@ body {
 }
 
 .navbar-default {
-background-color: #ffffff;
-border-bottom: 1px solid #e8e8e8;
+background-color: #000000;
+border-bottom: 0px;
 border-top: 0px;
 border-left: 0px;
 border-right: 0px;
@@ -51,7 +51,7 @@ position: fixed;
 z-index: 1;
 top: 0;
 left: 0;
-background-color: #02C54C;
+background-color: #000000;
 overflow-x: hidden;
 transition: 0.5s;
 font-size:large;
@@ -64,7 +64,7 @@ top: 0;
 right: 25px;
 font-size: 30px;
 margin-left: 50px;
-color: #000000;
+color: #ffffff;
 }
 
 #main {
@@ -86,54 +86,6 @@ margin:0;
 padding:0; 
 }
 
-.bannerhide {
-height: 170px;
-width: 95%;
-overflow:hidden;
-margin: 0 auto;
-}
-
-.tableau {
-height: 200px;
-width: 95%;
-margin: 0 auto;
-}
-
-.bannerhidetooltip {
-height: 150px;
-width: 250px;
-overflow:hidden;
-}
-
-.tableautooltip {
-height: 180px;
-width: 250px;
-}
-
-p.sansserif {
-font-size:9px;
-font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
-
-#UIControls {
-padding-left: 8px;
-}
-
-#data {
-width:90%;
-background-color: #FFFFFF;
-color: #000000;
-}
-
-ul#list {
-padding-left: 0;
--webkit-padding-start: 0;
-list-style-type: none;
-}
-
-.glyphicon glyphicon-zoom-in {
-color:#7A0087;
-}
 
 </style>
 </head>
@@ -149,11 +101,8 @@ color:#7A0087;
   <div class="container-fluid">
     <div class="navbar-header">
     <span class="hamburger" onclick="openNav()">&#9776;</span>
-    <a class="navbar-brand"><img src="godaddy-logo.png" alt="Mapbox"></a>
+    <a class="navbar-brand"><img src="mapbox.png" alt="Mapbox"></a>
     </div>
-<ul class="nav navbar-nav navbar-right">
-<li><a href="javascript:void(0)" onclick="resetall()"><span class="glyphicon glyphicon-repeat"></span> Reset</a></li>
-    </ul>   
   </div>
 </nav>
 
@@ -173,10 +122,10 @@ color:#7A0087;
 
 <script>
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXJzcHJpbnRpbmciLCJhIjoiY2o4dnU3bjVyMWhqZDMxcDZzazVoc3huOCJ9.8O5UIVXaFCT-4OFi850RDw';
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXIiLCJhIjoiY2phbHVlOHQ4MnZscDMycGJoaTdiaHRxOCJ9.OYLAoMVg6e3Ih4r65WJuvA';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/allanwalkersprinting/cjaix8uxlabvs2rmotieo9vqn?fresh=true',
+    style: 'mapbox://styles/allanwalker/cjbgrhpxv2dbp2rqshlep2mmz?fresh=true',
     center: [-73.979837, 40.749501],
     zoom: 12.95,
     bearing: -12.65,
