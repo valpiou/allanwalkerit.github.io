@@ -137,10 +137,10 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXIiLCJhIjoiY2phbHVlOHQ4MnZscDMyc
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/allanwalker/cjbgrhpxv2dbp2rqshlep2mmz?fresh=true',
-    center: [-73.992154, 40.732465],
-    zoom: 12.95,
-    bearing: -12.65,
-    pitch: 58.50
+    center: [-74.013388, 40.710867],
+    zoom: 14,
+    bearing: 0,
+    pitch: 60
 });
 
 var nav = new mapboxgl.NavigationControl();
@@ -150,13 +150,6 @@ map.addControl(new MapboxGeocoder({
     accessToken: mapboxgl.accessToken
 
 }));
-
-map.on('click', 'metadatageojson', function (e) {
-        new mapboxgl.Popup()
-            .setLngLat(e.features[0].geometry.coordinates)
-            .setHTML('Name: '+e.features[0].properties.nn_name)
-            .addTo(map);
-    });
 
 
 function openNav() {
