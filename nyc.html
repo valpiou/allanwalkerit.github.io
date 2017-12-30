@@ -148,9 +148,24 @@ map.addControl(nav, 'top-left');
 
 map.addControl(new MapboxGeocoder({
     accessToken: mapboxgl.accessToken
+
 }));
 
+map.on('click', 'metadatageojson', function (e) {
+        new mapboxgl.Popup()
+            .setLngLat(e.features[0].geometry.coordinates)
+            .setHTML(e.features[0].properties.nn_name)
+            .addTo(map);
+    });
 
+    map.on('mouseenter', 'metadatageojson', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'metadatageojson', function () {
+        map.getCanvas().style.cursor = '';
+    });
+;
 
 function openNav() {
     document.getElementById("sidenav").style.width = "250px";
