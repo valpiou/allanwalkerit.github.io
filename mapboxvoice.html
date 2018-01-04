@@ -18,23 +18,24 @@
 <div id='map'></div>
 </body>
 <script>
+
+var zoomlevel = 9;  
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXIiLCJhIjoiY2phbHVlOHQ4MnZscDMycGJoaTdiaHRxOCJ9.OYLAoMVg6e3Ih4r65WJuvA';
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
     center: [-74.50, 40], // starting position [lng, lat]
-    zoom: 9 // starting zoom
+    zoom: zoomlevel // starting zoom
 });
 
 map.on('load', function() {
-var zoom = map.getZoom()
-console.log(zoom);
+var zoomlevel = map.getZoom()
 
 if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
   var commands = {
     'zoom in': function() {
-zoom+1;
+zoom = zoomlevel +1;
 console.log(zoom);
     }
   };
