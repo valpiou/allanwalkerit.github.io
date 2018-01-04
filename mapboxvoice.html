@@ -16,6 +16,7 @@
 <body>
 
 <div id='map'></div>
+</body>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsYW53YWxrZXIiLCJhIjoiY2phbHVlOHQ4MnZscDMycGJoaTdiaHRxOCJ9.OYLAoMVg6e3Ih4r65WJuvA';
 var map = new mapboxgl.Map({
@@ -29,12 +30,7 @@ map.on('load', function() {
 var zoom = map.getZoom()
 console.log(zoom);
 });
-</script>
 
-</body>
-</html>
-
-<script>
 if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
   var commands = {
@@ -51,3 +47,7 @@ console.log(zoom);
   annyang.start();
 }
 </script>
+</html>
+
+
+
